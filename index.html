@@ -471,7 +471,7 @@
                 <option value="physical">物理地图</option>
                 <option value="poi">兴趣点</option>
                 <option value="military">军事地图</option>
-                <option value="emblems">徽章</option>
+                <option value="emblems">徽标</option>
                 <option value="landmass">纯陆地</option>
                 <option hidden value="custom">自定（未保存）</option>
             </select>
@@ -657,11 +657,11 @@
                 </li>
                 <li
                         id="toggleEmblems"
-                        data-tip="徽章：点击切换，拖动可调整图层顺序。Ctrl+点击可编辑图层样式<br/>Emblems: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
+                        data-tip="徽标：点击切换，拖动可调整图层顺序。Ctrl+点击可编辑图层样式<br/>Emblems: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
                         data-shortcut="Y"
                         onclick="toggleEmblems(event)"
                 >
-                    徽章 <u>Y</u>
+                    徽标 <u>Y</u>
                 </li>
                 <li
                         id="toggleLabels"
@@ -797,7 +797,7 @@
                 <option value="rivers">河流 Rivers</option>
                 <option value="ocean">海洋 Ocean</option>
                 <option value="lakes">湖泊 Lakes</option>
-                <option value="emblems">徽章 Emblems</option>
+                <option value="emblems">徽标 Emblems</option>
                 <option value="prec">降水 Precipitation</option>
                 <option value="armies">军事 Military</option>
                 <option value="routes">贸易路线 Routes</option>
@@ -988,10 +988,12 @@
                 <tr data-tip="沿轴平移纹理（像素）<br/>Shift the texture by axes">
                     <td><b>沿轴平移</b><br/>Shift by axes</td>
                     <td>
+                        <b>x </b>
                         <input id="styleTextureShiftX" type="number" value="0"
-                               data-tip="沿 x 轴平移纹理（像素）<br/>Shift texture by x axis in pixels"/>
+                               data-tip="沿 x 轴平移纹理（像素）<br/>Shift texture by x axis in pixels" style="text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
+                        <b>y </b>
                         <input id="styleTextureShiftY" type="number" value="0"
-                               data-tip="沿 y 轴平移纹理（像素）<br/>Shift texture by y axis in pixels"/>
+                               data-tip="沿 y 轴平移纹理（像素）<br/>Shift texture by y axis in pixels" style="text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
                     </td>
                 </tr>
                 </tbody>
@@ -1009,18 +1011,18 @@
                     <td><b>位置</b><br/>Position</td>
                     <td style="display: flex; flex-direction: column; gap: 2px">
                         <div>
-                            <span>x </span>
-                            <input id="styleVignetteX" type="number" min="0" max="100" step="0.1" style="width: 5em"/>
-                            <span>width&nbsp; </span>
+                            <span><b>x</b></span>
+                            <input id="styleVignetteX" type="number" min="0" max="100" step="0.1" style="width: 5em; text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
+                            <span><b>宽度</b> W</span>
                             <input id="styleVignetteWidth" type="number" min="0" max="100" step="0.1"
-                                   style="width: 5em"/>
+                                   style="width: 5em; text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
                         </div>
                         <div>
-                            <span>y </span>
-                            <input id="styleVignetteY" type="number" min="0" max="100" step="0.1" style="width: 5em"/>
-                            <span>height </span>
+                            <span><b>y</b></span>
+                            <input id="styleVignetteY" type="number" min="0" max="100" step="0.1" style="width: 5em; text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
+                            <span><b>高度</b> H</span>
                             <input id="styleVignetteHeight" type="number" min="0" max="100" step="0.1"
-                                   style="width: 5em"/>
+                                   style="width: 5em; text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
                         </div>
                     </td>
                 </tr>
@@ -1029,9 +1031,9 @@
                     <td><b>半径</b><br/>Radius</td>
                     <td>
                         <span>x </span>
-                        <input id="styleVignetteRx" type="number" min="0" max="50" style="width: 5em"/>
+                        <input id="styleVignetteRx" type="number" min="0" max="50" style="width: 5em; text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
                         <span>y </span>
-                        <input id="styleVignetteRy" type="number" min="0" max="50" style="width: 5em"/>
+                        <input id="styleVignetteRy" type="number" min="0" max="50" style="width: 5em; text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
                     </td>
                 </tr>
 
@@ -1113,7 +1115,7 @@
                 <tr data-tip="设置网格单元比例因子<br/>Set grid cells scale multiplier">
                     <td><b>比例</b><br/>Scale</td>
                     <td>
-                        <input id="styleGridScale" type="number" min=".1" max="10" step=".01"/>
+                        <input id="styleGridScale" type="number" min=".1" max="10" step=".01" style="text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
                         <output
                                 id="styleGridSizeFriendly"
                                 data-tip="网格单元中心间距（地图比例）<br/>Distance between grid cell centers (in map scale)"
@@ -1133,10 +1135,12 @@
                 <tr data-tip="沿轴平移元素<br/>Shift the element by axes">
                     <td><b>沿轴平移</b><br/>Shift by axes</td>
                     <td>
+                        <b>x </b>
                         <input id="styleGridShiftX" type="number"
-                               data-tip="沿 x 轴平移（像素）<br/>Shift by x axis in pixels"/>
+                               data-tip="沿 x 轴平移（像素）<br/>Shift by x axis in pixels" style="text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
+                        <b>y </b>
                         <input id="styleGridShiftY" type="number"
-                               data-tip="沿 y 轴平移（像素）<br/>Shift by y axis in pixels"/>
+                               data-tip="沿 y 轴平移（像素）<br/>Shift by y axis in pixels" style="text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
                     </td>
                 </tr>
                 </tbody>
@@ -1151,10 +1155,15 @@
 
                 <tr data-tip="沿轴平移风向玫瑰<br/>Shift wind (compass) rose by axes">
                     <td><b>沿轴平移</b><br/>Shift by axes</td>
-                    <td><b>x</b>
-                        <input id="styleCompassShiftX" type="number" value="80" data-tip="沿 x 轴平移风向玫瑰<br/>Shift by x axis in pixels" style="text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
+                    <td>
+                        <b>x</b>
+                        <input id="styleCompassShiftX" type="number" value="80"
+                               data-tip="沿 x 轴平移风向玫瑰<br/>Shift by x axis in pixels"
+                               style="text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
                         <b>y</b>
-                        <input id="styleCompassShiftY" type="number" value="80" data-tip="沿 y 轴平移风向玫瑰<br/>Shift by y axis in pixels" style="text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);/>
+                        <input id="styleCompassShiftY" type="number" value="80"
+                               data-tip="沿 y 轴平移风向玫瑰<br/>Shift by y axis in pixels"
+                               style="text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
                     </td>
                 </tr>
                 </tbody>
@@ -1226,331 +1235,361 @@
                 </tbody>
 
                 <tbody id="styleStrokeDash">
-                    <tr data-tip="设置描边虚线数组（例如 5 2）和线帽<br/>Set stroke dash array (e.g. 5 2) and linecap">
-                        <td><b>虚线</b><br/>Stroke dash</td>
-                        <td>
-                            <input id="styleStrokeDasharrayInput" type="text" value="1 2" style="width: 26%"/>
-                            <select id="styleStrokeLinecapInput" style="width: 32%">
-                                <option value="inherit" selected>继承 Inherit</option>
-                                <option value="butt">平头 Butt</option>
-                                <option value="round">圆头 Round</option>
-                                <option value="square">方头 Square</option>
-                            </select>
-                        </td>
-                    </tr>
+                <tr data-tip="设置描边虚线数组（例如 5 2）和线帽<br/>Set stroke dash array (e.g. 5 2) and linecap">
+                    <td><b>虚线</b><br/>Stroke dash</td>
+                    <td>
+                        <input id="styleStrokeDasharrayInput" type="text" value="1 2" style="width: 26%"/>
+                        <select id="styleStrokeLinecapInput" style="width: 32%">
+                            <option value="inherit" selected>继承 Inherit</option>
+                            <option value="butt">平头 Butt</option>
+                            <option value="round">圆头 Round</option>
+                            <option value="square">方头 Square</option>
+                        </select>
+                    </td>
+                </tr>
                 </tbody>
 
                 <tbody id="styleShadow">
-                    <tr data-tip="设置文字阴影<br/>Set text shadow">
-                        <td><b>文字阴影</b><br/>Text shadow</td>
-                        <td>
-                            <input id="styleShadowInput" type="text" value="0 0 4px white"/>
-                        </td>
-                    </tr>
+                <tr data-tip="设置文字阴影<br/>Set text shadow">
+                    <td><b>文字阴影</b><br/>Text shadow</td>
+                    <td>
+                        <input id="styleShadowInput" type="text" value="0 0 4px white"/>
+                    </td>
+                </tr>
                 </tbody>
 
                 <tbody id="styleFont">
-                    <tr data-tip="选择字体<br/>Select font">
-                        <td><b>字体</b><br/>Font</td>
-                        <td>
-                            <select id="styleSelectFont" style="width: 85%"></select>
-                            <button id="styleFontAdd" data-tip="添加字体<br/>Add a font" class="icon-plus sideButton"></button>
-                        </td>
-                    </tr>
+                <tr data-tip="选择字体<br/>Select font">
+                    <td><b>字体</b><br/>Font</td>
+                    <td>
+                        <select id="styleSelectFont" style="width: 85%"></select>
+                        <button id="styleFontAdd" data-tip="添加字体<br/>Add a font"
+                                class="icon-plus sideButton"></button>
+                    </td>
+                </tr>
                 </tbody>
 
 
                 <tbody id="styleSize">
-                    <tr data-tip="设置字体大小<br/>Set font size">
-                        <td><b>字体大小</b><br/>Font size</td>
-                        <td>
-                            <button id="styleFontPlus" data-tip="增大字体<br/>Increase font" class="whiteButton">+</button>
-                            <button id="styleFontMinus" data-tip="减小字体<br/>Decrease font" class="whiteButton">-</button>
-                            <input id="styleFontSize" type="number" min=".5" max="100" step=".1"/>
-                        </td>
-                    </tr>
+                <tr data-tip="设置字体大小<br/>Set font size">
+                    <td><b>字体大小</b><br/>Font size</td>
+                    <td>
+                        <button id="styleFontPlus" data-tip="增大字体<br/>Increase font" class="whiteButton">+</button>
+                        <button id="styleFontMinus" data-tip="减小字体<br/>Decrease font" class="whiteButton">-</button>
+                        <input id="styleFontSize" type="number" min=".5" max="100" step=".1" style="text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
+                    </td>
+                </tr>
                 </tbody>
 
                 <tbody id="styleRadius">
-                    <tr data-tip="设置图标半径<br/>Set icon size">
-                        <td><b>半径</b><br/>Radius</td>
-                        <td>
-                            <button id="styleRadiusPlus" data-tip="将半径乘以 1.1<br/>Multiply radius by 1.1" class="whiteButton">+</button>
-                            <button id="styleRadiusMinus" data-tip="将半径除以 1.1<br/>Divide radius by 1.1" class="whiteButton">-</button>
-                            <input id="styleRadiusInput" type="number" min=".2" max="10" step=".02" value="1"/>
-                        </td>
-                    </tr>
+                <tr data-tip="设置图标半径<br/>Set icon size">
+                    <td><b>半径</b><br/>Radius</td>
+                    <td>
+                        <button id="styleRadiusPlus" data-tip="将半径乘以 1.1<br/>Multiply radius by 1.1"
+                                class="whiteButton">+
+                        </button>
+                        <button id="styleRadiusMinus" data-tip="将半径除以 1.1<br/>Divide radius by 1.1"
+                                class="whiteButton">-
+                        </button>
+                        <input id="styleRadiusInput" type="number" min=".2" max="10" step=".02" value="1"/>
+                    </td>
+                </tr>
                 </tbody>
 
                 <tbody id="styleIconSize">
-                    <tr data-tip="设置图标尺寸<br/>Set icon size">
-                        <td><b>尺寸</b><br/>Size</td>
-                        <td>
-                            <button id="styleIconSizePlus" data-tip="将尺寸乘以 1.1<br/>Multiply size by 1.1" class="whiteButton">+</button>
-                            <button id="styleIconSizeMinus" data-tip="将尺寸除以 1.1<br/>Divide size by 1.1" class="whiteButton">-</button>
-                            <input id="styleIconSizeInput" type="number" min=".2" max="10" step=".02" value="1"/>
-                        </td>
-                    </tr>
+                <tr data-tip="设置图标尺寸<br/>Set icon size">
+                    <td><b>尺寸</b><br/>Size</td>
+                    <td>
+                        <button id="styleIconSizePlus" data-tip="将尺寸乘以 1.1<br/>Multiply size by 1.1"
+                                class="whiteButton">+
+                        </button>
+                        <button id="styleIconSizeMinus" data-tip="将尺寸除以 1.1<br/>Divide size by 1.1"
+                                class="whiteButton">-
+                        </button>
+                        <input id="styleIconSizeInput" type="number" min=".2" max="10" step=".02" value="1" style="text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
+                    </td>
+                </tr>
                 </tbody>
 
                 <tbody id="styleCoastline">
-                    <tr data-tip="允许系统根据缩放级别自动应用滤镜<br/>Allow system to apply filter automatically based on zoom level">
-                        <td colspan="2">
-                            <input id="styleCoastlineAuto" class="checkbox" type="checkbox"/>
-                            <label for="styleCoastlineAuto" class="checkbox-label"><b>自动缩放时更改滤镜</b><br/>Automatically change filter on zoom</label>
-                        </td>
-                    </tr>
+                <tr data-tip="允许系统根据缩放级别自动应用滤镜<br/>Allow system to apply filter automatically based on zoom level">
+                    <td colspan="2">
+                        <input id="styleCoastlineAuto" class="checkbox" type="checkbox"/>
+                        <label for="styleCoastlineAuto" class="checkbox-label"><b>自动缩放时更改滤镜</b><br/>　 Automatically change filter on zoom</label>
+                    </td>
+                </tr>
                 </tbody>
 
                 <tbody id="styleTemperature">
-                    <tr data-tip="定义温度层的不透明度。设为0则完全透明<br/>Define transparency of temperature layer. Set to 0 to make it fully transparent">
-                        <td><b>填充不透明度</b><br/>Fill opacity</td>
-                        <td>
-                            <slider-input id="styleTemperatureFillOpacityInput" min="0" max="1" step=".01" ></slider-input>
-                        </td>
-                    </tr>
+                <tr data-tip="定义温度层的不透明度。设为0则完全透明<br/>Define transparency of temperature layer. Set to 0 to make it fully transparent">
+                    <td><b>填充不透明度</b><br/>Fill opacity</td>
+                    <td>
+                        <slider-input id="styleTemperatureFillOpacityInput" min="0" max="1" step=".01"></slider-input>
+                    </td>
+                </tr>
 
-                    <tr data-tip="设置标签大小<br/>Set labels size">
-                        <td><b>标签大小</b><br/>Labels size</td>
-                        <td>
-                            <slider-input id="styleTemperatureFontSizeInput" min="0" max="30" step="1"></slider-input>
-                        </td>
-                    </tr>
+                <tr data-tip="设置标签大小<br/>Set labels size">
+                    <td><b>标签大小</b><br/>Labels size</td>
+                    <td>
+                        <slider-input id="styleTemperatureFontSizeInput" min="0" max="30" step="1"></slider-input>
+                    </td>
+                </tr>
 
-                    <tr data-tip="设置标签颜色<br/>Set labels color">
-                        <td><b>标签颜色</b><br/>Labels color</td>
-                        <td>
-                            <input id="styleTemperatureFillInput" type="color"/>
-                            <output id="styleTemperatureFillOutput">#000</output>
-                        </td>
-                    </tr>
+                <tr data-tip="设置标签颜色<br/>Set labels color">
+                    <td><b>标签颜色</b><br/>Labels color</td>
+                    <td>
+                        <input id="styleTemperatureFillInput" type="color"/>
+                        <output id="styleTemperatureFillOutput">#000</output>
+                    </td>
+                </tr>
                 </tbody>
 
                 <tbody id="styleStates" style="display: block">
-                    <tr data-tip="设置国家填充不透明度。0：透明，1：不透明<br/>Set states fill opacity. 0: invisible, 1: solid">
-                        <td><b>填充不透明度</b><br/>Body opacity</td>
-                        <td>
-                            <slider-input id="styleStatesBodyOpacity" min="0" max="1" step="0.01"></slider-input>
-                        </td>
-                    </tr>
+                <tr data-tip="设置国家填充不透明度。0：透明，1：不透明<br/>Set states fill opacity. 0: invisible, 1: solid">
+                    <td><b>填充不透明度</b><br/>Body opacity</td>
+                    <td>
+                        <slider-input id="styleStatesBodyOpacity" min="0" max="1" step="0.01"></slider-input>
+                    </td>
+                </tr>
 
-                    <tr data-tip="选择国家填充滤镜。请注意，滤镜可能会影响性能！<br/>Select filter for states fill. Please note filters may cause performance issues!">
-                        <td><b>填充滤镜</b><br/>Body filter</td>
-                        <td><select id="styleStatesBodyFilter"/></td>
-                    </tr>
+                <tr data-tip="选择国家填充滤镜。请注意，滤镜可能会影响性能！<br/>Select filter for states fill. Please note filters may cause performance issues!">
+                    <td><b>填充滤镜</b><br/>Body filter</td>
+                    <td><select id="styleStatesBodyFilter"/></td>
+                </tr>
 
-                    <tr style="margin-top: 0.8em">
-                        <td style="font-style: italic">
-                            Halo 仅在“渲染”选项设置为“最佳质量”时才渲染！<br/>Halo is only rendered if "Rendering" option is set to "Best quality"!<br/>　
-                        </td>
-                    </tr>
+                <tr style="margin-top: 0.8em">
+                    <td style="font-style: italic">
+                        Halo 仅在“渲染”选项设置为“最佳质量”时才渲染！<br/>Halo is only rendered if "Rendering" option is
+                        set to "Best quality"!<br/>　
+                    </td>
+                </tr>
 
-                    <tr data-tip="设置国家光晕宽度<br/>Set states halo effect width">
-                        <td><b>光晕宽度</b><br/>Halo width</td>
-                        <td>
-                            <slider-input id="styleStatesHaloWidth" min="0" max="30" step="0.1"></slider-input>
-                        </td>
-                    </tr>
+                <tr data-tip="设置国家光晕宽度<br/>Set states halo effect width">
+                    <td><b>光晕宽度</b><br/>Halo width</td>
+                    <td>
+                        <slider-input id="styleStatesHaloWidth" min="0" max="30" step="0.1"></slider-input>
+                    </td>
+                </tr>
 
-                    <tr data-tip="设置国家光晕不透明度。0：透明，1：不透明<br/>Set states halo effect opacity. 0: invisible, 1: solid">
-                        <td><b>光晕不透明度</b><br/>Halo opacity</td>
-                        <td>
-                            <slider-input id="styleStatesHaloOpacity" min="0" max="1" step="0.01"></slider-input>
-                        </td>
-                    </tr>
+                <tr data-tip="设置国家光晕不透明度。0：透明，1：不透明<br/>Set states halo effect opacity. 0: invisible, 1: solid">
+                    <td><b>光晕不透明度</b><br/>Halo opacity</td>
+                    <td>
+                        <slider-input id="styleStatesHaloOpacity" min="0" max="1" step="0.01"></slider-input>
+                    </td>
+                </tr>
 
-                    <tr data-tip="选择光晕模糊强度。设为0时为实线<br/>Select halo effect power (blur). Set to 0 to make it solid line" style="margin-bottom: 1em">
-                        <td><b>光晕模糊</b><br/>Halo blur</td>
-                        <td>
-                            <slider-input id="styleStatesHaloBlur" min="0" max="10" step="0.01"></slider-input>
-                        </td>
-                    </tr>
+                <tr data-tip="选择光晕模糊强度。设为0时为实线<br/>Select halo effect power (blur). Set to 0 to make it solid line"
+                    style="margin-bottom: 1em">
+                    <td><b>光晕模糊</b><br/>Halo blur</td>
+                    <td>
+                        <slider-input id="styleStatesHaloBlur" min="0" max="10" step="0.01"></slider-input>
+                    </td>
+                </tr>
                 </tbody>
 
                 <tbody id="styleArmies">
-                    <tr data-tip="设置填充不透明度。设为0则完全透明<br/>Set fill transparency. Set to 0 to make it fully transparent">
-                        <td><b>填充不透明度</b><br/>Fill opacity</td>
-                        <td>
-                            <slider-input id="styleArmiesFillOpacity" min="0" max="1" step=".01"></slider-input>
-                        </td>
-                    </tr>
-                    <tr data-tip="设置军团框尺寸。更改后所有军团将被重新绘制（位置将重置）<br/>Set regiment box size. All regiments will be redrawn on change (position will default)">
-                        <td><b>军团框尺寸</b><br/>Box Size</td>
-                        <td>
-                            <slider-input id="styleArmiesSize" min="0" max="10" step=".1"></slider-input>
-                        </td>
-                    </tr>
+                <tr data-tip="设置填充不透明度。设为0则完全透明<br/>Set fill transparency. Set to 0 to make it fully transparent">
+                    <td><b>填充不透明度</b><br/>Fill opacity</td>
+                    <td>
+                        <slider-input id="styleArmiesFillOpacity" min="0" max="1" step=".01"></slider-input>
+                    </td>
+                </tr>
+                <tr data-tip="设置军团框尺寸。更改后所有军团将被重新绘制（位置将重置）<br/>Set regiment box size. All regiments will be redrawn on change (position will default)">
+                    <td><b>军团框尺寸</b><br/>Box Size</td>
+                    <td>
+                        <slider-input id="styleArmiesSize" min="0" max="10" step=".1"></slider-input>
+                    </td>
+                </tr>
                 </tbody>
 
                 <tbody id="styleEmblems">
-                    <tr data-tip="设置国家徽章尺寸倍数<br/>Set state emblems size multiplier">
-                        <td><b>国家徽章尺寸</b><br/>State size</td>
-                        <td>
-                            <slider-input id="emblemsStateSizeInput" min="0" max="5" step=".01"></slider-input>
-                        </td>
-                    </tr>
-                    <tr data-tip="设置省份徽章尺寸倍数<br/>Set province emblems size multiplier">
-                        <td><b>省份徽章尺寸</b><br/>Province size</td>
-                        <td>
-                            <slider-input id="emblemsProvinceSizeInput" min="0" max="5" step=".01"></slider-input>
-                        </td>
-                    </tr>
-                    <tr data-tip="设置城镇徽章尺寸倍数<br/>Set burg emblems size multiplier">
-                        <td><b>城镇徽章尺寸</b><br/>Burg size</td>
-                        <td>
-                            <slider-input id="emblemsBurgSizeInput" min="0" max="5" step=".01"></slider-input>
-                        </td>
-                    </tr>
-                    <tr data-tip="允许系统在该比例下自动隐藏徽章组（如果尺寸过小或过大）<br/>Allow system to hide emblem groups if their size is too small or too big on that scale">
-                        <td colspan="2">
-                            <input id="hideEmblems" class="checkbox" type="checkbox" onchange="invokeActiveZooming()"
-                                   checked/>
-                            <label for="hideEmblems" class="checkbox-label"><b>自动切换可见性</b><br/>Toggle visibility automatically</label>
-                        </td>
-                    </tr>
+                <tr data-tip="设置国家徽标尺寸倍数<br/>Set state emblems size multiplier">
+                    <td><b>国家徽标尺寸</b><br/>State size</td>
+                    <td>
+                        <slider-input id="emblemsStateSizeInput" min="0" max="5" step=".01"></slider-input>
+                    </td>
+                </tr>
+                <tr data-tip="设置省份徽标尺寸倍数<br/>Set province emblems size multiplier">
+                    <td><b>省份徽标尺寸</b><br/>Province size</td>
+                    <td>
+                        <slider-input id="emblemsProvinceSizeInput" min="0" max="5" step=".01"></slider-input>
+                    </td>
+                </tr>
+                <tr data-tip="设置城镇徽标尺寸倍数<br/>Set burg emblems size multiplier">
+                    <td><b>城镇徽标尺寸</b><br/>Burg size</td>
+                    <td>
+                        <slider-input id="emblemsBurgSizeInput" min="0" max="5" step=".01"></slider-input>
+                    </td>
+                </tr>
+                <tr data-tip="允许系统在该比例下自动隐藏徽标组（如果尺寸过小或过大）<br/>Allow system to hide emblem groups if their size is too small or too big on that scale">
+                    <td colspan="2">
+                        <input id="hideEmblems" class="checkbox" type="checkbox" onchange="invokeActiveZooming()"
+                               checked/>
+                        <label for="hideEmblems" class="checkbox-label"><b>自动切换可见性</b><br/>　 Toggle visibility automatically</label>
+                    </td>
+                </tr>
                 </tbody>
 
                 <tbody id="styleFilter" style="display: block">
-                    <tr data-tip="选择元素滤镜。请注意滤镜可能会影响性能！<br/>Select filter for element. Please note filters may cause performance issues!">
-                        <td><b>滤镜</b><br/>Filter</td>
-                        <td><select id="styleFilterInput"/></td>
-                    </tr>
+                <tr data-tip="选择元素滤镜。请注意滤镜可能会影响性能！<br/>Select filter for element. Please note filters may cause performance issues!">
+                    <td><b>滤镜</b><br/>Filter</td>
+                    <td><select id="styleFilterInput"/></td>
+                </tr>
                 </tbody>
 
                 <tbody id="styleClipping">
-                    <tr data-tip="设置裁剪。仅显示未被裁剪部分<br/>Set clipping. Only non-clipped part will be visible">
-                        <td><b>裁剪</b><br/>Clipping</td>
-                        <td>
-                            <select id="styleClippingInput">
-                                <option value="" selected>无裁剪 No clipping</option>
-                                <option value="url(#land)">裁剪水域 Clip water</option>
-                                <option value="url(#water)">裁剪陆地 Clip land</option>
-                            </select>
-                        </td>
-                    </tr>
+                <tr data-tip="设置裁剪。仅显示未被裁剪部分<br/>Set clipping. Only non-clipped part will be visible">
+                    <td><b>裁剪</b><br/>Clipping</td>
+                    <td>
+                        <select id="styleClippingInput">
+                            <option value="" selected>无裁剪 No clipping</option>
+                            <option value="url(#land)">裁剪水域 Clip water</option>
+                            <option value="url(#water)">裁剪陆地 Clip land</option>
+                        </select>
+                    </td>
+                </tr>
                 </tbody>
 
                 <tbody id="styleMarkers">
-                    <tr data-tip="尝试保持在任意地图缩放下尺寸不变，关闭则根据缩放改变尺寸<br/>Try to keep the same size on any map scale, turn off to get size change depending on scale">
-                        <td colspan="2">
-                            <input id="styleRescaleMarkers" class="checkbox" type="checkbox"/>
-                            <label for="styleRescaleMarkers" class="checkbox-label"><b>保持初始尺寸</b><br/>Keep initial size on zoom change</label>
-                        </td>
-                    </tr>
+                <tr data-tip="尝试保持在任意地图缩放下尺寸不变，关闭则根据缩放改变尺寸<br/>Try to keep the same size on any map scale, turn off to get size change depending on scale">
+                    <td colspan="">
+                        <input id="styleRescaleMarkers" class="checkbox" type="checkbox"/>
+                        <label for="styleRescaleMarkers" class="checkbox-label"><b>保持初始尺寸</b><br/>　 Keep initial
+                            size on zoom change</label>
+                    </td>
+                </tr>
                 </tbody>
 
                 <tbody id="styleVisibility">
-                    <tr data-tip="允许系统在该比例下自动隐藏标签（如果尺寸过小或过大）<br/>Allow system to hide labels if their size is too small or too big on that scale">
-                        <td colspan="2">
-                            <input id="hideLabels" class="checkbox" type="checkbox" onchange="invokeActiveZooming()"
-                                   checked/>
-                            <label for="hideLabels" class="checkbox-label"><b>自动切换可见性</b><br/>Toggle visibility automatically</label>
-                        </td>
-                    </tr>
+                <tr data-tip="允许系统在该比例下自动隐藏标签（如果尺寸过小或过大）<br/>Allow system to hide labels if their size is too small or too big on that scale">
+                    <td colspan="2">
+                        <input id="hideLabels" class="checkbox" type="checkbox" onchange="invokeActiveZooming()"
+                               checked/>
+                        <label for="hideLabels" class="checkbox-label"><b>自动切换可见性</b><br/>Toggle visibility
+                            automatically</label>
+                    </td>
+                </tr>
 
-                    <tr data-tip="允许系统在缩放时重新调整标签尺寸<br/>Allow system to rescale labels on zoom">
-                        <td colspan="2">
-                            <input id="rescaleLabels" class="checkbox" type="checkbox" onchange="invokeActiveZooming()"
-                                   checked/>
-                            <label for="rescaleLabels" class="checkbox-label"><b>缩放时重新调整尺寸</b><br/>Rescale on zoom</label>
-                        </td>
-                    </tr>
+                <tr data-tip="允许系统在缩放时重新调整标签尺寸<br/>Allow system to rescale labels on zoom">
+                    <td colspan="2">
+                        <input id="rescaleLabels" class="checkbox" type="checkbox" onchange="invokeActiveZooming()"
+                               checked/>
+                        <label for="rescaleLabels" class="checkbox-label"><b>缩放时重新调整尺寸</b><br/>Rescale on zoom</label>
+                    </td>
+                </tr>
                 </tbody>
 
                 <tbody id="styleScaleBar">
-                    <tr data-tip="设置比例尺和字体尺寸<br/>Set bar and font size">
-                        <td><b>尺寸</b><br/>Size</td>
-                        <td><b>比例尺</b><br/>Bar</td>
-                        <td>
-                            <input id="styleScaleBarSize" type="number" min=".5" max="5" step=".1" style="text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
-                        </td>
-                        <td><b>字体</b><br/>Font</td>
-                        <td>
-                            <input id="styleScaleBarFontSize" type="number" min="1" max="100" step=".1" style="text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
-                        </td>
-                    </tr>
+                <tr data-tip="设置比例尺和字体尺寸<br/>Set bar and font size">
+                    <td><b>尺寸</b><br/>Size</td>
+                    <td><b>比例尺</b><br/>Bar</td>
+                    <td>
+                        <input id="styleScaleBarSize" type="number" min=".5" max="5" step=".1"
+                               style="text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
+                    </td>
+                    <td><b>字体</b><br/>Font</td>
+                    <td>
+                        <input id="styleScaleBarFontSize" type="number" min="1" max="100" step=".1"
+                               style="text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
+                    </td>
+                </tr>
 
-                    <tr data-tip="设置比例尺右下角位置（百分比）<br/>Set position of the Scale bar bottom right corner (in percents)">
-                        <td><b>位置</b><br/>Position</td>
-                        <td>
-                            <span><b>x </b></span>
-                            <input id="styleScaleBarPositionX" type="number" min="0" max="100" step="0.1" style="width: 5em; text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
-                            <span><b>y </b></span>
-                            <input id="styleScaleBarPositionY" type="number" min="0" max="100" step="0.1" style="width: 5em; text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
-                        </td>
-                    </tr>
+                <tr data-tip="设置比例尺右下角位置（百分比）<br/>Set position of the Scale bar bottom right corner (in percents)">
+                    <td><b>位置</b><br/>Position</td>
+                    <td>
+                        <span><b>x </b></span>
+                        <input id="styleScaleBarPositionX" type="number" min="0" max="100" step="0.1"
+                               style="width: 5em; text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
+                        <span><b>y </b></span>
+                        <input id="styleScaleBarPositionY" type="number" min="0" max="100" step="0.1"
+                               style="width: 5em; text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
+                    </td>
+                </tr>
 
-                    <tr data-tip="输入比例尺标签，留空则不显示标签<br/>Type scale bar label, leave blank to hide label">
-                        <td><b>标签</b><br/>Label</td>
-                        <td>
-                            <input id="styleScaleBarLabel" type="text"/>
-                        </td>
-                    </tr>
+                <tr data-tip="输入比例尺标签，留空则不显示标签<br/>Type scale bar label, leave blank to hide label">
+                    <td><b>标签</b><br/>Label</td>
+                    <td>
+                        <input id="styleScaleBarLabel" type="text"/>
+                    </td>
+                </tr>
 
-                    <tr data-tip="设置背景不透明度。0：透明，1：不透明<br/>Set background opacity. 0: transparent, 1: solid">
-                        <td><b>背景不透明度</b><br/>Back opacity</td>
-                        <td>
-                            <slider-input id="styleScaleBarBackgroundOpacity" min="0" max="1" step=".01" ></slider-input>
-                        </td>
-                    </tr>
+                <tr data-tip="设置背景不透明度。0：透明，1：不透明<br/>Set background opacity. 0: transparent, 1: solid">
+                    <td><b>背景不透明度</b><br/>Back opacity</td>
+                    <td>
+                        <slider-input id="styleScaleBarBackgroundOpacity" min="0" max="1" step=".01"></slider-input>
+                    </td>
+                </tr>
 
-                    <tr data-tip="设置背景填充色<br/>Set background fill color">
-                        <td><b>背景填充</b><br/>Back fill</td>
-                        <td>
-                            <input id="styleScaleBarBackgroundFill" type="color"/>
-                            <output id="styleScaleBarBackgroundFillOutput"></output>
-                        </td>
-                    </tr>
+                <tr data-tip="设置背景填充色<br/>Set background fill color">
+                    <td><b>背景填充</b><br/>Back fill</td>
+                    <td>
+                        <input id="styleScaleBarBackgroundFill" type="color"/>
+                        <output id="styleScaleBarBackgroundFillOutput"></output>
+                    </td>
+                </tr>
 
-                    <tr data-tip="设置背景描边颜色和宽度<br/>Set background stroke color and width">
-                        <td><b>背景描边</b><br/>Back stroke</td>
-                        <td>
-                            <input id="styleScaleBarBackgroundStroke" type="color"/>
-                            <output id="styleScaleBarBackgroundStrokeOutput"></output>
-                            <span><b>宽度</b> Width </span>
-                            <input id="styleScaleBarBackgroundStrokeWidth" type="number" min="0" max="10" step="0.1" style="width: 5em; text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
+                <tr data-tip="设置背景描边颜色和宽度<br/>Set background stroke color and width">
+                    <td><b>背景描边</b><br/>Back stroke</td>
+                    <td>
+                        <input id="styleScaleBarBackgroundStroke" type="color"/>
+                        <output id="styleScaleBarBackgroundStrokeOutput"></output>
                         </td>
-                    </tr>
+                    <td>
+                        <span><b>宽度</b><br/>Width </span></td>
+                        <td><input id="styleScaleBarBackgroundStrokeWidth" type="number" min="0" max="10" step="0.1"
+                               style="width: 5em; text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
+                    </td>
+                </tr>
 
-                    <tr data-tip="设置背景元素内边距：上、右、下、左（像素）<br/>Set background element padding: top, right, bottom, left (in pixels)">
-                        <td>背景内边距<br/>Back padding</td>
-                        <td style="display: flex; gap: 4px">
-                            <input id="styleScaleBarBackgroundPaddingTop" type="number" min="0" max="100" style="width: 5em"/>
-                            <input id="styleScaleBarBackgroundPaddingRight" type="number" min="0" max="100" style="width: 5em"/>
-                            <input id="styleScaleBarBackgroundPaddingBottom" type="number" min="0" max="100" style="width: 5em"/>
-                            <input id="styleScaleBarBackgroundPaddingLeft" type="number" min="0" max="100" style="width: 5em"/>
-                        </td>
-                    </tr>
+                <tr data-tip="设置背景元素内边距：上、下、左、右（像素）<br/>Set background element padding: top, bottom, left, right (in pixels)">
+                    <td><b>背景内边距</b><br/>Back padding</td>
+                    <td><b>↑</b></td>
+                    <td><input id="styleScaleBarBackgroundPaddingTop" type="number" min="0" max="100"
+                               style="width: 4em; text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
+                    </td>
+                    <td><b>↓</b></td>
+                    <td><input id="styleScaleBarBackgroundPaddingBottom" type="number" min="0" max="100"
+                               style="width: 4em; text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
+                    </td>
+                    <td><b>←</b></td>
+                    <td><input id="styleScaleBarBackgroundPaddingLeft" type="number" min="0" max="100"
+                               style="width: 4em; text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
+                    </td>
+                    <td><b>→</b></td>
+                    <td> <input id="styleScaleBarBackgroundPaddingRight" type="number" min="0" max="100"
+                               style="width: 4em; text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
+                    </td>
+                </tr>
 
-                    <tr data-tip="选择背景滤镜<br/>Select background filter">
-                        <td>背景滤镜<br/>Back filter</td>
-                        <td><select id="styleScaleBarBackgroundFilter"/></td>
-                    </tr>
+                <tr data-tip="选择背景滤镜<br/>Select background filter">
+                    <td><b>背景滤镜</b><br/>Back filter</td>
+                    <td><select id="styleScaleBarBackgroundFilter"/></td>
+                </tr>
 
                 </tbody>
             </table>
 
-            <div id="mapFilters" data-tip="Set a filter to be applied to the map in general">
-                <p>Toggle global filters:</p>
-                <button id="grayscale" class="radio">Grayscale</button>
-                <button id="sepia" class="radio">Sepia</button>
-                <button id="dingy" class="radio">Dingy</button>
-                <button id="tint" class="radio">Tint</button>
+            <div id="mapFilters" data-tip="设置全局应用于地图的滤镜<br/>Set a filter to be applied to the map in general">
+                <p><b>切换全局滤镜</b> Toggle global filters</p>
+                <button id="grayscale" class="radio">灰度 Gray.</button>
+                <button id="sepia" class="radio">深褐 Sepia</button>
+                <button id="dingy" class="radio">暗淡 Dingy</button>
+                <button id="tint" class="radio">染色 Tint</button>
             </div>
         </div>
 
         <div id="optionsContent" class="tabcontent">
-            <p data-tip="Map generation settings. Generate a new map to apply the settings">
-                Map settings (new map to apply):
+            <p data-tip="地图生成设置。生成新地图以应用设置<br/>Map generation settings. Generate a new map to apply the settings">
+                新地图设置 Map settings (new map to apply)
             </p>
             <table>
                 <tr
-                        data-tip="Set original map size on generation. It cannot be changed later. Always keep canvas size equal to your screen size or less. The best option is to use the default value. For full-globe maps use aspect ratio 2:1"
+                        data-tip="在生成时设置原始地图大小。以后无法更改。始终保持画布尺寸等于或小于屏幕尺寸。最好使用默认值。对于全景地图，使用宽高比 2:1<br/>Set original map size on generation. It cannot be changed later. Always keep canvas size equal to your screen size or less. The best option is to use the default value. For full-globe maps use aspect ratio 2:1"
                 >
                     <td>
-                        <i data-tip="Restore default canvas size" id="restoreDefaultCanvasSize" class="icon-ccw"></i>
+                        <i data-tip="恢复默认画布尺寸<br/>Restore default canvas size" id="restoreDefaultCanvasSize" class="icon-ccw"></i>
                     </td>
-                    <td>Canvas size</td>
+                    <td><b>画布大小</b><br/>Canvas size</td>
                     <td>
                         <input id="mapWidthInput" class="paired" type="number" min="240" value="960"/>
                         <span>x</span>
@@ -1561,7 +1600,7 @@
                 </tr>
 
                 <tr
-                        data-tip="Map seed number. Press 'Enter' to apply. Seed produces the same map only if canvas size and options are the same"
+                        data-tip="地图种子编号。按 “回车键 ”应用。只有当画布尺寸和选项相同时，种子才会生成相同的地图<br/>Map seed number. Press 'Enter' to apply. Seed produces the same map only if canvas size and options are the same"
                 >
                     <td>
                         <i
@@ -1570,7 +1609,7 @@
                                 class="icon-hourglass-1"
                         ></i>
                     </td>
-                    <td>Map seed</td>
+                    <td><b>地图种子</b><br/>Map seed</td>
                     <td>
                         <input id="optionsSeed" class="long" type="number" min="1" max="999999999" step="1"/>
                     </td>
@@ -1584,12 +1623,12 @@
                 </tr>
 
                 <tr
-                        data-tip="Set number of points to be used for graph generation. Highly affects performance. 10K is the only recommended value"
+                        data-tip="设置用于生成图形的点数。这对性能有很大影响。10K 是唯一推荐值<br/>Set number of points to be used for graph generation. Highly affects performance. 10K is the only recommended value"
                 >
                     <td>
                         <i data-locked="0" id="lock_points" class="icon-lock-open"></i>
                     </td>
-                    <td>Points number</td>
+                    <td><b>生成点数</b><br/>Points number</td>
                     <td>
                         <input
                                 id="pointsInput"
@@ -1606,11 +1645,11 @@
                     </td>
                 </tr>
 
-                <tr data-tip="Define map name (will be used to name downloaded files)">
+                <tr data-tip="定义地图名称（将用于命名下载的文件）<br/>Define map name (will be used to name downloaded files)">
                     <td>
                         <i data-locked="0" id="lock_mapName" class="icon-lock-open"></i>
                     </td>
-                    <td>Map name</td>
+                    <td><b>地图名字</b><br/>Map name</td>
                     <td>
                         <input
                                 id="mapName"
@@ -1626,11 +1665,11 @@
                     </td>
                 </tr>
 
-                <tr data-tip="Define current year and era name">
+                <tr data-tip="定义当前年份和年代名称<br/>Define current year and era name">
                     <td>
                         <i data-locked="0" id="lock_year" data-ids="year,era" class="icon-lock-open"></i>
                     </td>
-                    <td>Year and era</td>
+                    <td><b>时间年代</b> Year and era</td>
                     <td>
                         <input
                                 id="yearInput"
@@ -1655,22 +1694,22 @@
                     </td>
                 </tr>
 
-                <tr data-tip="Select template or precreated heightmap to be used on generation">
+                <tr data-tip="选择用于生成的模板或预制高程图<br/>Select template or precreated heightmap to be used on generation">
                     <td>
                         <i data-locked="0" id="lock_template" class="icon-lock-open"></i>
                     </td>
-                    <td>Heightmap</td>
+                    <td><b>高程图</b><br/>Heightmap</td>
                     <td id="templateInputContainer" class="pointer">
                         <select id="templateInput" data-stored="template" style="pointer-events: none"></select>
                     </td>
                     <td></td>
                 </tr>
 
-                <tr data-tip="Define how many Cultures should be generated">
+                <tr data-tip="定义生成的文化数量<br/>Define how many Cultures should be generated">
                     <td>
                         <i data-locked="0" id="lock_cultures" class="icon-lock-open"></i>
                     </td>
-                    <td>Cultures number</td>
+                    <td><b>文化数量</b><br/>Cultures number</td>
                     <td>
                         <input id="culturesInput" data-stored="cultures" type="range" min="1"/>
                     </td>
@@ -1679,73 +1718,73 @@
                     </td>
                 </tr>
 
-                <tr data-tip="Select a set of cultures to be used for names and cultures generation">
+                <tr data-tip="选择用于生成名称和文化的一组文化集<br/>Select a set of cultures to be used for names and cultures generation">
                     <td>
                         <i data-locked="0" id="lock_culturesSet" class="icon-lock-open"></i>
                     </td>
-                    <td>Cultures set</td>
+                    <td><b>文化集</b><br/>Cultures set</td>
                     <td>
                         <select id="culturesSet" data-stored="culturesSet">
-                            <option value="world" data-max="32" selected>All-world</option>
-                            <option value="european" data-max="15">European</option>
-                            <option value="oriental" data-max="13">Oriental</option>
-                            <option value="english" data-max="10">English</option>
-                            <option value="antique" data-max="10">Antique</option>
-                            <option value="highFantasy" data-max="17">High Fantasy</option>
-                            <option value="darkFantasy" data-max="18">Dark Fantasy</option>
-                            <option value="random" data-max="100">Random</option>
+                            <option value="world" data-max="32" selected>全世界 All-world</option>
+                            <option value="european" data-max="15">欧洲 European</option>
+                            <option value="oriental" data-max="13">东方 Eastern</option>
+                            <option value="english" data-max="10">英语 English</option>
+                            <option value="antique" data-max="10">古典 Antique</option>
+                            <option value="highFantasy" data-max="17">高度幻想 High Fantasy</option>
+                            <option value="darkFantasy" data-max="18">暗黑幻想 Dark Fantasy</option>
+                            <option value="random" data-max="100">随机 Random</option>
                         </select>
                     </td>
                     <td></td>
                 </tr>
 
-                <tr data-tip="Define how many states and capitals should be generated">
+                <tr data-tip="定义应生成多少个州和首府<br/>Define how many states and capitals should be generated">
                     <td>
                         <i data-locked="0" id="lock_statesNumber" class="icon-lock-open"></i>
                     </td>
-                    <td>States number</td>
+                    <td><b>国家数量</b><br/>States number</td>
                     <td colspan="2">
                         <slider-input id="statesNumber" data-stored="statesNumber" min="0" max="100"></slider-input>
                     </td>
                 </tr>
 
-                <tr data-tip="Define burgs percentage to form a separate province">
+                <tr data-tip="定义成立省份的城镇百分比<br/>Define burgs percentage to form a separate province">
                     <td>
                         <i data-locked="0" id="lock_provincesRatio" class="icon-lock-open"></i>
                     </td>
-                    <td>Provinces ratio</td>
+                    <td><b>省份比例</b><br/>Provinces ratio</td>
                     <td colspan="2">
                         <slider-input id="provincesRatio" data-stored="provincesRatio" min="0" max="100"></slider-input>
                     </td>
                 </tr>
 
-                <tr data-tip="Define how much states and cultures can vary in size. Defines expansionism value">
+                <tr data-tip="定义国家和文化在规模上的差异程度。定义扩张率<br/>Define how much states and cultures can vary in size. Defines expansionism value">
                     <td>
                         <i data-locked="0" id="lock_sizeVariety" class="icon-lock-open"></i>
                     </td>
-                    <td>Size variety</td>
+                    <td><b>尺寸多样性</b><br/>Size variety</td>
                     <td colspan="2">
                         <slider-input id="sizeVariety" data-stored="sizeVariety" min="0" max="10"
                                       step=".1"></slider-input>
                     </td>
                 </tr>
 
-                <tr data-tip="Set state and cultures growth rate. Defines how many lands will stay neutral">
+                <tr data-tip="定义国家和文化增长率。定义保持中立的土地数量<br/>Set state and cultures growth rate. Defines how many lands will stay neutral">
                     <td>
                         <i data-locked="0" id="lock_growthRate" class="icon-lock-open"></i>
                     </td>
-                    <td>Growth rate</td>
+                    <td><b>增长率</b><br/>Growth rate</td>
                     <td colspan="2">
                         <slider-input id="growthRate" data-stored="growthRate" min=".1" max="2"
                                       step=".1"></slider-input>
                     </td>
                 </tr>
 
-                <tr data-tip="Define a number of towns to be placed (if enough suitable land exists)">
+                <tr data-tip="定义城镇数量（如果有足够的合适土地）<br/>Define a number of towns to be placed (if enough suitable land exists)">
                     <td>
                         <i data-locked="0" id="lock_manors" class="icon-lock-open"></i>
                     </td>
-                    <td>Towns number</td>
+                    <td><b>城镇数量</b><br/>Towns number</td>
                     <td>
                         <input id="manorsInput" data-stored="manors" type="range" min="0" max="1000" step="1"
                                value="1000"/>
@@ -1756,12 +1795,12 @@
                 </tr>
 
                 <tr
-                        data-tip="Define how many organized religions and cults should be generated. Cultures will have their own folk religions in any case"
+                        data-tip="定义应产生多少有组织的宗教和邪教。无论如何，不同文化都会有自己的民间宗教<br/>Define how many organized religions and cults should be generated. Cultures will have their own folk religions in any case"
                 >
                     <td>
                         <i data-locked="0" id="lock_religionsNumber" class="icon-lock-open"></i>
                     </td>
-                    <td>Religions number</td>
+                    <td><b>宗教数量</b><br/>Religions number</td>
                     <td colspan="2">
                         <slider-input
                                 id="religionsNumber"
@@ -1773,51 +1812,51 @@
                     </td>
                 </tr>
 
-                <tr data-tip="Select state labels mode: display short or full names">
+                <tr data-tip="选择状态标签模式：显示简称或全称<br/>Select state labels mode: display short or full names">
                     <td>
                         <i data-locked="0" id="lock_stateLabelsMode" class="icon-lock-open"></i>
                     </td>
-                    <td>State labels</td>
+                    <td><b>国家标签</b><br/>State labels</td>
                     <td>
                         <select id="stateLabelsModeInput" data-stored="stateLabelsMode">
-                            <option value="auto">Auto</option>
-                            <option value="short">Short names</option>
-                            <option value="full">Full names</option>
+                            <option value="auto">自动 Auto</option>
+                            <option value="short">简称 Short names</option>
+                            <option value="full">全称 Full names</option>
                         </select>
                     </td>
                     <td></td>
                 </tr>
             </table>
 
-            <p data-tip="Tool settings that don't affect maps. Changes are getting applied immediately">
-                Generator settings:
+            <p data-tip="不影响地图的工具设置。更改会立即应用<br/>Tool settings that don't affect maps. Changes are getting applied immediately">
+                 生成器设置 Generator settings
             </p>
             <table>
                 <tr
-                        data-tip="Set user interface size. Please note browser zoom also affects interface size (Ctrl + or Ctrl - to change)"
+                        data-tip="设置用户界面大小。请注意浏览器缩放也会影响界面大小（按 Ctrl + 或 Ctrl - 键更改）<br/>Set user interface size. Please note browser zoom also affects interface size (Ctrl + or Ctrl - to change)"
                 >
                     <td></td>
-                    <td>Interface size</td>
+                    <td><b>UI 尺寸</b><br/>Interface size</td>
                     <td colspan="2">
                         <slider-input id="uiSize" data-stored="uiSize" min=".6" max="3" step=".1"></slider-input>
                     </td>
                 </tr>
 
-                <tr data-tip="Set tooltip size">
+                <tr data-tip="设置工具提示大小<br/>Set tooltip size">
                     <td></td>
-                    <td>Tooltip size</td>
+                    <td><b>提示尺寸</b><br/>Tooltip size</td>
                     <td colspan="2">
                         <slider-input id="tooltipSize" data-stored="tooltipSize" min="1" max="32"
                                       value="14"></slider-input>
                     </td>
                 </tr>
 
-                <tr data-tip="Set theme hue for dialogs and tool windows">
+                <tr data-tip="设置对话框和工具窗口主题色调<br/>Set theme hue for dialogs and tool windows">
                     <td>
-                        <i data-tip="Restore default theme color: pale magenta" id="themeColorRestore"
+                        <i data-tip="恢复默认主题颜色：淡洋红色<br/>Restore default theme color: pale magenta" id="themeColorRestore"
                            class="icon-ccw"></i>
                     </td>
-                    <td>Theme color</td>
+                    <td><b>主题色</b><br/>Theme color</td>
                     <td>
                         <input id="themeHueInput" type="range" min="0" max="359"/>
                     </td>
@@ -1826,18 +1865,18 @@
                     </td>
                 </tr>
 
-                <tr data-tip="Set dialog and tool windows transparency">
+                <tr data-tip="设置对话框和工具窗口的透明度<br/>Set dialog and tool windows transparency">
                     <td></td>
-                    <td>Transparency</td>
+                    <td><b>透明度</b><br/>Transparency</td>
                     <td colspan="2">
                         <slider-input id="transparencyInput" data-stored="transparency" min="0"
                                       max="100"></slider-input>
                     </td>
                 </tr>
 
-                <tr data-tip="Set autosave interval in minutes. Set 0 to disable autosave. Map is saved to browser memory">
+                <tr data-tip="设置自动保存时间间隔（分钟）。设置 0 则禁用自动保存。地图保存在浏览器内存中<br/>Set autosave interval in minutes. Set 0 to disable autosave. Map is saved to browser memory">
                     <td></td>
-                    <td>Autosave interval</td>
+                    <td><b>自动保存间隔</b><br/>Autosave interval</td>
                     <td>
                         <input
                                 id="autosaveIntervalInput"
@@ -1858,25 +1897,26 @@
                                 max="60"
                                 step="1"
                                 value="15"
+                                style="text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"
                         />
                     </td>
                 </tr>
 
-                <tr data-tip="Set what Generator should do on load">
+                <tr data-tip="设置生成器在加载时应执行的操作<br/>>Set what Generator should do on load">
                     <td></td>
-                    <td>Onload behavior</td>
+                    <td><b>加载时行为</b><br/>Onload behavior</td>
                     <td>
                         <select id="onloadBehavior" data-stored="onloadBehavior">
-                            <option value="random" selected>Generate random map</option>
-                            <option value="lastSaved">Open last saved map</option>
+                            <option value="random" selected>生成随机地图 Generate random map</option>
+                            <option value="lastSaved">打开上次保存地图 Open last saved map</option>
                         </select>
                     </td>
                     <td></td>
                 </tr>
 
-                <tr data-tip="Toggle Azgaar Assistant (help bubble on the bottom right corner)">
+                <tr data-tip="切换 Azgaar 助手（右下角的帮助气泡）Toggle Azgaar Assistant (help bubble on the bottom right corner)">
                     <td></td>
-                    <td>Azgaar assistant</td>
+                    <td><b>Azgaar assistant</b></td>
                     <td>
                         <select id="azgaarAssistant" data-stored="azgaarAssistant">
                             <option value="show" selected>Show</option>
@@ -1885,9 +1925,9 @@
                     </td>
                 </tr>
 
-                <tr data-tip="Select speech synthesis voice to pronounce generated names">
+                <tr data-tip="选择朗读者音色<br/>Select speech synthesis voice to pronounce generated names">
                     <td></td>
-                    <td>Speaker voice</td>
+                    <td><b>Speaker voice</b></td>
                     <td>
                         <select id="speakerVoice" data-stored="speakerVoice"></select>
                     </td>
@@ -1896,75 +1936,75 @@
                     </td>
                 </tr>
 
-                <tr data-tip="Select emblem shape. Can be changed indivudually in Emblem editor">
+                <tr data-tip="选择徽标形状。可在徽标编辑器中单独更改<br/>Select emblem shape. Can be changed indivudually in Emblem editor">
                     <td>
                         <i data-locked="0" id="lock_emblemShape" class="icon-lock"></i>
                     </td>
-                    <td>Emblem shape</td>
+                    <td><b>徽标形状</b><br/>Emblem shape</td>
                     <td>
                         <select id="emblemShape" data-stored="emblemShape">
-                            <optgroup label="Diversiform">
-                                <option value="culture" selected>Culture-specific</option>
-                                <option value="random">Culture-random</option>
-                                <option value="state">State-specific</option>
+                            <optgroup label="多样 Diversiform">
+                                <option value="culture" selected>文化特异性 Culture-specific</option>
+                                <option value="random">文化随机 Culture-random</option>
+                                <option value="state">国家特异性 State-specific</option>
                             </optgroup>
-                            <optgroup label="Basic">
-                                <option value="heater">Heater</option>
-                                <option value="spanish">Spanish</option>
-                                <option value="french">French</option>
+                            <optgroup label="基本 Basic">
+                                <option value="heater">尖底盾 Heater</option>
+                                <option value="spanish">西班牙式 Spanish</option>
+                                <option value="french">法兰西式 French</option>
                             </optgroup>
-                            <optgroup label="Regional">
-                                <option value="horsehead">Horsehead</option>
-                                <option value="horsehead2">Horsehead Edgy</option>
-                                <option value="polish">Polish</option>
-                                <option value="hessen">Hessen</option>
-                                <option value="swiss">Swiss</option>
+                            <optgroup label="区域 Regional">
+                                <option value="horsehead">马头式 Horsehead</option>
+                                <option value="horsehead2">变体马头式 Horsehead Edgy</option>
+                                <option value="polish">波兰式 Polish</option>
+                                <option value="hessen">黑森式 Hessen</option>
+                                <option value="swiss">瑞士式 Swiss</option>
                             </optgroup>
-                            <optgroup label="Historical">
-                                <option value="boeotian">Boeotian</option>
-                                <option value="roman">Roman</option>
-                                <option value="kite">Kite</option>
-                                <option value="oldFrench">Old French</option>
-                                <option value="renaissance">Renaissance</option>
-                                <option value="baroque">Baroque</option>
+                            <optgroup label="历史 Historical">
+                                <option value="boeotian">古希腊式 Boeotian</option>
+                                <option value="roman">罗马式 Roman</option>
+                                <option value="kite">筝形盾式 Kite</option>
+                                <option value="oldFrench">古典法兰西式 Old French</option>
+                                <option value="renaissance">文艺复兴式 Renaissance</option>
+                                <option value="baroque">巴洛克式 Baroque</option>
                             </optgroup>
-                            <optgroup label="Specific">
-                                <option value="targe">Targe</option>
-                                <option value="targe2">Targe2</option>
-                                <option value="pavise">Pavise</option>
-                                <option value="wedged">Wedged</option>
+                            <optgroup label="特殊 Specific">
+                                <option value="targe">塔格盾 Targe</option>
+                                <option value="targe2">变体塔格盾 Targe2</option>
+                                <option value="pavise">帕维斯盾 Pavise</option>
+                                <option value="wedged">楔形盾 Wedged</option>
                             </optgroup>
-                            <optgroup label="Banner">
-                                <option value="flag">Flag</option>
-                                <option value="pennon">Pennon</option>
-                                <option value="guidon">Guidon</option>
-                                <option value="banner">Banner</option>
-                                <option value="dovetail">Dovetail</option>
-                                <option value="gonfalon">Gonfalon</option>
-                                <option value="pennant">Pennant</option>
+                            <optgroup label="旗帜 Banner">
+                                <option value="flag">旗帜 Flag</option>
+                                <option value="pennon">小旗 Pennon</option>
+                                <option value="guidon">指挥旗 Guidon</option>
+                                <option value="banner">横幅 Banner</option>
+                                <option value="dovetail">燕尾旗 Dovetail</option>
+                                <option value="gonfalon">挂旗 Gonfalon</option>
+                                <option value="pennant">角旗 Pennant</option>
                             </optgroup>
-                            <optgroup label="Simple">
-                                <option value="round">Round</option>
-                                <option value="oval">Oval</option>
-                                <option value="vesicaPiscis">Vesica Piscis</option>
-                                <option value="square">Square</option>
-                                <option value="diamond">Diamond</option>
+                            <optgroup label="简单 Simple">
+                                <option value="round">圆形 Round</option>
+                                <option value="oval">椭圆形 Oval</option>
+                                <option value="vesicaPiscis">鱼尾形 Vesica Piscis</option>
+                                <option value="square">方形 Square</option>
+                                <option value="diamond">钻石 Diamond</option>
                             </optgroup>
-                            <optgroup label="Fantasy">
-                                <option value="fantasy1">Fantasy1</option>
-                                <option value="fantasy2">Fantasy2</option>
-                                <option value="fantasy3">Fantasy3</option>
-                                <option value="fantasy4">Fantasy4</option>
-                                <option value="fantasy5">Fantasy5</option>
+                            <optgroup label="幻想 Fantasy">
+                                <option value="fantasy1">幻想1 Fantasy1</option>
+                                <option value="fantasy2">幻想2 Fantasy2</option>
+                                <option value="fantasy3">幻想3 Fantasy3</option>
+                                <option value="fantasy4">幻想4 Fantasy4</option>
+                                <option value="fantasy5">幻想5 Fantasy5</option>
                             </optgroup>
-                            <optgroup label="Middle Earth">
-                                <option value="noldor">Noldor</option>
-                                <option value="gondor">Gondor</option>
-                                <option value="easterling">Easterling</option>
-                                <option value="erebor">Erebor</option>
-                                <option value="ironHills">Iron Hills</option>
-                                <option value="urukHai">UrukHai</option>
-                                <option value="moriaOrc">Moria Orc</option>
+                            <optgroup label="中土世界 Middle Earth">
+                                <option value="noldor">诺多精灵 Noldor</option>
+                                <option value="gondor">刚铎 Gondor</option>
+                                <option value="easterling">东方人 Easterling</option>
+                                <option value="erebor">孤山 Erebor</option>
+                                <option value="ironHills">铁山 Iron Hills</option>
+                                <option value="urukHai">强兽人 UrukHai</option>
+                                <option value="moriaOrc">摩瑞亚半兽人 Moria Orc</option>
                             </optgroup>
                         </select>
                     </td>
@@ -1979,7 +2019,7 @@
                     <td>
                         <i data-tip="Restore default zoom extent: [1, 20]" id="zoomExtentDefault" class="icon-ccw"></i>
                     </td>
-                    <td>Zoom extent</td>
+                    <td><b>缩放范围</b><br>Zoom extent</td>
                     <td>
                         <span data-tip="Mimimal possible zoom level (should be > 0)">min</span>
                         <input
@@ -2015,7 +2055,7 @@
 
                 <tr data-tip="Select rendering model. Try to set to 'optimized' if you face performance issues">
                     <td></td>
-                    <td>Rendering</td>
+                    <td><b>渲染</b>/Rendering</td>
                     <td>
                         <select id="shapeRendering" data-stored="shapeRendering">
                             <option value="geometricPrecision">Best quality</option>
@@ -2031,7 +2071,7 @@
                     <td>
                         <i data-tip="Reset language to English" id="resetLanguage" class="icon-ccw"></i>
                     </td>
-                    <td>Language</td>
+                    <td><b>语言</b>/Language</td>
                     <td>
                         <button id="loadGoogleTranslateButton">Init Google Translate</button>
                         <div id="google_translate_element"></div>
@@ -2043,17 +2083,17 @@
             <div>
                 <button
                         id="configureWorld"
-                        data-tip="Click to open world configurator to setup map position on Globe and World climate"
+                        data-tip="点击打开世界配置器，设置地图在地球仪上的位置和世界气候<br/>Click to open world configurator to setup map position on Globe and World climate"
                         onclick="editWorld()"
                 >
-                    Configure World
+                    <b>配置世界</b>/Configure World
                 </button>
                 <button
                         id="optionsReset"
-                        data-tip="Click to restore default options and reload the page"
+                        data-tip="点击恢复默认选项并重新加载页面<br/>Click to restore default options and reload the page"
                         onclick="cleanupData()"
                 >
-                    Reset to defaults
+                    <b>默认</b>/Reset to defaults
                 </button>
             </div>
         </div>
@@ -2062,64 +2102,63 @@
             <div class="separator">Edit</div>
             <div class="grid">
                 <button id="editBiomesButton" data-tip="Click to open Biomes Editor" data-shortcut="Shift + B">
-                    Biomes
+                    <b>生物群落</b><br/>Biomes (<b>^B</b>)
                 </button>
                 <button id="overviewBurgsButton" data-tip="Click to open Burgs Overview" data-shortcut="Shift + T">
-                    Burgs
+                    <b>城镇</b><br/>Burgs (<b>^T</b>)
                 </button>
                 <button id="editCulturesButton" data-tip="Click to open Cultures Editor" data-shortcut="Shift + C">
-                    Cultures
+                    <b>文化</b><br/>Cultures (<b>^C</b>)
                 </button>
                 <button
                         id="editDiplomacyButton"
                         data-tip="Click to open Diplomatical relationships Editor"
                         data-shortcut="Shift + D"
                 >
-                    Diplomacy
+                    <b>外交</b><br/>Diplomacy (<b>^D</b>)
                 </button>
                 <button id="editEmblemButton" data-tip="Click to open Emblem Editor" data-shortcut="Shift + Y">
-                    Emblems
+                    <b>徽标</b><br/>Emblems (<b>^Y</b>)
                 </button>
                 <button
                         id="editHeightmapButton"
                         data-tip="Click to open Heightmap customization menu"
                         data-shortcut="Shift + H"
                 >
-                    Heightmap
+                    <b>高程图</b><br/>Heightmap (<b>^H</b>)
                 </button>
                 <button id="overviewMarkersButton" data-tip="Click to open Markers Overview" data-shortcut="Shift + K">
-                    Markers
+                    <b>标记</b><br/>Markers (<b>^K</b>)
                 </button>
-                <button
-                        id="overviewMilitaryButton"
-                        data-tip="Click to open Military Forces Overview"
-                        data-shortcut="Shift + M"
-                >
-                    Military
+                <button id="overviewMilitaryButton" data-tip="Click to open Military Forces Overview" data-shortcut="Shift + M">
+                    <b>军事</b><br/>Military (<b>^M</b>)
                 </button>
                 <button id="editNamesBaseButton" data-tip="Click to open Namesbase Editor" data-shortcut="Shift + N">
-                    Namesbase
+                    <b>名称库</b><br/>Namesbase (<b>^N</b>)
                 </button>
-                <button id="editNotesButton" data-tip="Click to open Notes Editor" data-shortcut="Shift + O">Notes
+                <button id="editNotesButton" data-tip="Click to open Notes Editor" data-shortcut="Shift + O">
+                    <b>笔记</b><br/>Notes (<b>^O</b>)
                 </button>
                 <button id="editProvincesButton" data-tip="Click to open Provinces Editor" data-shortcut="Shift + P">
-                    Provinces
+                    <b>省份</b><br/>Provinces (<b>^P</b>)
                 </button>
                 <button id="editReligions" data-tip="Click to open Religions Editor" data-shortcut="Shift + R">
-                    Religions
+                    <b>宗教</b><br/>Religions (<b>^R</b>)
                 </button>
                 <button id="overviewRiversButton" data-tip="Click to open Rivers Overview" data-shortcut="Shift + V">
-                    Rivers
+                    <b>河流</b><br/>>Rivers (<b>^V</b>)
                 </button>
                 <button id="overviewRoutesButton" data-tip="Click to open Routes Overview" data-shortcut="Shift + U">
-                    Routes
+                    <b>贸易路线</b><br/>Routes (<b>^U</b>)
                 </button>
                 <button id="editStatesButton" data-tip="Click to open States Editor" data-shortcut="Shift + S">
-                    States
+                    <b>国家</b><br/>States (<b>^S</b>)
                 </button>
-                <button id="editUnitsButton" data-tip="Click to open Units Editor" data-shortcut="Shift + Q">Units
+                <button id="editUnitsButton" data-tip="Click to open Units Editor" data-shortcut="Shift + Q">
+                    <b>单位</b><br/>Units (<b>^Q</b>)
                 </button>
-                <button id="editZonesButton" data-tip="Click to open Zones Editor" data-shortcut="Shift + Z">Zones
+                <button id="editZonesButton" data-tip="Click to open Zones Editor" data-shortcut="Shift + Z">
+                    <b>区域</b><br/>Zones (<b>^Z</b>)
                 </button>
             </div>
 

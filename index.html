@@ -434,7 +434,7 @@
         </button>
     </div>
 
-    <div id="options" style="display: none">
+    <div id="options" style="display: none;">
         <div class="drag-trigger" data-tip="Drag to move the Menu"></div>
 
         <div class="tab">
@@ -447,15 +447,15 @@
             >
                 ◄
             </button>
-            <button id="layersTab" data-tip="点击切换地图图层" class="options active">Layers</button>
-            <button id="styleTab" data-tip="点击打开样式编辑器" class="options">Style</button>
-            <button id="optionsTab" data-tip="点击更改生成及界面选项" class="options">Options</button>
-            <button id="toolsTab" data-tip="点击打开工具菜单" class="options">Tools</button>
-            <button id="aboutTab" data-tip="点击查看生成器信息" class="options">About</button>
+            <button id="layersTab" data-tip="点击切换地图图层" class="options active">图层</button>
+            <button id="styleTab" data-tip="点击打开样式编辑器" class="options">样式</button>
+            <button id="optionsTab" data-tip="点击更改生成及界面选项" class="options">选项</button>
+            <button id="toolsTab" data-tip="点击打开工具菜单" class="options">工具</button>
+            <button id="aboutTab" data-tip="点击查看生成器信息" class="options">关于</button>
         </div>
 
         <div id="layersContent" class="tabcontent" style="display: block">
-            <p data-tip="Select a map layers preset" style="display: inline-block">Layers preset:</p>
+            <p data-tip="Select a map layers preset" style="display: inline-block">图层预设 Layers Preset</p>
             <select
                     data-tip="Select a map layers preset"
                     id="layersPreset"
@@ -473,7 +473,7 @@
                 <option value="military">军事地图</option>
                 <option value="emblems">徽章</option>
                 <option value="landmass">纯陆地</option>
-                <option hidden value="custom">自定义（未保存）</option>
+                <option hidden value="custom">自定（未保存）</option>
             </select>
             <button
                     id="savePresetButton"
@@ -490,14 +490,14 @@
                     onclick="removePreset()"
             ></button>
 
-            <p>显示的图层及其顺序：</p>
+            <p>显示的图层及其顺序 Layers and orders：</p>
             <ul
-                    data-tip="点击切换图层，拖动可调整图层顺序。Ctrl+点击可编辑图层样式"
+                    data-tip="点击切换图层，拖动可调整图层顺序。Ctrl+点击可编辑图层样式<br/>Click to toggle a layer, drag to raise or lower a layer. Ctrl + click to edit layer style"
                     id="mapLayers"
             >
                 <li
                         id="toggleTexture"
-                        data-tip="Texture overlay: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
+                        data-tip="纹理：点击切换，拖动可调整图层顺序。Ctrl+点击可编辑图层样式<br/>Texture overlay: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
                         data-shortcut="X"
                         onclick="toggleTexture(event)"
                 >
@@ -505,7 +505,7 @@
                 </li>
                 <li
                         id="toggleHeight"
-                        data-tip="Heightmap: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
+                        data-tip="高度图：点击切换，拖动可调整图层顺序。Ctrl+点击可编辑图层样式<br/>Heightmap: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
                         data-shortcut="H"
                         onclick="toggleHeight(event)"
                 >
@@ -513,7 +513,7 @@
                 </li>
                 <li
                         id="toggleBiomes"
-                        data-tip="Biomes: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
+                        data-tip="生物群落：点击切换，拖动可调整图层顺序。Ctrl+点击可编辑图层样式<br/>Biomes: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
                         data-shortcut="B"
                         onclick="toggleBiomes(event)"
                 >
@@ -521,7 +521,7 @@
                 </li>
                 <li
                         id="toggleCells"
-                        data-tip="Cells structure: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
+                        data-tip="单元格结构：点击切换，拖动可调整图层顺序。Ctrl+点击可编辑图层样式<br/>Cells structure: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
                         data-shortcut="E"
                         onclick="toggleCells(event)"
                 >
@@ -529,7 +529,7 @@
                 </li>
                 <li
                         id="toggleGrid"
-                        data-tip="Grid: click to toggle, drag to raise or lower. Ctrl + click to edit layer style and select type"
+                        data-tip="网格：点击切换，拖动可调整图层顺序。Ctrl+点击可编辑图层样式并选择类型<br/>Grid: click to toggle, drag to raise or lower. Ctrl + click to edit layer style and select type"
                         data-shortcut="G"
                         onclick="toggleGrid(event)"
                 >
@@ -537,15 +537,15 @@
                 </li>
                 <li
                         id="toggleCoordinates"
-                        data-tip="Coordinate grid: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
+                        data-tip="坐标网格：点击切换，拖动可调整图层顺序。Ctrl+点击可编辑图层样式<br/>Coordinate grid: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
                         data-shortcut="O"
                         onclick="toggleCoordinates(event)"
                 >
-                    坐标 <u>O</u>
+                    坐标网格 <u>O</u>
                 </li>
                 <li
                         id="toggleCompass"
-                        data-tip="Wind (Compass) Rose: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
+                        data-tip="风向玫瑰：点击切换，拖动可调整图层顺序。Ctrl+点击可编辑图层样式<br/>Wind (Compass) Rose: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
                         data-shortcut="W"
                         onclick="toggleCompass(event)"
                 >
@@ -553,7 +553,7 @@
                 </li>
                 <li
                         id="toggleRivers"
-                        data-tip="Rivers: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
+                        data-tip="河流：点击切换，拖动可调整图层顺序。Ctrl+点击可编辑图层样式<br/>Rivers: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
                         data-shortcut="V"
                         onclick="toggleRivers(event)"
                 >
@@ -561,7 +561,7 @@
                 </li>
                 <li
                         id="toggleRelief"
-                        data-tip="Relief and biome icons: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
+                        data-tip="地形符号：点击切换，拖动可调整图层顺序。Ctrl+点击可编辑图层样式<br/>Relief and biome icons: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
                         data-shortcut="F"
                         onclick="toggleRelief(event)"
                 >
@@ -569,7 +569,7 @@
                 </li>
                 <li
                         id="toggleReligions"
-                        data-tip="Religions: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
+                        data-tip="宗教：点击切换，拖动可调整图层顺序。Ctrl+点击可编辑图层样式<br/>Religions: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
                         data-shortcut="R"
                         onclick="toggleReligions(event)"
                 >
@@ -577,7 +577,7 @@
                 </li>
                 <li
                         id="toggleCultures"
-                        data-tip="Cultures: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
+                        data-tip="文化：点击切换，拖动可调整图层顺序。Ctrl+点击可编辑图层样式<br/>Cultures: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
                         data-shortcut="C"
                         onclick="toggleCultures(event)"
                 >
@@ -585,7 +585,7 @@
                 </li>
                 <li
                         id="toggleStates"
-                        data-tip="States: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
+                        data-tip="国家：点击切换，拖动可调整图层顺序。Ctrl+点击可编辑图层样式<br/>States: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
                         data-shortcut="S"
                         onclick="toggleStates(event)"
                 >
@@ -593,7 +593,7 @@
                 </li>
                 <li
                         id="toggleProvinces"
-                        data-tip="Provinces: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
+                        data-tip="省份：点击切换，拖动可调整图层顺序。Ctrl+点击可编辑图层样式<br/>Provinces: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
                         data-shortcut="P"
                         onclick="toggleProvinces(event)"
                 >
@@ -601,7 +601,7 @@
                 </li>
                 <li
                         id="toggleZones"
-                        data-tip="Zones: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
+                        data-tip="区域：点击切换，拖动可调整图层顺序。Ctrl+点击可编辑图层样式<br/>Zones: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
                         data-shortcut="Z"
                         onclick="toggleZones(event)"
                 >
@@ -609,7 +609,7 @@
                 </li>
                 <li
                         id="toggleBorders"
-                        data-tip="State borders: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
+                        data-tip="边界：点击切换，拖动可调整图层顺序。Ctrl+点击可编辑图层样式<br/>State borders: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
                         data-shortcut="D"
                         onclick="toggleBorders(event)"
                 >
@@ -617,15 +617,15 @@
                 </li>
                 <li
                         id="toggleRoutes"
-                        data-tip="Trade routes: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
+                        data-tip="贸易路线：点击切换，拖动可调整图层顺序。Ctrl+点击可编辑图层样式<br/>Trade routes: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
                         data-shortcut="U"
                         onclick="toggleRoutes(event)"
                 >
-                    航线 <u>U</u>
+                    贸易路线 <u>U</u>
                 </li>
                 <li
                         id="toggleTemperature"
-                        data-tip="Temperature map: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
+                        data-tip="温度地图：点击切换，拖动可调整图层顺序。Ctrl+点击可编辑图层样式<br/>Temperature map: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
                         data-shortcut="T"
                         onclick="toggleTemperature(event)"
                 >
@@ -633,7 +633,7 @@
                 </li>
                 <li
                         id="togglePopulation"
-                        data-tip="Population map: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
+                        data-tip="人口地图：点击切换，拖动可调整图层顺序。Ctrl+点击可编辑图层样式<br/>Population map: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
                         data-shortcut="N"
                         onclick="togglePopulation(event)"
                 >
@@ -641,15 +641,15 @@
                 </li>
                 <li
                         id="toggleIce"
-                        data-tip="Icebergs and glaciers: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
+                        data-tip="冰山与冰川：点击切换，拖动可调整图层顺序。Ctrl+点击可编辑图层样式<br/>Icebergs and glaciers: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
                         data-shortcut="J"
                         onclick="toggleIce(event)"
                 >
-                    冰 <u>J</u>
+                    冰川 <u>J</u>
                 </li>
                 <li
                         id="togglePrecipitation"
-                        data-tip="Precipitation map: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
+                        data-tip="降水量图：点击切换，拖动可调整图层顺序。Ctrl+点击可编辑图层样式<br/>Precipitation map: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
                         data-shortcut="A"
                         onclick="togglePrecipitation(event)"
                 >
@@ -657,7 +657,7 @@
                 </li>
                 <li
                         id="toggleEmblems"
-                        data-tip="Emblems: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
+                        data-tip="徽章：点击切换，拖动可调整图层顺序。Ctrl+点击可编辑图层样式<br/>Emblems: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
                         data-shortcut="Y"
                         onclick="toggleEmblems(event)"
                 >
@@ -665,7 +665,7 @@
                 </li>
                 <li
                         id="toggleLabels"
-                        data-tip="Labels: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
+                        data-tip="标签：点击切换，拖动可调整图层顺序。Ctrl+点击可编辑图层样式<br/>Labels: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
                         data-shortcut="L"
                         onclick="toggleLabels(event)"
                 >
@@ -673,7 +673,7 @@
                 </li>
                 <li
                         id="toggleBurgIcons"
-                        data-tip="Burg icons: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
+                        data-tip="城镇图标：点击切换，拖动可调整图层顺序。Ctrl+点击可编辑图层样式<br/>Burg icons: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
                         data-shortcut="I"
                         onclick="toggleBurgIcons(event)"
                 >
@@ -681,7 +681,7 @@
                 </li>
                 <li
                         id="toggleMilitary"
-                        data-tip="Military forces: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
+                        data-tip="军事力量：点击切换，拖动可调整图层顺序。Ctrl+点击可编辑图层样式<br/>Military forces: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
                         data-shortcut="M"
                         onclick="toggleMilitary(event)"
                 >
@@ -689,7 +689,7 @@
                 </li>
                 <li
                         id="toggleMarkers"
-                        data-tip="Markers: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
+                        data-tip="标记：点击切换，拖动可调整图层顺序。Ctrl+点击可编辑图层样式<br/>Markers: click to toggle, drag to raise or lower the layer. Ctrl + click to edit layer style"
                         data-shortcut="K"
                         onclick="toggleMarkers(event)"
                 >
@@ -697,7 +697,7 @@
                 </li>
                 <li
                         id="toggleRulers"
-                        data-tip="Rulers: click to toggle, drag to move, click on label to delete. Ctrl + click to edit layer style"
+                        data-tip="标尺：点击切换，拖动可移动，点击标签可删除。Ctrl+点击可编辑图层样式<br/>Rulers: click to toggle, drag to move, click on label to delete. Ctrl + click to edit layer style"
                         data-shortcut="= (equal sign)"
                         onclick="toggleRulers(event)"
                 >
@@ -705,7 +705,7 @@
                 </li>
                 <li
                         id="toggleScaleBar"
-                        data-tip="Scale Bar: click to toggle. Ctrl + click to edit style"
+                        data-tip="比例尺：点击切换。Ctrl+点击可编辑样式<br/>Scale Bar: click to toggle. Ctrl + click to edit style"
                         data-shortcut="/ (slash sign)"
                         onclick="toggleScaleBar(event)"
                         class="solid"
@@ -714,7 +714,7 @@
                 </li>
                 <li
                         id="toggleVignette"
-                        data-tip="Vignette (border fading): click to toggle. Ctrl + click to edit style"
+                        data-tip="晕影（边缘渐变）：点击切换。Ctrl+点击可编辑样式<br/>Vignette (border fading): click to toggle. Ctrl + click to edit style"
                         data-shortcut="[ (left square bracket)"
                         onclick="toggleVignette(event)"
                         class="solid"
@@ -725,103 +725,109 @@
             <div class="tip">Click to toggle, drag to raise or lower the layer</div>
             <div class="tip">Ctrl + click to edit layer style</div>
 
-            <div id="viewMode" data-tip="Set view node">
-                <p>View mode:</p>
-                <button data-tip="Standard view mode that allows to edit the map" id="viewStandard" class="pressed">
-                    Standard
+            <div id="viewMode" data-tip="设置视图节点<br/>Set view node">
+                <p>查看模式 View mode</p>
+                <button data-tip="标准模式，可编辑地图<br/>Standard view mode that allows to edit the map"
+                        id="viewStandard" class="pressed">
+                    标准
                 </button>
                 <button
-                        data-tip="Map presentation in 3D scene. Works best for heightmap. Cannot be used for editing"
+                        data-tip="3D 场景展示。高度图效果最佳，但不可用于编辑<br/>Map presentation in 3D scene. Works best for heightmap. Cannot be used for editing"
                         id="viewMesh"
                 >
-                    3D scene
+                    3D 场景
                 </button>
-                <button data-tip="Project map on globe. Cannot be used for editing" id="viewGlobe">Globe</button>
+                <button data-tip="将地图投影在地球仪上，不可用于编辑<br/>Project map on globe. Cannot be used for editing"
+                        id="viewGlobe">
+                    地球仪
+                </button>
             </div>
         </div>
 
+
         <div id="styleContent" class="tabcontent">
             <p
-                    data-tip="Select a style preset. State labels may required regeneration if font is changed"
+                    data-tip="选择预设样式。如果更改字体，可能需要重新生成状态标签<br/>Select a style preset. State labels may required regeneration if font is changed"
                     style="display: inline-block"
             >
-                Style preset:
+                预设样式 Stype preset
             </p>
             <select
-                    data-tip="Select a style preset"
+                    data-tip="选择预设样式<br/>Select a style preset"
                     id="stylePreset"
                     onchange="requestStylePresetChange(this.value)"
                     style="width: 45%; text-transform: capitalize"
             ></select>
             <button
                     id="addStyleButton"
-                    data-tip="Click to save current style as a new preset"
+                    data-tip="单击可将当前样式保存为新预设<br/>Click to save current style as a new preset"
                     class="icon-plus sideButton"
                     style="display: inline-block"
                     onclick="addStylePreset()"
             ></button>
             <button
                     id="removeStyleButton"
-                    data-tip="Click to remove current custom style preset"
+                    data-tip="单击删除当前自定义样式预设<br/>Click to remove current custom style preset"
                     class="icon-minus sideButton"
                     style="display: none"
                     onclick="requestRemoveStylePreset()"
             ></button>
 
-            <p data-tip="Select an element to edit its style" style="display: inline-block">Select element:</p>
+            <p data-tip="选择元素以编辑其样式<br/>Select an element to edit its style" style="display: inline-block">
+                选择元素 Select element</p>
             <select
                     data-tip="Select an element to edit its style (list is ordered alphabetically)"
                     id="styleElementSelect"
                     style="width: 42%"
             >
-                <option value="anchors">Anchor Icons</option>
-                <option value="biomes">Biomes</option>
-                <option value="borders">Borders</option>
-                <option value="burgIcons">Burg Icons</option>
-                <option value="cells">Cells</option>
-                <option value="coastline">Coastline</option>
-                <option value="coordinates">Coordinates</option>
-                <option value="cults">Cultures</option>
-                <option value="emblems">Emblems</option>
-                <option value="fogging">Fogging</option>
-                <option value="gridOverlay">Grid</option>
-                <option value="terrs">Heightmap</option>
-                <option value="ice">Ice</option>
-                <option value="labels">Labels</option>
-                <option value="lakes">Lakes</option>
-                <option value="landmass">Landmass</option>
-                <option value="legend">Legend</option>
-                <option value="markers">Markers</option>
-                <option value="armies">Military</option>
-                <option value="ocean">Ocean</option>
-                <option value="population">Population</option>
-                <option value="prec">Precipitation</option>
-                <option value="provs">Provinces</option>
-                <option value="terrain">Relief Icons</option>
-                <option value="relig">Religions</option>
-                <option value="rivers">Rivers</option>
-                <option value="routes">Routes</option>
-                <option value="ruler">Rulers</option>
-                <option value="scaleBar">Scale Bar</option>
-                <option value="regions" selected>States</option>
-                <option value="temperature">Temperature</option>
-                <option value="texture">Texture</option>
-                <option value="vignette">Vignette</option>
-                <option value="compass">Wind Rose</option>
-                <option value="zones">Zones</option>
+                <option value="scaleBar">比例尺 Scale Bar</option>
+                <option value="borders">边界 Borders</option>
+                <option value="ruler">标尺 Rulers</option>
+                <option value="markers">标记 Markers</option>
+                <option value="labels">标签 Labels</option>
+                <option value="ice">冰川 Ice</option>
+                <option value="burgIcons">城镇图标 Burg Icons</option>
+                <option value="landmass">大陆 Landmass</option>
+                <option value="cells">单元格 Cells</option>
+                <option value="terrain">地形符号 Relief Icons</option>
+                <option value="compass">风玫瑰图 Wind Rose</option>
+                <option value="terrs">高程图 Heightmap</option>
+                <option value="regions" selected>国家 States</option>
+                <option value="coastline">海岸线 Coastline</option>
+                <option value="rivers">河流 Rivers</option>
+                <option value="ocean">海洋 Ocean</option>
+                <option value="lakes">湖泊 Lakes</option>
+                <option value="emblems">徽章 Emblems</option>
+                <option value="prec">降水 Precipitation</option>
+                <option value="armies">军事 Military</option>
+                <option value="routes">贸易路线 Routes</option>
+                <option value="fogging">迷雾 Fogging</option>
+                <option value="anchors">锚点图标 Anchor Icons</option>
+                <option value="zones">区域 Zones</option>
+                <option value="population">人口 Population</option>
+                <option value="biomes">生物群落 Biomes</option>
+                <option value="provs">省份 Provinces</option>
+                <option value="legend">图例 Legend</option>
+                <option value="gridOverlay">网格 Grid</option>
+                <option value="temperature">温度 Temperature</option>
+                <option value="cults">文化 Cultures</option>
+                <option value="texture">纹理 Texture</option>
+                <option value="vignette">晕影 Vignette</option>
+                <option value="relig">宗教 Religions</option>
+                <option value="coordinates">坐标 Coordinates</option>
             </select>
 
             <table id="styleElements">
                 <caption
                         id="styleIsOff"
-                        data-tip="The selected layer is not visible. Toogle it on to see style changes effect"
+                        data-tip="所选图层不可见。将其打开以查看样式更改效果<br/>The selected layer is not visible. Toogle it on to see style changes effect"
                 >
-                    Ensure the element visibility is toggled on!
+                    确保元素的可视性已打开！<br/>Ensure the element visibility is toggled on!
                 </caption>
 
                 <tbody id="styleGroup">
-                <tr data-tip="Select element group">
-                    <td><b>Group</b></td>
+                <tr data-tip="选择元素分组<br/>Select element group">
+                    <td><b>分组<br/>Group</b></td>
                     <td>
                         <select id="styleGroupSelect"></select>
                     </td>
@@ -829,36 +835,38 @@
                 </tbody>
 
                 <tbody id="styleHeightmap">
-                <tr id="styleHeightmapRenderOceanOption" data-tip="Check to render ocean heights">
+                <tr id="styleHeightmapRenderOceanOption"
+                    data-tip="勾选以渲染海洋高度<br/>Check to render ocean heights">
                     <td colspan="2">
                         <input id="styleHeightmapRenderOcean" class="checkbox" type="checkbox"/>
-                        <label for="styleHeightmapRenderOcean" class="checkbox-label">Render ocean heights</label>
+                        <label for="styleHeightmapRenderOcean" class="checkbox-label">渲染海洋高度<br/>Render ocean
+                            heights</label>
                     </td>
                 </tr>
 
-                <tr data-tip="Terracing power. Set to 0 to toggle off">
-                    <td>Terracing</td>
+                <tr data-tip="梯田力度。设为 0 则关闭<br/>Terracing power. Set to 0 to toggle off">
+                    <td>梯田<br/>Terracing</td>
                     <td>
                         <slider-input id="styleHeightmapTerracing" min="0" max="20" step="1"></slider-input>
                     </td>
                 </tr>
 
-                <tr data-tip="Layers reduction rate. Increase to improve performance">
-                    <td>Reduce layers</td>
+                <tr data-tip="图层衰减率。增加该值以提高性能<br/>Layers reduction rate. Increase to improve performance">
+                    <td>图层衰减<br/>Reduce layers</td>
                     <td>
                         <slider-input id="styleHeightmapSkip" min="0" max="10" step="1"></slider-input>
                     </td>
                 </tr>
 
-                <tr data-tip="Line simplification rate. Increase to slightly improve performance">
-                    <td>Simplify line</td>
+                <tr data-tip="线条简化率。增加该值可稍微提高性能<br/>Line simplification rate. Increase to slightly improve performance">
+                    <td>简化线条<br/>Simplify line</td>
                     <td>
                         <slider-input id="styleHeightmapSimplification" min="0" max="10" step="1"></slider-input>
                     </td>
                 </tr>
 
-                <tr data-tip="Select line interpolation type">
-                    <td>Line style</td>
+                <tr data-tip="选择线条插值类型<br/>Select line interpolation type">
+                    <td>线条样式<br/>Line style</td>
                     <td>
                         <select id="styleHeightmapCurve">
                             <option value="curveBasisClosed" selected>Curved</option>
@@ -868,8 +876,8 @@
                     </td>
                 </tr>
 
-                <tr data-tip="Select color scheme for the element">
-                    <td>Color scheme</td>
+                <tr data-tip="选择元素的配色方案<br/>Select color scheme for the element">
+                    <td>配色方案<br/>Color scheme</td>
                     <td>
                         <select id="styleHeightmapScheme" style="width: 86%"></select>
                         <button
@@ -883,8 +891,8 @@
                 </tbody>
 
                 <tbody id="styleOpacity" style="display: none">
-                <tr data-tip="Set opacity. 0: transparent, 1: solid">
-                    <td>Opacity</td>
+                <tr data-tip="设置不透明度。0：完全透明，1：完全不透明<br/>Set opacity. 0: transparent, 1: solid">
+                    <td>不透明度<br/>Opacity</td>
                     <td>
                         <slider-input id="styleOpacityInput" min="0" max="1" step="0.01"></slider-input>
                     </td>
@@ -892,23 +900,23 @@
                 </tbody>
 
                 <tbody id="styleLegend">
-                <tr data-tip="Set maximum number of items in one column">
-                    <td>Column items</td>
+                <tr data-tip="设置每列最大项目数量<br/>Set maximum number of items in one column">
+                    <td>列项目数量<br/>Column items</td>
                     <td>
                         <slider-input id="styleLegendColItems" min="1" max="30" step="1"></slider-input>
                     </td>
                 </tr>
 
-                <tr data-tip="Set background color">
-                    <td>Background</td>
+                <tr data-tip="设置背景颜色<br/>Set background color">
+                    <td>背景颜色<br/>Background</td>
                     <td>
                         <input id="styleLegendBack" type="color" value="#ffffff"/>
                         <output id="styleLegendBackOutput">#ffffff</output>
                     </td>
                 </tr>
 
-                <tr data-tip="Set background opacity">
-                    <td>Opacity</td>
+                <tr data-tip="设置背景不透明度<br/>Set background opacity">
+                    <td>不透明度<br/>Opacity</td>
                     <td>
                         <slider-input id="styleLegendOpacity" min="0" max="1" step=".01"></slider-input>
                     </td>
@@ -916,16 +924,16 @@
                 </tbody>
 
                 <tbody id="stylePopulation">
-                <tr data-tip="Set bar color for rural population">
-                    <td>Rural color</td>
+                <tr data-tip="设置乡村人口条形颜色<br/>Set bar color for rural population">
+                    <td>乡村颜色<br/>Rural color</td>
                     <td>
                         <input id="stylePopulationRuralStrokeInput" type="color" value="#0000ff"/>
                         <output id="stylePopulationRuralStrokeOutput">#0000ff</output>
                     </td>
                 </tr>
 
-                <tr data-tip="Set bar color for urban population">
-                    <td>Urban color</td>
+                <tr data-tip="设置城市人口条形颜色<br/>Set bar color for urban population">
+                    <td>城市颜色<br/>Urban color</td>
                     <td>
                         <input id="stylePopulationUrbanStrokeInput" type="color" value="#ff0000"/>
                         <output id="stylePopulationUrbanStrokeOutput">#ff0000</output>
@@ -938,33 +946,37 @@
                     <td>Image</td>
                     <td>
                         <select id="styleTextureInput" style="width: 86%">
-                            <option value="">No texture</option>
-                            <option value="./images/textures/folded-paper-big.jpg">Folded paper big</option>
-                            <option value="./images/textures/folded-paper-small.jpg">Folded paper small</option>
-                            <option value="./images/textures/gray-paper.jpg">Gray paper</option>
-                            <option value="./images/textures/soiled-paper.jpg">Soiled paper horizontal</option>
-                            <option value="./images/textures/soiled-paper-vertical.jpg">Soided paper vertical</option>
-                            <option value="./images/textures/plaster.jpg">Plaster</option>
-                            <option value="./images/textures/ocean.jpg">Ocean</option>
-                            <option value="./images/textures/antique-small.jpg">Antique small</option>
-                            <option value="./images/textures/antique-big.jpg">Antique big</option>
-                            <option value="./images/textures/pergamena-small.jpg">Pergamena small</option>
-                            <option value="./images/textures/marble-big.jpg" selected>Marble big</option>
-                            <option value="./images/textures/marble-small.jpg">Marble small</option>
-                            <option value="./images/textures/marble-blue-small.jpg">Marble Blue</option>
-                            <option value="./images/textures/marble-blue-big.jpg">Marble Blue big</option>
-                            <option value="./images/textures/stone-small.jpg">Stone small</option>
-                            <option value="./images/textures/stone-big.jpg">Stone big</option>
-                            <option value="./images/textures/timbercut-small.jpg">Timber Cut small</option>
-                            <option value="./images/textures/timbercut-big.jpg">Timber Cut big</option>
-                            <option value="./images/textures/mars-small.jpg">Mars small</option>
-                            <option value="./images/textures/mars-big.jpg">Mars big</option>
-                            <option value="./images/textures/mercury-small.jpg">Mercury small</option>
-                            <option value="./images/textures/mercury-big.jpg">Mercury big</option>
-                            <option value="./images/textures/mauritania-small.jpg">Mauritania small</option>
-                            <option value="./images/textures/iran-small.jpg">Iran small</option>
-                            <option value="./images/textures/spain-small.jpg">Spain small</option>
+                            <option value="">无纹理 No texture</option>
+                            <option value="./images/textures/marble-big.jpg">大理石·大 Marble big</option>
+                            <option value="./images/textures/marble-small.jpg">大理石·小 Marble small</option>
+                            <option value="./images/textures/marble-blue-big.jpg">大理石蓝·大 Marble Blue big</option>
+                            <option value="./images/textures/marble-blue-small.jpg">大理石蓝·小 Marble Blue</option>
+                            <option value="./images/textures/antique-big.jpg">复古·大 Antique big</option>
+                            <option value="./images/textures/antique-small.jpg">复古·小 Antique small</option>
+                            <option value="./images/textures/plaster.jpg">灰泥 Plaster</option>
+                            <option value="./images/textures/gray-paper.jpg">灰纸 Gray paper</option>
+                            <option value="./images/textures/ocean.jpg">海洋 Ocean</option>
+                            <option value="./images/textures/soiled-paper.jpg">横向污纸 Soiled paper horizontal</option>
+                            <option value="./images/textures/mars-big.jpg">火星·大 Mars big</option>
+                            <option value="./images/textures/mars-small.jpg">火星·小 Mars small</option>
+                            <option value="./images/textures/mauritania-small.jpg">毛里塔尼亚·小 Mauritania small
+                            </option>
+                            <option value="./images/textures/timbercut-big.jpg">木纹·大 Timber Cut big</option>
+                            <option value="./images/textures/timbercut-small.jpg">木纹·小 Timber Cut small</option>
+                            <option value="./images/textures/stone-big.jpg">石材·大 Stone big</option>
+                            <option value="./images/textures/stone-small.jpg">石材·小 Stone small</option>
+                            <option value="./images/textures/mercury-big.jpg">水星·大 Mercury big</option>
+                            <option value="./images/textures/mercury-small.jpg">水星·小 Mercury small</option>
+                            <option value="./images/textures/spain-small.jpg">西班牙·小 Spain small</option>
+                            <option value="./images/textures/pergamena-small.jpg">羊皮纸·小 Pergamena small</option>
+                            <option value="./images/textures/iran-small.jpg">伊朗·小 Iran small</option>
+                            <option value="./images/textures/folded-paper-big.jpg" selected>折纸·大 Folded paper big
+                            </option>
+                            <option value="./images/textures/folded-paper-small.jpg">折纸·小 Folded paper small</option>
+                            <option value="./images/textures/soiled-paper-vertical.jpg">纵向污纸 Soiled paper vertical
+                            </option>
                         </select>
+
                         <button
                                 data-tip="Click and provide a URL to image to be set as a texture"
                                 class="icon-plus sideButton"
@@ -973,27 +985,28 @@
                     </td>
                 </tr>
 
-                <tr data-tip="Shift the texture by axes">
-                    <td>Shift by axes</td>
+                <tr data-tip="沿轴平移纹理（像素）<br/>Shift the texture by axes">
+                    <td>沿轴平移<br/>Shift by axes</td>
                     <td>
                         <input id="styleTextureShiftX" type="number" value="0"
-                               data-tip="Shift texture by x axis in pixels"/>
+                               data-tip="沿 x 轴平移纹理（像素）<br/>Shift texture by x axis in pixels"/>
                         <input id="styleTextureShiftY" type="number" value="0"
-                               data-tip="Shift texture by y axis in pixels"/>
+                               data-tip="沿 y 轴平移纹理（像素）<br/>Shift texture by y axis in pixels"/>
                     </td>
                 </tr>
                 </tbody>
 
                 <tbody id="styleVignette">
-                <tr data-tip="Select precreated vignette">
-                    <td>Preset</td>
+                <tr data-tip="选择预设晕影<br/>Select precreated vignette">
+                    <td>预设<br/>Preset</td>
                     <td>
                         <select id="styleVignettePreset"></select>
                     </td>
                 </tr>
 
+
                 <tr data-tip="Vignette rectangle position (in percents)">
-                    <td>Position</td>
+                    <td>位置<br/>Position</td>
                     <td style="display: flex; flex-direction: column; gap: 2px">
                         <div>
                             <span>x </span>
@@ -1012,8 +1025,8 @@
                     </td>
                 </tr>
 
-                <tr data-tip="Set vignette X and Y radius (in percents)">
-                    <td>Radius</td>
+                <tr data-tip="设置渐晕的 X 和 Y 半径（单位：百分比）<br/>Set vignette X and Y radius (in percents)">
+                    <td>半径<br/>Radius</td>
                     <td>
                         <span>x </span>
                         <input id="styleVignetteRx" type="number" min="0" max="50" style="width: 5em"/>
@@ -1022,7 +1035,7 @@
                     </td>
                 </tr>
 
-                <tr data-tip="Set vignette blue propagation (in pixels)">
+                <tr data-tip="设置渐变蓝色传播（单位：像素）<br/>Set vignette blue propagation (in pixels)">
                     <td>Blur</td>
                     <td>
                         <slider-input id="styleVignetteBlur" min="0" max="400" step="1"></slider-input>
@@ -1031,35 +1044,35 @@
                 </tbody>
 
                 <tbody id="styleOcean">
-                <tr data-tip="Select ocean pattern">
-                    <td>Pattern</td>
+                <tr data-tip="选择海洋图案<br/>Select ocean pattern">
+                    <td>图案<br/>Pattern</td>
                     <td>
                         <select id="styleOceanPattern">
-                            <option value="">No pattern</option>
+                            <option value="">无图案 No pattern</option>
                             <option value="./images/pattern1.png">Pattern 1</option>
                             <option value="./images/pattern2.png">Pattern 2</option>
                             <option value="./images/pattern3.png">Pattern 3</option>
                             <option value="./images/pattern4.png">Pattern 4</option>
                             <option value="./images/pattern5.png">Pattern 5</option>
                             <option value="./images/pattern6.png">Pattern 6</option>
-                            <option value="./images/kiwiroo.png">Kiwiroo</option>
+                            <option value="./images/kiwiroo.png">猕猴桃 Kiwiroo</option>
                         </select>
                     </td>
                 </tr>
 
-                <tr data-tip="Set ocean pattern opacity">
-                    <td>Pattern opacity</td>
+                <tr data-tip="设置海洋图案的不透明度<br/>Set ocean pattern opacity">
+                    <td>图案不透明度<br/>Pattern opacity</td>
                     <td>
                         <slider-input id="styleOceanPatternOpacity" min="0" max="1" step=".01"></slider-input>
                     </td>
                 </tr>
 
-                <tr data-tip="Define the coast outline contours scheme">
-                    <td>Ocean layers</td>
+                <tr data-tip="定义海岸轮廓等高线方案<br/>Define the coast outline contours scheme">
+                    <td>海洋图层<br/>Ocean layers</td>
                     <td>
                         <select id="outlineLayers">
-                            <option value="none">No outline</option>
-                            <option value="random">Random</option>
+                            <option value="none">无轮廓 No outline</option>
+                            <option value="random">随机 Random</option>
                             <option value="-6,-3,-1" selected>Standard 3</option>
                             <option value="-6,-4,-2">Indented 3</option>
                             <option value="-9,-6,-3,-1">Standard 4</option>
@@ -1069,8 +1082,8 @@
                     </td>
                 </tr>
 
-                <tr data-tip="Set ocean color">
-                    <td>Color</td>
+                <tr data-tip="设置海洋颜色<br/>Set ocean color">
+                    <td>颜色<br/>Color</td>
                     <td>
                         <input id="styleOceanFill" type="color" value="#466eab"/>
                         <output id="styleOceanFillOutput">#466eab</output>
@@ -1079,63 +1092,65 @@
                 </tbody>
 
                 <tbody id="styleGrid">
-                <tr data-tip="Select grid overlay type">
-                    <td>Type</td>
+                <tr data-tip="选择网格叠加类型<br/>Select grid overlay type">
+                    <td>类型<br/>Type</td>
                     <td>
                         <select id="styleGridType">
-                            <option value="pointyHex">Hex grid (pointy)</option>
-                            <option value="flatHex">Hex grid (flat)</option>
-                            <option value="square">Square grid</option>
-                            <option value="square45deg">Square 45 degrees grid</option>
-                            <option value="squareTruncated">Truncated square grid</option>
-                            <option value="squareTetrakis">Tetrakis square grid</option>
-                            <option value="triangleHorizontal">Triangle grid (horizontal)</option>
-                            <option value="triangleVertical">Triangle grid (vertical)</option>
-                            <option value="trihexagonal">Trihexagonal grid</option>
-                            <option value="rhombille">Rhombille grid</option>
+                            <option value="pointyHex">六边形网格（尖角） (Hex grid, pointy)</option>
+                            <option value="flatHex">六边形网格（平角） (Hex grid, flat)</option>
+                            <option value="square">方形网格 (Square grid)</option>
+                            <option value="square45deg">45度方形网格 (Square 45 degrees grid)</option>
+                            <option value="squareTruncated">截断方形网格 (Truncated square grid)</option>
+                            <option value="squareTetrakis">四角方形网格 (Tetrakis square grid)</option>
+                            <option value="triangleHorizontal">水平三角网格 (Triangle grid, horizontal)</option>
+                            <option value="triangleVertical">垂直三角网格 (Triangle grid, vertical)</option>
+                            <option value="trihexagonal">三六边形网格 (Trihexagonal grid)</option>
+                            <option value="rhombille">菱形网格 (Rhombille grid)</option>
                         </select>
                     </td>
                 </tr>
 
-                <tr data-tip="Set grid cells scale multiplier">
-                    <td>Scale</td>
+                <tr data-tip="设置网格单元比例因子<br/>Set grid cells scale multiplier">
+                    <td>比例<br/>Scale</td>
                     <td>
                         <input id="styleGridScale" type="number" min=".1" max="10" step=".01"/>
                         <output
                                 id="styleGridSizeFriendly"
-                                data-tip="Distance between grid cell centers (in map scale)"
+                                data-tip="网格单元中心间距（地图比例）<br/>Distance between grid cell centers (in map scale)"
                         ></output>
                         <a
                                 href="https://github.com/Azgaar/Fantasy-Map-Generator/wiki/Scale-and-distance#grids"
                                 target="_blank"
                         >
                     <span
-                            data-tip="Open wiki article scale and distance to know about grid scale"
+                            data-tip="打开维基文章了解网格比例<br/>Open wiki article scale and distance to know about grid scale"
                             class="icon-info-circled pointer"
                     ></span>
                         </a>
                     </td>
                 </tr>
 
-                <tr data-tip="Shift the element by axes">
-                    <td>Shift by axes</td>
+                <tr data-tip="沿轴平移元素<br/>Shift the element by axes">
+                    <td>沿轴平移<br/>Shift by axes</td>
                     <td>
-                        <input id="styleGridShiftX" type="number" data-tip="Shift by x axis in pixels"/>
-                        <input id="styleGridShiftY" type="number" data-tip="Shift by y axis in pixels"/>
+                        <input id="styleGridShiftX" type="number"
+                               data-tip="沿 x 轴平移（像素）<br/>Shift by x axis in pixels"/>
+                        <input id="styleGridShiftY" type="number"
+                               data-tip="沿 y 轴平移（像素）<br/>Shift by y axis in pixels"/>
                     </td>
                 </tr>
                 </tbody>
 
                 <tbody id="styleCompass">
-                <tr data-tip="Set wind (compass) rose size">
-                    <td>Size</td>
+                <tr data-tip="设置风向玫瑰尺寸<br/>Set wind (compass) rose size">
+                    <td>尺寸<br/>Size</td>
                     <td>
                         <slider-input id="styleCompassSizeInput" min=".02" max="1" step=".01"></slider-input>
                     </td>
                 </tr>
 
-                <tr data-tip="Shift wind (compass) rose by axes">
-                    <td>Shift by axes</td>
+                <tr data-tip="沿轴平移风向玫瑰<br/>Shift wind (compass) rose by axes">
+                    <td>沿轴平移<br/>Shift by axes</td>
                     <td>
                         <input id="styleCompassShiftX" type="number" value="80" data-tip="Shift by x axis in pixels"/>
                         <input id="styleCompassShiftY" type="number" value="80" data-tip="Shift by y axis in pixels"/>
@@ -1144,37 +1159,36 @@
                 </tbody>
 
                 <tbody id="styleRelief">
-                <tr data-tip="Select set of relief icons. All relief icons will be regenerated">
-                    <td>Style</td>
+                <tr data-tip="选择地形符号组。所有地形符号将重新生成<br/>Select set of relief icons. All relief icons will be regenerated">
+                    <td>样式<br/>Style</td>
                     <td>
                         <select id="styleReliefSet">
-                            <option value="simple" selected>Simple</option>
-                            <option value="gray">Gray</option>
-                            <option value="colored">Colored</option>
+                            <option value="simple" selected>简约 Simple</option>
+                            <option value="gray">灰色 Gray</option>
+                            <option value="colored">彩色 Colored</option>
                         </select>
                     </td>
                 </tr>
 
-                <tr data-tip="Define the size of relief icons. All relief icons will be regenerated">
-                    <td>Size</td>
+                <tr data-tip="定义地形符号的尺寸。所有地形符号将重新生成<br/>Define the size of relief icons. All relief icons will be regenerated">
+                    <td>尺寸<br/>Size</td>
                     <td>
                         <slider-input id="styleReliefSize" min=".2" max="4" step=".01"></slider-input>
                     </td>
                 </tr>
 
-                <tr
-                        data-tip="Define the density of relief icons. All relief icons will be regenerated. Highly affects performance!"
-                >
-                    <td>Density</td>
+                <tr data-tip="定义地形符号的密度。所有地形符号将重新生成，可能会显著影响性能！<br/>Define the density of relief icons. All relief icons will be regenerated. Highly affects performance!">
+                    <td>密度<br/>Density</td>
                     <td>
                         <slider-input id="styleReliefDensity" min=".3" max=".8" step=".01"></slider-input>
                     </td>
                 </tr>
+
                 </tbody>
 
                 <tbody id="styleFill">
                 <tr data-tip="Set fill color">
-                    <td>Fill color</td>
+                    <td>填充颜色<br/>Fill color</td>
                     <td>
                         <input id="styleFillInput" type="color" value="#5E4FA2"/>
                         <output id="styleFillOutput">#5E4FA2</output>
@@ -1183,8 +1197,8 @@
                 </tbody>
 
                 <tbody id="styleStroke">
-                <tr data-tip="Set stroke color">
-                    <td>Stroke color</td>
+                <tr data-tip="设置描边颜色<br/>Set stroke color">
+                    <td>描边颜色<br/>Stroke color</td>
                     <td>
                         <input id="styleStrokeInput" type="color" value="#5E4FA2"/>
                         <output id="styleStrokeOutput">#5E4FA2</output>
@@ -1193,8 +1207,8 @@
                 </tbody>
 
                 <tbody id="styleStrokeWidth">
-                <tr data-tip="Set stroke width">
-                    <td>Stroke width</td>
+                <tr data-tip="设置描边宽度<br/>Set stroke width">
+                    <td>描边宽度<br/>Stroke width</td>
                     <td>
                         <slider-input id="styleStrokeWidthInput" min="0" max="5" step=".01"></slider-input>
                     </td>
@@ -1202,8 +1216,8 @@
                 </tbody>
 
                 <tbody id="styleLetterSpacing">
-                <tr data-tip="Set letter spacing">
-                    <td>Letter spacing</td>
+                <tr data-tip="设置字间距<br/>Set letter spacing">
+                    <td>字间距<br/>Letter spacing</td>
                     <td>
                         <slider-input id="styleLetterSpacingInput" min="0" max="20" step=".01"></slider-input>
                     </td>

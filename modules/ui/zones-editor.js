@@ -12,7 +12,7 @@ function editZones() {
   modules.editZones = true;
 
   $("#zonesEditor").dialog({
-    title: "Zones Editor",
+    title: "区域编辑器 Zones Editor",
     resizable: false,
     close: () => exitZonesManualAssignment("close"),
     position: {my: "right top", at: "right-10 top+10", of: "svg", collision: "fit"}

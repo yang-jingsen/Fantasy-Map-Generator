@@ -819,7 +819,7 @@ window.BurgsAndStates = (() => {
             if (s.form === "Theocracy") {
                 // European
                 if ([0, 1, 2, 3, 4, 6, 8, 9, 13, 15, 20].includes(base)) {
-                    if (P(0.1)) return "Divine " + monarchy[tier];
+                    if (P(0.1)) return "神圣" + monarchy[tier];
                     if (tier < 2 && P(0.5)) return "教区";
                     if (tier < 2 && P(0.5)) return "主教区";
                 }

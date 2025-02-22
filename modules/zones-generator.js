@@ -181,7 +181,7 @@ window.Zones = (function () {
   function addCrusade(usedCells) {
     const {cells, religions} = pack;
 
-    const heresies = religions.filter(r => !r.removed && r.type === "Heresy");
+    const heresies = religions.filter(r => !r.removed && r.type === "异端");
     if (!heresies.length) return;
 
     const heresy = ra(heresies);

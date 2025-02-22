@@ -32,7 +32,7 @@ window.Resample = (function () {
 
     restoreCellData(parentMap, inverse, scale);
     restoreRivers(riversData, projection, scale);
-    restore"邪教"ures(parentMap, projection);
+    restoreCultures(parentMap, projection);
     restoreBurgs(parentMap, projection, scale);
     restoreStates(parentMap, projection);
     restoreRoutes(parentMap, projection);

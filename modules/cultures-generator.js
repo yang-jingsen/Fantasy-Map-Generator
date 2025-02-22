@@ -149,29 +149,29 @@ window.Cultures = (function () {
 
     // set culture type based on culture center position
     function defineCultureType(i) {
-      if (cells.h[i] < 70 && [1, 2, 4].includes(cells.biome[i])) return "Nomadic"; // high penalty in forest biomes and near coastline
-      if (cells.h[i] > 50) return "Highland"; // no penalty for hills and moutains, high for other elevations
+      if (cells.h[i] < 70 && [1, 2, 4].includes(cells.biome[i])) return "游牧"; // high penalty in forest biomes and near coastline
+      if (cells.h[i] > 50) return "高地"; // no penalty for hills and moutains, high for other elevations
       const f = pack.features[cells.f[cells.haven[i]]]; // opposite feature
-      if (f.type === "lake" && f.cells > 5) return "Lake"; // low water cross penalty and high for growth not along coastline
+      if (f.type === "lake" && f.cells > 5) return "湖泊"; // low water cross penalty and high for growth not along coastline
       if (
         (cells.harbor[i] && f.type !== "lake" && P(0.1)) ||
         (cells.harbor[i] === 1 && P(0.6)) ||
         (pack.features[cells.f[i]].group === "isle" && P(0.4))
       )
-        return "Naval"; // low water cross penalty and high for non-along-coastline growth
-      if (cells.r[i] && cells.fl[i] > 100) return "River"; // no River cross penalty, penalty for non-River growth
-      if (cells.t[i] > 2 && [3, 7, 8, 9, 10, 12].includes(cells.biome[i])) return "Hunting"; // high penalty in non-native biomes
-      return "Generic";
+        return "海洋"; // low water cross penalty and high for non-along-coastline growth
+      if (cells.r[i] && cells.fl[i] > 100) return "河流"; // no River cross penalty, penalty for non-River growth
+      if (cells.t[i] > 2 && [3, 7, 8, 9, 10, 12].includes(cells.biome[i])) return "狩猎"; // high penalty in non-native biomes
+      return "通用";
     }
 
     function defineCultureExpansionism(type) {
       let base = 1; // Generic
-      if (type === "Lake") base = 0.8;
-      else if (type === "Naval") base = 1.5;
-      else if (type === "River") base = 0.9;
-      else if (type === "Nomadic") base = 1.5;
-      else if (type === "Hunting") base = 0.7;
-      else if (type === "Highland") base = 1.2;
+      if (type === "湖泊") base = 0.8;
+      else if (type === "海洋") base = 1.5;
+      else if (type === "河流") base = 0.9;
+      else if (type === "游牧") base = 1.5;
+      else if (type === "狩猎") base = 0.7;
+      else if (type === "高地") base = 1.2;
       return rn(((Math.random() * byId("sizeVariety").value) / 2 + 1) * base, 1);
     }
 
@@ -213,7 +213,7 @@ window.Cultures = (function () {
       center,
       i,
       expansionism: 1,
-      type: "Generic",
+      type: "通用",
       cells: 0,
       area: 0,
       rural: 0,
@@ -573,36 +573,36 @@ window.Cultures = (function () {
 
     function getBiomeCost(c, biome, type) {
       if (cells.biome[cultures[c].center] === biome) return 10; // tiny penalty for native biome
-      if (type === "Hunting") return biomesData.cost[biome] * 5; // non-native biome penalty for hunters
-      if (type === "Nomadic" && biome > 4 && biome < 10) return biomesData.cost[biome] * 10; // forest biome penalty for nomads
+      if (type === "狩猎") return biomesData.cost[biome] * 5; // non-native biome penalty for hunters
+      if (type === "游牧" && biome > 4 && biome < 10) return biomesData.cost[biome] * 10; // forest biome penalty for nomads
       return biomesData.cost[biome] * 2; // general non-native biome penalty
     }
 
     function getHeightCost(i, h, type) {
       const f = pack.features[cells.f[i]],
         a = cells.area[i];
-      if (type === "Lake" && f.type === "lake") return 10; // no lake crossing penalty for Lake cultures
-      if (type === "Naval" && h < 20) return a * 2; // low sea/lake crossing penalty for Naval cultures
-      if (type === "Nomadic" && h < 20) return a * 50; // giant sea/lake crossing penalty for Nomads
+      if (type === "湖泊" && f.type === "lake") return 10; // no lake crossing penalty for Lake cultures
+      if (type === "海洋" && h < 20) return a * 2; // low sea/lake crossing penalty for Naval cultures
+      if (type === "游牧" && h < 20) return a * 50; // giant sea/lake crossing penalty for Nomads
       if (h < 20) return a * 6; // general sea/lake crossing penalty
-      if (type === "Highland" && h < 44) return 3000; // giant penalty for highlanders on lowlands
-      if (type === "Highland" && h < 62) return 200; // giant penalty for highlanders on lowhills
-      if (type === "Highland") return 0; // no penalty for highlanders on highlands
+      if (type === "高地" && h < 44) return 3000; // giant penalty for highlanders on lowlands
+      if (type === "高地" && h < 62) return 200; // giant penalty for highlanders on lowhills
+      if (type === "高地") return 0; // no penalty for highlanders on highlands
       if (h >= 67) return 200; // general mountains crossing penalty
       if (h >= 44) return 30; // general hills crossing penalty
       return 0;
     }
 
     function getRiverCost(riverId, cellId, type) {
-      if (type === "River") return riverId ? 0 : 100; // penalty for river cultures
+      if (type === "河流") return riverId ? 0 : 100; // penalty for river cultures
       if (!riverId) return 0; // no penalty for others if there is no river
       return minmax(cells.fl[cellId] / 10, 20, 100); // river penalty from 20 to 100 based on flux
     }
 
     function getTypeCost(t, type) {
-      if (t === 1) return type === "Naval" || type === "Lake" ? 0 : type === "Nomadic" ? 60 : 20; // penalty for coastline
-      if (t === 2) return type === "Naval" || type === "Nomadic" ? 30 : 0; // low penalty for land level 2 for Navals and nomads
-      if (t !== -1) return type === "Naval" || type === "Lake" ? 100 : 0; // penalty for mainland for navals
+      if (t === 1) return type === "海洋" || type === "湖泊" ? 0 : type === "游牧" ? 60 : 20; // penalty for coastline
+      if (t === 2) return type === "海洋" || type === "游牧" ? 30 : 0; // low penalty for land level 2 for Navals and nomads
+      if (t !== -1) return type === "海洋" || type === "湖泊" ? 100 : 0; // penalty for mainland for navals
       return 0;
     }
 

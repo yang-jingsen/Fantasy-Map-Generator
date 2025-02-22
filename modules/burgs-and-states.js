@@ -206,7 +206,7 @@ window.BurgsAndStates = (() => {
             else if (b.port) kinship -= 0.1;
             if (b.culture !== state.culture) kinship -= 0.25;
             b.type = getType(i, b.port);
-            const type = b.capital && P(0.2) ? "Capital" : b.type === "Generic" ? "City" : b.type;
+            const type = b.capital && P(0.2) ? "Capital" : b.type === "通用" ? "City" : b.type;
             b.coa = COA.generate(stateCOA, kinship, null, type);
             b.coa.shield = COA.getShield(b.culture, b.state);
         }
@@ -242,23 +242,23 @@ window.BurgsAndStates = (() => {
     const getType = (cellId, port) => {
         const {cells, features, burgs} = pack;
 
-        if (port) return "Naval";
+        if (port) return "海洋";
 
         const haven = cells.haven[cellId];
-        if (haven !== undefined && features[cells.f[haven]].type === "lake") return "Lake";
+        if (haven !== undefined && features[cells.f[haven]].type === "lake") return "湖泊";
 
-        if (cells.h[cellId] > 60) return "Highland";
+        if (cells.h[cellId] > 60) return "高地";
 
-        if (cells.r[cellId] && cells.fl[cellId] >= 100) return "River";
+        if (cells.r[cellId] && cells.fl[cellId] >= 100) return "河流";
 
         const biome = cells.biome[cellId];
         const population = cells.pop[cellId];
         if (!cells.burg[cellId] || population <= 5) {
-            if (population < 5 && [1, 2, 3, 4].includes(biome)) return "Nomadic";
-            if (biome > 4 && biome < 10) return "Hunting";
+            if (population < 5 && [1, 2, 3, 4].includes(biome)) return "游牧";
+            if (biome > 4 && biome < 10) return "狩猎";
         }
 
-        return "Generic";
+        return "通用";
     };
 
     const defineBurgFeatures = burg => {
@@ -346,33 +346,33 @@ window.BurgsAndStates = (() => {
 
         function getBiomeCost(b, biome, type) {
             if (b === biome) return 10; // tiny penalty for native biome
-            if (type === "Hunting") return biomesData.cost[biome] * 2; // non-native biome penalty for hunters
-            if (type === "Nomadic" && biome > 4 && biome < 10) return biomesData.cost[biome] * 3; // forest biome penalty for nomads
+            if (type === "狩猎") return biomesData.cost[biome] * 2; // non-native biome penalty for hunters
+            if (type === "游牧" && biome > 4 && biome < 10) return biomesData.cost[biome] * 3; // forest biome penalty for nomads
             return biomesData.cost[biome]; // general non-native biome penalty
         }
 
         function getHeightCost(f, h, type) {
-            if (type === "Lake" && f.type === "lake") return 10; // low lake crossing penalty for Lake cultures
-            if (type === "Naval" && h < 20) return 300; // low sea crossing penalty for Navals
-            if (type === "Nomadic" && h < 20) return 10000; // giant sea crossing penalty for Nomads
+            if (type === "湖泊" && f.type === "lake") return 10; // low lake crossing penalty for Lake cultures
+            if (type === "海洋" && h < 20) return 300; // low sea crossing penalty for Navals
+            if (type === "游牧" && h < 20) return 10000; // giant sea crossing penalty for Nomads
             if (h < 20) return 1000; // general sea crossing penalty
-            if (type === "Highland" && h < 62) return 1100; // penalty for highlanders on lowlands
-            if (type === "Highland") return 0; // no penalty for highlanders on highlands
+            if (type === "高地" && h < 62) return 1100; // penalty for highlanders on lowlands
+            if (type === "高地") return 0; // no penalty for highlanders on highlands
             if (h >= 67) return 2200; // general mountains crossing penalty
             if (h >= 44) return 300; // general hills crossing penalty
             return 0;
         }
 
         function getRiverCost(r, i, type) {
-            if (type === "River") return r ? 0 : 100; // penalty for river cultures
+            if (type === "河流") return r ? 0 : 100; // penalty for river cultures
             if (!r) return 0; // no penalty for others if there is no river
             return minmax(cells.fl[i] / 10, 20, 100); // river penalty from 20 to 100 based on flux
         }
 
         function getTypeCost(t, type) {
-            if (t === 1) return type === "Naval" || type === "Lake" ? 0 : type === "Nomadic" ? 60 : 20; // penalty for coastline
-            if (t === 2) return type === "Naval" || type === "Nomadic" ? 30 : 0; // low penalty for land level 2 for Navals and nomads
-            if (t !== -1) return type === "Naval" || type === "Lake" ? 100 : 0; // penalty for mainland for navals
+            if (t === 1) return type === "海洋" || type === "湖泊" ? 0 : type === "游牧" ? 60 : 20; // penalty for coastline
+            if (t === 2) return type === "海洋" || type === "游牧" ? 30 : 0; // low penalty for land level 2 for Navals and nomads
+            if (t !== -1) return type === "海洋" || type === "湖泊" ? 100 : 0; // penalty for mainland for navals
             return 0;
         }
 
@@ -544,17 +544,17 @@ window.BurgsAndStates = (() => {
         for (let f = 1; f < states.length; f++) {
             if (states[f].removed) continue;
 
-            if (states[f].diplomacy.includes("Vassal")) {
+            if (states[f].diplomacy.includes("属国")) {
                 // Vassals copy relations from their Suzerains
-                const suzerain = states[f].diplomacy.indexOf("Vassal");
+                const suzerain = states[f].diplomacy.indexOf("属国");
 
                 for (let i = 1; i < states.length; i++) {
                     if (i === f || i === suzerain) continue;
                     states[f].diplomacy[i] = states[suzerain].diplomacy[i];
-                    if (states[suzerain].diplomacy[i] === "Suzerain") states[f].diplomacy[i] = "盟友";
+                    if (states[suzerain].diplomacy[i] === "宗主") states[f].diplomacy[i] = "盟友";
                     for (let e = 1; e < states.length; e++) {
                         if (e === f || e === suzerain) continue;
-                        if (states[e].diplomacy[suzerain] === "Suzerain" || states[e].diplomacy[suzerain] === "Vassal") continue;
+                        if (states[e].diplomacy[suzerain] === "宗主" || states[e].diplomacy[suzerain] === "属国") continue;
                         states[e].diplomacy[f] = states[e].diplomacy[suzerain];
                     }
                 }
@@ -564,15 +564,15 @@ window.BurgsAndStates = (() => {
             for (let t = f + 1; t < states.length; t++) {
                 if (states[t].removed) continue;
 
-                if (states[t].diplomacy.includes("Vassal")) {
-                    const suzerain = states[t].diplomacy.indexOf("Vassal");
+                if (states[t].diplomacy.includes("属国")) {
+                    const suzerain = states[t].diplomacy.indexOf("属国");
                     states[f].diplomacy[t] = states[f].diplomacy[suzerain];
                     continue;
                 }
 
                 const naval =
-                    states[f].type === "Naval" &&
-                    states[t].type === "Naval" &&
+                    states[f].type === "海洋" &&
+                    states[t].type === "海洋" &&
                     cells.f[states[f].center] !== cells.f[states[t].center];
                 const neib = naval ? false : states[f].neighbors.includes(t);
                 const neibOfNeib =
@@ -593,8 +593,8 @@ window.BurgsAndStates = (() => {
                     states[t].area < areaMean &&
                     states[f].area / states[t].area > 2
                 )
-                    status = "Vassal";
-                states[f].diplomacy[t] = status === "Vassal" ? "Suzerain" : status;
+                    status = "属国";
+                states[f].diplomacy[t] = status === "属国" ? "宗主" : status;
                 states[t].diplomacy[f] = status;
             }
         }
@@ -604,12 +604,12 @@ window.BurgsAndStates = (() => {
             const ad = states[attacker].diplomacy; // attacker relations;
             if (states[attacker].removed) continue;
             if (!ad.includes("竞争")) continue; // no rivals to attack
-            if (ad.includes("Vassal")) continue; // not independent
+            if (ad.includes("属国")) continue; // not independent
             if (ad.includes("敌人")) continue; // already at war
 
             // random independent rival
             const defender = ra(
-                ad.map((r, d) => (r === "竞争" && !states[d].diplomacy.includes("Vassal") ? d : 0)).filter(d => d)
+                ad.map((r, d) => (r === "竞争" && !states[d].diplomacy.includes("属国") ? d : 0)).filter(d => d)
             );
             let ap = states[attacker].area * states[attacker].expansionism;
             let dp = states[defender].area * states[defender].expansionism;
@@ -631,7 +631,7 @@ window.BurgsAndStates = (() => {
 
             // attacker vassals join the war
             ad.forEach((r, d) => {
-                if (r === "Suzerain") {
+                if (r === "宗主") {
                     attackers.push(d);
                     war.push(`${an}'s vassal ${states[d].name} joined the war on attackers side`);
                 }
@@ -639,7 +639,7 @@ window.BurgsAndStates = (() => {
 
             // defender vassals join the war
             dd.forEach((r, d) => {
-                if (r === "Suzerain") {
+                if (r === "宗主") {
                     defenders.push(d);
                     war.push(`${dn}'s vassal ${states[d].name} joined the war on defenders side`);
                 }
@@ -650,7 +650,7 @@ window.BurgsAndStates = (() => {
 
             // defender allies join
             dd.forEach((r, d) => {
-                if (r !== "盟友" || states[d].diplomacy.includes("Vassal")) return;
+                if (r !== "盟友" || states[d].diplomacy.includes("属国")) return;
                 if (states[d].diplomacy[attacker] !== "竞争" && ap / dp > 2 * gauss(1.6, 0.8, 0, 10, 2)) {
                     const reason = states[d].diplomacy.includes("敌人") ? "Being already at war," : `Frightened by ${an},`;
                     war.push(`${reason} ${states[d].name} severed the defense pact with ${dn}`);
@@ -663,7 +663,7 @@ window.BurgsAndStates = (() => {
 
                 // ally vassals join
                 states[d].diplomacy
-                    .map((r, d) => (r === "Suzerain" ? d : 0))
+                    .map((r, d) => (r === "宗主" ? d : 0))
                     .filter(d => d)
                     .forEach(v => {
                         defenders.push(v);
@@ -674,7 +674,7 @@ window.BurgsAndStates = (() => {
 
             // attacker allies join if the defender is their rival or joined power > defenders power and defender is not an ally
             ad.forEach((r, d) => {
-                if (r !== "盟友" || states[d].diplomacy.includes("Vassal") || defenders.includes(d)) return;
+                if (r !== "盟友" || states[d].diplomacy.includes("属国") || defenders.includes(d)) return;
                 const name = states[d].name;
                 if (states[d].diplomacy[defender] !== "竞争" && (P(0.2) || ap <= dp * 1.2)) {
                     war.push(`${an}'s ally ${name} avoided entering the war`);
@@ -692,7 +692,7 @@ window.BurgsAndStates = (() => {
 
                 // ally vassals join
                 states[d].diplomacy
-                    .map((r, d) => (r === "Suzerain" ? d : 0))
+                    .map((r, d) => (r === "宗主" ? d : 0))
                     .filter(d => d)
                     .forEach(v => {
                         attackers.push(v);
@@ -764,7 +764,7 @@ window.BurgsAndStates = (() => {
 
             if (isTheocracy) s.form = "Theocracy";
             else if (isAnarchy) s.form = "Anarchy";
-            else s.form = s.type === "Naval" ? rw(naval) : rw(generic);
+            else s.form = s.type === "海洋" ? rw(naval) : rw(generic);
             s.formName = selectForm(s, tier);
             s.fullName = getFullName(s);
         }
@@ -780,11 +780,11 @@ window.BurgsAndStates = (() => {
                         form === "公国" &&
                         s.neighbors.length > 1 &&
                         rand(6) < s.neighbors.length &&
-                        s.diplomacy.includes("Vassal")
+                        s.diplomacy.includes("属国")
                     )
                         return "边疆区"; // some vassal duchies on borderland
-                    if (base === 1 && P(0.3) && s.diplomacy.includes("Vassal")) return "自治领"; // English vassals
-                    if (P(0.3) && s.diplomacy.includes("Vassal")) return "保护国"; // some vassals
+                    if (base === 1 && P(0.3) && s.diplomacy.includes("属国")) return "自治领"; // English "属国"s
+                    if (P(0.3) && s.diplomacy.includes("属国")) return "保护国"; // some "属国"s
                 }
 
                 if (base === 31 && (form === "帝国" || form === "王国")) return "汗国"; // Mongolian

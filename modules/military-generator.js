@@ -19,19 +19,19 @@ window.Military = (function () {
       "敌人": 1,
       "未知": 0,
       "竞争": 0.5,
-      Vassal: 0.5,
-      Suzerain: -0.5
+      "属国": 0.5,
+      "宗主": -0.5
     };
 
     const stateModifier = {
-      melee: {Nomadic: 0.5, Highland: 1.2, Lake: 1, Naval: 0.7, Hunting: 1.2, River: 1.1},
-      ranged: {Nomadic: 0.9, Highland: 1.3, Lake: 1, Naval: 0.8, Hunting: 2, River: 0.8},
-      mounted: {Nomadic: 2.3, Highland: 0.6, Lake: 0.7, Naval: 0.3, Hunting: 0.7, River: 0.8},
-      machinery: {Nomadic: 0.8, Highland: 1.4, Lake: 1.1, Naval: 1.4, Hunting: 0.4, River: 1.1},
-      naval: {Nomadic: 0.5, Highland: 0.5, Lake: 1.2, Naval: 1.8, Hunting: 0.7, River: 1.2},
-      armored: {Nomadic: 1, Highland: 0.5, Lake: 1, Naval: 1, Hunting: 0.7, River: 1.1},
-      aviation: {Nomadic: 0.5, Highland: 0.5, Lake: 1.2, Naval: 1.2, Hunting: 0.6, River: 1.2},
-      magical: {Nomadic: 1, Highland: 2, Lake: 1, Naval: 1, Hunting: 1, River: 1}
+      melee: {"游牧": 0.5, "高地": 1.2, "湖泊": 1, "海洋": 0.7, "狩猎": 1.2, "河流": 1.1},
+      ranged: {"游牧": 0.9, "高地": 1.3, "湖泊": 1, "海洋": 0.8, "狩猎": 2, "河流": 0.8},
+      mounted: {"游牧": 2.3, "高地": 0.6, "湖泊": 0.7, "海洋": 0.3, "狩猎": 0.7, "河流": 0.8},
+      machinery: {"游牧": 0.8, "高地": 1.4, "湖泊": 1.1, "海洋": 1.4, "狩猎": 0.4, "河流": 1.1},
+      naval: {"游牧": 0.5, "高地": 0.5, "湖泊": 1.2, "海洋": 1.8, "狩猎": 0.7, "河流": 1.2},
+      armored: {"游牧": 1, "高地": 0.5, "湖泊": 1, "海洋": 1, "狩猎": 0.7, "河流": 1.1},
+      aviation: {"游牧": 0.5, "高地": 0.5, "湖泊": 1.2, "海洋": 1.2, "狩猎": 0.6, "河流": 1.2},
+      magical: {"游牧": 1, "高地": 2, "湖泊": 1, "海洋": 1, "狩猎": 1, "河流": 1}
     };
 
     const cellTypeModifier = {
@@ -153,7 +153,7 @@ window.Military = (function () {
       if (religion !== cells.religion[stateObj.center])
         modifier = stateObj.form === "Theocracy" ? modifier / 2.2 : modifier / 1.4; // non-dominant religion
       if (cells.f[i] !== cells.f[stateObj.center])
-        modifier = stateObj.type === "Naval" ? modifier / 1.2 : modifier / 1.8; // different landmass
+        modifier = stateObj.type === "海洋" ? modifier / 1.2 : modifier / 1.8; // different landmass
       const type = getType(i);
 
       for (const unit of options.military) {
@@ -205,7 +205,7 @@ window.Military = (function () {
       if (b.capital) m *= 1.2; // capital has household troops
       if (culture !== stateObj.culture) m = stateObj.form === "Union" ? m / 1.2 : m / 2; // non-dominant culture
       if (religion !== cells.religion[stateObj.center]) m = stateObj.form === "Theocracy" ? m / 2.2 : m / 1.4; // non-dominant religion
-      if (cells.f[b.cell] !== cells.f[stateObj.center]) m = stateObj.type === "Naval" ? m / 1.2 : m / 1.8; // different landmass
+      if (cells.f[b.cell] !== cells.f[stateObj.center]) m = stateObj.type === "海洋" ? m / 1.2 : m / 1.8; // different landmass
       const type = getType(b.cell);
 
       for (const unit of options.military) {

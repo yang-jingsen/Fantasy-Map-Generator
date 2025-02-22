@@ -1,7 +1,7 @@
 const $body = insertEditorHtml();
 addListeners();
 
-const cultureTypes = ["Generic", "River", "Lake", "Naval", "Nomadic", "Hunting", "Highland"];
+const cultureTypes = ["通用", "河流", "湖泊", "海洋", "游牧", "狩猎", "高地"];
 
 export function open() {
   closeDialogs("#culturesEditor, .stable");
@@ -641,13 +641,13 @@ async function showHierarchy() {
   };
 
   const getShape = ({type}) => {
-    if (type === "Generic") return "circle";
-    if (type === "River") return "diamond";
-    if (type === "Lake") return "hexagon";
-    if (type === "Naval") return "square";
-    if (type === "Highland") return "concave";
-    if (type === "Nomadic") return "octagon";
-    if (type === "Hunting") return "pentagon";
+    if (type === "通用") return "circle";
+    if (type === "河流") return "diamond";
+    if (type === "湖泊") return "hexagon";
+    if (type === "海洋") return "square";
+    if (type === "高地") return "concave";
+    if (type === "游牧") return "octagon";
+    if (type === "狩猎") return "pentagon";
   };
 
   HeirarchyTree.open({
@@ -907,7 +907,7 @@ async function uploadCulturesData() {
       current.expansionism = +culture.expansionism;
 
       if (cultureTypes.includes(culture.type)) current.type = culture.type;
-      else current.type = "Generic";
+      else current.type = "通用";
     }
 
     culture.origins = current.i ? restoreOrigins(culture.origins || "") : [null];

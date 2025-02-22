@@ -46,8 +46,8 @@ function editDiplomacy() {
       color: "#ad5a1f",
       tip: "Rivalry is a state of competing for dominance in the region"
     },
-    Vassal: {inText: "是其附属国<br/>is a vassal of", color: "#87CEFA", tip: "Vassal is a state having obligation to its suzerain"},
-    Suzerain: {
+    "属国": {inText: "是其附属国<br/>is a vassal of", color: "#87CEFA", tip: "Vassal is a state having obligation to its suzerain"},
+    "宗主": {
       inText: "是其宗主国<br/>is suzerain to",
       color: "#00008B",
       tip: "Suzerain is a state having some control over its vassals"
@@ -295,7 +295,7 @@ function editDiplomacy() {
 
     states[subjectId].diplomacy[objectId] = newRelation;
     states[objectId].diplomacy[subjectId] =
-      newRelation === "Vassal" ? "Suzerain" : newRelation === "Suzerain" ? "Vassal" : newRelation;
+      newRelation === "属国" ? "宗主" : newRelation === "宗主" ? "属国" : newRelation;
 
     // update relation history
     const change = () => [
@@ -316,9 +316,9 @@ function editDiplomacy() {
       const changed =
         newRelation === "盟友"
           ? ally()
-          : newRelation === "Vassal"
+          : newRelation === "属国"
           ? vassal()
-          : newRelation === "Suzerain"
+          : newRelation === "宗主"
           ? suzerain()
           : newRelation === "Unknown"
           ? unknown()
@@ -328,8 +328,8 @@ function editDiplomacy() {
 
     if (oldRelation === "敌人") chronicle.push(peace());
     else if (newRelation === "敌人") chronicle.push(war());
-    else if (newRelation === "Vassal") chronicle.push(vassal());
-    else if (newRelation === "Suzerain") chronicle.push(suzerain());
+    else if (newRelation === "属国") chronicle.push(vassal());
+    else if (newRelation === "宗主") chronicle.push(suzerain());
     else if (newRelation === "盟友") chronicle.push(ally());
     else if (newRelation === "未知") chronicle.push(unknown());
     else if (newRelation === "竞争") chronicle.push(rival());

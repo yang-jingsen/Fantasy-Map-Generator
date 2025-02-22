@@ -63,7 +63,7 @@ function editBurg(id) {
     byId("burgProvinceAndState").innerHTML = stateName + "<br>" + provinceName;
 
     byId("burgName").value = b.name;
-    byId("burgType").value = b.type || "Generic";
+    byId("burgType").value = b.type || "通用";
     byId("burgPopulation").value = rn(b.population * populationRate * urbanization);
     byId("burgEditAnchorStyle").style.display = +b.port ? "inline-block" : "none";
 

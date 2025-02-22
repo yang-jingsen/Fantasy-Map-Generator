@@ -253,7 +253,8 @@ export function resolveVersionConflicts(mapVersion) {
       const source = findCell(s.x, s.y);
       const mouth = findCell(e.x, e.y);
       const name = Rivers.getName(mouth);
-      const type = length < 25 ? rw({Creek: 9, River: 3, Brook: 3, Stream: 1}) : "River";
+      // const type = length < 25 ? rw({Creek: 9, "河流": 3, Brook: 3, Stream: 1}) : "河流";
+      const type = "河流";
       pack.rivers.push({i, parent: 0, length, source, mouth, basin: i, name, type});
     });
   }

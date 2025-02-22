@@ -319,9 +319,9 @@ function recreateStates() {
     const name = Names.getState(basename, culture);
     const nomadic = [1, 2, 3, 4].includes(pack.cells.biome[capital.cell]);
     const type = nomadic
-      ? "Nomadic"
-      : pack.cultures[culture].type === "Nomadic"
-      ? "Generic"
+      ? "游牧"
+      : pack.cultures[culture].type === "游牧"
+      ? "通用"
       : pack.cultures[culture].type;
     const expansionism = rn(Math.random() * byId("sizeVariety").value + 1, 1);
 

@@ -445,12 +445,15 @@ window.Rivers = (function () {
   // weighted arrays of river type names
   const riverTypes = {
     main: {
-      big: {River: 1},
-      small: {Creek: 9, River: 3, Brook: 3, Stream: 1}
+      big: {"河流": 1},
+      // small: {Creek: 9, "河流": 3, Brook: 3, Stream: 1}
+      small: {"河流": 1}
     },
     fork: {
-      big: {Fork: 1},
-      small: {Branch: 1}
+      // big: {Fork: 1},
+      // small: {Branch: 1}
+      big: {"支流": 1},
+      small: {"支流": 1}
     }
   };
 

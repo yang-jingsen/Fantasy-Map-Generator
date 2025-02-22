@@ -301,7 +301,7 @@ function getCultureOptions(culture) {
 
 function getTypeOptions(type) {
   let options = "";
-  const types = ["Generic", "River", "Lake", "Naval", "Nomadic", "Hunting", "Highland"];
+  const types = ["通用", "河流", "湖泊", "海洋", "游牧", "狩猎", "高地"];
   types.forEach(t => (options += `<option ${type === t ? "selected" : ""} value="${t}">${t}</option>`));
   return options;
 }
@@ -1223,8 +1223,8 @@ function addState() {
     else if (relations === "疑虑") relations = "中立";
     else if (relations === "敌人") relations = "友善";
     else if (relations === "竞争") relations = "友善";
-    else if (relations === "Vassal") relations = "疑虑";
-    else if (relations === "Suzerain") relations = "敌人";
+    else if (relations === "属国") relations = "疑虑";
+    else if (relations === "宗主") relations = "敌人";
     s.diplomacy.push(relations);
     return relations;
   });
@@ -1245,7 +1245,7 @@ function addState() {
     color,
     expansionism: 0.5,
     capital: burg,
-    type: "Generic",
+    type: "通用",
     center,
     culture,
     military: [],

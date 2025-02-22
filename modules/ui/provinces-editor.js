@@ -329,8 +329,8 @@ function editProvinces() {
       else if (relations === "疑虑") relations = "中立";
       else if (relations === "敌人") relations = "友善";
       else if (relations === "竞争") relations = "友善";
-      else if (relations === "Vassal") relations = "疑虑";
-      else if (relations === "Suzerain") relations = "敌人";
+      else if (relations === "属国") relations = "疑虑";
+      else if (relations === "宗主") relations = "敌人";
       s.diplomacy.push(relations);
       return relations;
     });
@@ -349,7 +349,7 @@ function editProvinces() {
       color,
       expansionism: 0.5,
       capital: burgId,
-      type: "Generic",
+      type: "通用",
       center,
       culture,
       military: [],

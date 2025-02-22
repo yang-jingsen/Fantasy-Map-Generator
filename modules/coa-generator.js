@@ -1386,7 +1386,7 @@ window.COA = (function () {
 
   // charges specific to culture or burg type (FMG-only config, not coming from Armoria)
   const typeMapping = {
-    Naval: {
+    "海洋": {
       anchor: 3,
       drakkar: 1,
       lymphad: 2,
@@ -1397,8 +1397,8 @@ window.COA = (function () {
       dolphin: 1,
       plaice: 1
     },
-    Highland: {tower: 1, raven: 1, wolfHeadErased: 1, wolfPassant: 1, goat: 1, axe: 1},
-    River: {
+    "高地": {tower: 1, raven: 1, wolfHeadErased: 1, wolfPassant: 1, goat: 1, axe: 1},
+    "河流": {
       garb: 1,
       rake: 1,
       raft: 1,
@@ -1422,7 +1422,7 @@ window.COA = (function () {
       windmill: 1,
       crocodile: 1
     },
-    Lake: {
+    "湖泊": {
       hook: 3,
       cancer: 2,
       escallop: 1,
@@ -1439,7 +1439,7 @@ window.COA = (function () {
       frog: 1,
       wasp: 1
     },
-    Nomadic: {
+    "游牧": {
       pot: 1,
       buckle: 1,
       wheel: 2,
@@ -1454,7 +1454,7 @@ window.COA = (function () {
       scorpion: 1,
       falcon: 1
     },
-    Hunting: {
+    "狩猎": {
       bugleHorn: 2,
       bugleHorn2: 1,
       stagsAttires: 2,
@@ -1919,7 +1919,7 @@ window.COA = (function () {
     if (addCharge) {
       const charge = (() => {
         if (parent?.charges && P(kinship - 0.1)) return parent.charges[0].charge;
-        if (type && type !== "Generic" && P(0.3)) return rw(typeMapping[type]);
+        if (type && type !== "通用" && P(0.3)) return rw(typeMapping[type]);
         return selectCharge(ordinary || divisioned ? charges.types : charges.single);
       })();
       const chargeData = charges.data[charge] || {};

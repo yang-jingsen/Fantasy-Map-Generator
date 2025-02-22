@@ -15,7 +15,7 @@ function createRiver() {
   const body = document.getElementById("riverCreatorBody");
 
   $("#riverCreator").dialog({
-    title: "Create River",
+    title: "编辑河流 Create River",
     resizable: false,
     position: {my: "left top", at: "left+10 top+10", of: "#map"},
     close: closeRiverCreator
@@ -118,7 +118,7 @@ function createRiver() {
       cells: riverCells,
       basin,
       name,
-      type: "River"
+      type: "河流"
     });
     const id = "river" + riverId;
 

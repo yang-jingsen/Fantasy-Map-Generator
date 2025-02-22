@@ -1151,9 +1151,10 @@
 
                 <tr data-tip="沿轴平移风向玫瑰<br/>Shift wind (compass) rose by axes">
                     <td><b>沿轴平移</b><br/>Shift by axes</td>
-                    <td>
-                        <input id="styleCompassShiftX" type="number" value="80" data-tip="Shift by x axis in pixels"/>
-                        <input id="styleCompassShiftY" type="number" value="80" data-tip="Shift by y axis in pixels"/>
+                    <td><b>x</b>
+                        <input id="styleCompassShiftX" type="number" value="80" data-tip="沿 x 轴平移风向玫瑰<br/>Shift by x axis in pixels" style="text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
+                        <b>y</b>
+                        <input id="styleCompassShiftY" type="number" value="80" data-tip="沿 y 轴平移风向玫瑰<br/>Shift by y axis in pixels" style="text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);/>
                     </td>
                 </tr>
                 </tbody>
@@ -1305,7 +1306,7 @@
                     <tr data-tip="定义温度层的不透明度。设为0则完全透明<br/>Define transparency of temperature layer. Set to 0 to make it fully transparent">
                         <td><b>填充不透明度</b><br/>Fill opacity</td>
                         <td>
-                            <slider-input id="styleTemperatureFillOpacityInput" min="0" max="1" step=".01"></slider-input>
+                            <slider-input id="styleTemperatureFillOpacityInput" min="0" max="1" step=".01" ></slider-input>
                         </td>
                     </tr>
 
@@ -1438,106 +1439,94 @@
                     </tr>
                 </tbody>
 
-
                 <tbody id="styleVisibility">
-                <tr data-tip="Allow system to hide labels if their size in too small or too big on that scale">
-                    <td colspan="2">
-                        <input id="hideLabels" class="checkbox" type="checkbox" onchange="invokeActiveZooming()"
-                               checked/>
-                        <label for="hideLabels" class="checkbox-label">Toggle visibility automatically</label>
-                    </td>
-                </tr>
+                    <tr data-tip="允许系统在该比例下自动隐藏标签（如果尺寸过小或过大）<br/>Allow system to hide labels if their size is too small or too big on that scale">
+                        <td colspan="2">
+                            <input id="hideLabels" class="checkbox" type="checkbox" onchange="invokeActiveZooming()"
+                                   checked/>
+                            <label for="hideLabels" class="checkbox-label"><b>自动切换可见性</b><br/>Toggle visibility automatically</label>
+                        </td>
+                    </tr>
 
-                <tr data-tip="Allow system to rescale labels on zoom">
-                    <td colspan="2">
-                        <input id="rescaleLabels" class="checkbox" type="checkbox" onchange="invokeActiveZooming()"
-                               checked/>
-                        <label for="rescaleLabels" class="checkbox-label">Rescale on zoom</label>
-                    </td>
-                </tr>
+                    <tr data-tip="允许系统在缩放时重新调整标签尺寸<br/>Allow system to rescale labels on zoom">
+                        <td colspan="2">
+                            <input id="rescaleLabels" class="checkbox" type="checkbox" onchange="invokeActiveZooming()"
+                                   checked/>
+                            <label for="rescaleLabels" class="checkbox-label"><b>缩放时重新调整尺寸</b><br/>Rescale on zoom</label>
+                        </td>
+                    </tr>
                 </tbody>
 
                 <tbody id="styleScaleBar">
-                <tr data-tip="Set bar and font size">
-                    <td>Size</td>
-                    <td>
-                        <span>Bar </span>
-                        <input id="styleScaleBarSize" type="number" min=".5" max="5" step=".1"/>
-                        <span>Font </span>
-                        <input id="styleScaleBarFontSize" type="number" min="1" max="100" step=".1"/>
-                    </td>
-                </tr>
+                    <tr data-tip="设置比例尺和字体尺寸<br/>Set bar and font size">
+                        <td><b>尺寸</b><br/>Size</td>
+                        <td><b>比例尺</b><br/>Bar</td>
+                        <td>
+                            <input id="styleScaleBarSize" type="number" min=".5" max="5" step=".1" style="text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
+                        </td>
+                        <td><b>字体</b><br/>Font</td>
+                        <td>
+                            <input id="styleScaleBarFontSize" type="number" min="1" max="100" step=".1" style="text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
+                        </td>
+                    </tr>
 
-                <tr data-tip="Set position of the Scale bar bottom right corner (in percents)">
-                    <td>Position</td>
-                    <td>
-                        <span>x </span>
-                        <input id="styleScaleBarPositionX" type="number" min="0" max="100" step="0.1"
-                               style="width: 5em"/>
-                        <span>y </span>
-                        <input id="styleScaleBarPositionY" type="number" min="0" max="100" step="0.1"
-                               style="width: 5em"/>
-                    </td>
-                </tr>
+                    <tr data-tip="设置比例尺右下角位置（百分比）<br/>Set position of the Scale bar bottom right corner (in percents)">
+                        <td><b>位置</b><br/>Position</td>
+                        <td>
+                            <span><b>x </b></span>
+                            <input id="styleScaleBarPositionX" type="number" min="0" max="100" step="0.1" style="width: 5em; text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
+                            <span><b>y </b></span>
+                            <input id="styleScaleBarPositionY" type="number" min="0" max="100" step="0.1" style="width: 5em; text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
+                        </td>
+                    </tr>
 
-                <tr data-tip="Type scale bar label, leave blank to hide label">
-                    <td>Label</td>
-                    <td>
-                        <input id="styleScaleBarLabel" type="text"/>
-                    </td>
-                </tr>
+                    <tr data-tip="输入比例尺标签，留空则不显示标签<br/>Type scale bar label, leave blank to hide label">
+                        <td><b>标签</b><br/>Label</td>
+                        <td>
+                            <input id="styleScaleBarLabel" type="text"/>
+                        </td>
+                    </tr>
 
-                <tr data-tip="Set background opacity. 0: transparent, 1: solid">
-                    <td>Back opacity</td>
-                    <td>
-                        <slider-input id="styleScaleBarBackgroundOpacity" min="0" max="1" step=".01"></slider-input>
-                    </td>
-                </tr>
+                    <tr data-tip="设置背景不透明度。0：透明，1：不透明<br/>Set background opacity. 0: transparent, 1: solid">
+                        <td><b>背景不透明度</b><br/>Back opacity</td>
+                        <td>
+                            <slider-input id="styleScaleBarBackgroundOpacity" min="0" max="1" step=".01" ></slider-input>
+                        </td>
+                    </tr>
 
-                <tr data-tip="Set background fill color">
-                    <td>Back fill</td>
-                    <td>
-                        <input id="styleScaleBarBackgroundFill" type="color"/>
-                        <output id="styleScaleBarBackgroundFillOutput"></output>
-                    </td>
-                </tr>
+                    <tr data-tip="设置背景填充色<br/>Set background fill color">
+                        <td><b>背景填充</b><br/>Back fill</td>
+                        <td>
+                            <input id="styleScaleBarBackgroundFill" type="color"/>
+                            <output id="styleScaleBarBackgroundFillOutput"></output>
+                        </td>
+                    </tr>
 
-                <tr data-tip="Set background stroke color and width">
-                    <td>Back stroke</td>
-                    <td>
-                        <input id="styleScaleBarBackgroundStroke" type="color"/>
-                        <output id="styleScaleBarBackgroundStrokeOutput"></output>
+                    <tr data-tip="设置背景描边颜色和宽度<br/>Set background stroke color and width">
+                        <td><b>背景描边</b><br/>Back stroke</td>
+                        <td>
+                            <input id="styleScaleBarBackgroundStroke" type="color"/>
+                            <output id="styleScaleBarBackgroundStrokeOutput"></output>
+                            <span><b>宽度</b> Width </span>
+                            <input id="styleScaleBarBackgroundStrokeWidth" type="number" min="0" max="10" step="0.1" style="width: 5em; text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
+                        </td>
+                    </tr>
 
-                        <span>Width </span>
-                        <input
-                                id="styleScaleBarBackgroundStrokeWidth"
-                                type="number"
-                                min="0"
-                                max="10"
-                                step="0.1"
-                                style="width: 5em"
-                        />
-                    </td>
-                </tr>
+                    <tr data-tip="设置背景元素内边距：上、右、下、左（像素）<br/>Set background element padding: top, right, bottom, left (in pixels)">
+                        <td>背景内边距<br/>Back padding</td>
+                        <td style="display: flex; gap: 4px">
+                            <input id="styleScaleBarBackgroundPaddingTop" type="number" min="0" max="100" style="width: 5em"/>
+                            <input id="styleScaleBarBackgroundPaddingRight" type="number" min="0" max="100" style="width: 5em"/>
+                            <input id="styleScaleBarBackgroundPaddingBottom" type="number" min="0" max="100" style="width: 5em"/>
+                            <input id="styleScaleBarBackgroundPaddingLeft" type="number" min="0" max="100" style="width: 5em"/>
+                        </td>
+                    </tr>
 
-                <tr data-tip="Set background element padding: top, right, bottom, left (in pixels)">
-                    <td>Back padding</td>
-                    <td style="display: flex; gap: 4px">
-                        <input id="styleScaleBarBackgroundPaddingTop" type="number" min="0" max="100"
-                               style="width: 5em"/>
-                        <input id="styleScaleBarBackgroundPaddingRight" type="number" min="0" max="100"
-                               style="width: 5em"/>
-                        <input id="styleScaleBarBackgroundPaddingBottom" type="number" min="0" max="100"
-                               style="width: 5em"/>
-                        <input id="styleScaleBarBackgroundPaddingLeft" type="number" min="0" max="100"
-                               style="width: 5em"/>
-                    </td>
-                </tr>
+                    <tr data-tip="选择背景滤镜<br/>Select background filter">
+                        <td>背景滤镜<br/>Back filter</td>
+                        <td><select id="styleScaleBarBackgroundFilter"/></td>
+                    </tr>
 
-                <tr data-tip="Select background filter">
-                    <td>Back filter</td>
-                    <td><select id="styleScaleBarBackgroundFilter"/></td>
-                </tr>
                 </tbody>
             </table>
 

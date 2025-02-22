@@ -1,4 +1,10 @@
 :root {
+  --input-color: #000000;
+  --slider-input-font-color: #000000;
+  --slider-input-bg: #ffffff;
+  --input-bg: #ffffff;
+  --slider-text-align: left;
+  --input-border: 2px solid #000000;
   --monospace: Consolas, "微软雅黑", monospace;
   --serif: Georgia, "微软雅黑", serif;
   --sans-serif: Helvetica, Arial, "微软雅黑", sans-serif;

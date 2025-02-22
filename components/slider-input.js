@@ -17,7 +17,7 @@
   const template = document.createElement("template");
   template.innerHTML = /* html */ `
     <input type="range" />
-    <input type="number" />
+    <input type="number" style="text-align: var(--slider-text-align); color: var(--slider-input-font-color); border: var(--input-border); background: var(--slider-input-bg)"/>
   `;
 
   class SliderInput extends HTMLElement {

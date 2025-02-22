@@ -531,10 +531,10 @@ window.BurgsAndStates = (() => {
         const chronicle = (states[0].diplomacy = []);
         const valid = states.filter(s => s.i && !states.removed);
 
-        const neibs = {Ally: 1, Friendly: 2, Neutral: 1, Suspicion: 10, Rival: 9}; // relations to neighbors
-        const neibsOfNeibs = {Ally: 10, Friendly: 8, Neutral: 5, Suspicion: 1}; // relations to neighbors of neighbors
-        const far = {Friendly: 1, Neutral: 12, Suspicion: 2, Unknown: 6}; // relations to other
-        const navals = {Neutral: 1, Suspicion: 2, Rival: 1, Unknown: 1}; // relations of naval powers
+        const neibs = {"盟友": 1, "友善": 2, "中立": 1, "疑虑": 10, "竞争": 9}; // relations to neighbors
+        const neibsOfNeibs = {"盟友": 10, "友善": 8, "中立": 5, "疑虑": 1}; // relations to neighbors of neighbors
+        const far = {"友善": 1, "中立": 12, "疑虑": 2, "未知": 6}; // relations to other
+        const navals = {"中立": 1, "疑虑": 2, "竞争": 1, "未知": 1}; // relations of naval powers
 
         valid.forEach(s => (s.diplomacy = new Array(states.length).fill("x"))); // clear all relationships
         if (valid.length < 2) return; // no states to renerate relations with
@@ -551,7 +551,7 @@ window.BurgsAndStates = (() => {
                 for (let i = 1; i < states.length; i++) {
                     if (i === f || i === suzerain) continue;
                     states[f].diplomacy[i] = states[suzerain].diplomacy[i];
-                    if (states[suzerain].diplomacy[i] === "Suzerain") states[f].diplomacy[i] = "Ally";
+                    if (states[suzerain].diplomacy[i] === "Suzerain") states[f].diplomacy[i] = "盟友";
                     for (let e = 1; e < states.length; e++) {
                         if (e === f || e === suzerain) continue;
                         if (states[e].diplomacy[suzerain] === "Suzerain" || states[e].diplomacy[suzerain] === "Vassal") continue;
@@ -603,13 +603,13 @@ window.BurgsAndStates = (() => {
         for (let attacker = 1; attacker < states.length; attacker++) {
             const ad = states[attacker].diplomacy; // attacker relations;
             if (states[attacker].removed) continue;
-            if (!ad.includes("Rival")) continue; // no rivals to attack
+            if (!ad.includes("竞争")) continue; // no rivals to attack
             if (ad.includes("Vassal")) continue; // not independent
-            if (ad.includes("Enemy")) continue; // already at war
+            if (ad.includes("敌人")) continue; // already at war
 
             // random independent rival
             const defender = ra(
-                ad.map((r, d) => (r === "Rival" && !states[d].diplomacy.includes("Vassal") ? d : 0)).filter(d => d)
+                ad.map((r, d) => (r === "竞争" && !states[d].diplomacy.includes("Vassal") ? d : 0)).filter(d => d)
             );
             let ap = states[attacker].area * states[attacker].expansionism;
             let dp = states[defender].area * states[defender].expansionism;
@@ -650,11 +650,11 @@ window.BurgsAndStates = (() => {
 
             // defender allies join
             dd.forEach((r, d) => {
-                if (r !== "Ally" || states[d].diplomacy.includes("Vassal")) return;
-                if (states[d].diplomacy[attacker] !== "Rival" && ap / dp > 2 * gauss(1.6, 0.8, 0, 10, 2)) {
-                    const reason = states[d].diplomacy.includes("Enemy") ? "Being already at war," : `Frightened by ${an},`;
+                if (r !== "盟友" || states[d].diplomacy.includes("Vassal")) return;
+                if (states[d].diplomacy[attacker] !== "竞争" && ap / dp > 2 * gauss(1.6, 0.8, 0, 10, 2)) {
+                    const reason = states[d].diplomacy.includes("敌人") ? "Being already at war," : `Frightened by ${an},`;
                     war.push(`${reason} ${states[d].name} severed the defense pact with ${dn}`);
-                    dd[d] = states[d].diplomacy[defender] = "Suspicion";
+                    dd[d] = states[d].diplomacy[defender] = "疑虑";
                     return;
                 }
                 defenders.push(d);
@@ -674,13 +674,13 @@ window.BurgsAndStates = (() => {
 
             // attacker allies join if the defender is their rival or joined power > defenders power and defender is not an ally
             ad.forEach((r, d) => {
-                if (r !== "Ally" || states[d].diplomacy.includes("Vassal") || defenders.includes(d)) return;
+                if (r !== "盟友" || states[d].diplomacy.includes("Vassal") || defenders.includes(d)) return;
                 const name = states[d].name;
-                if (states[d].diplomacy[defender] !== "Rival" && (P(0.2) || ap <= dp * 1.2)) {
+                if (states[d].diplomacy[defender] !== "竞争" && (P(0.2) || ap <= dp * 1.2)) {
                     war.push(`${an}'s ally ${name} avoided entering the war`);
                     return;
                 }
-                const allies = states[d].diplomacy.map((r, d) => (r === "Ally" ? d : 0)).filter(d => d);
+                const allies = states[d].diplomacy.map((r, d) => (r === "盟友" ? d : 0)).filter(d => d);
                 if (allies.some(ally => defenders.includes(ally))) {
                     war.push(`${an}'s ally ${name} did not join the war as its allies are in war on both sides`);
                     return;
@@ -702,7 +702,7 @@ window.BurgsAndStates = (() => {
             });
 
             // change relations to Enemy for all participants
-            attackers.forEach(a => defenders.forEach(d => (states[a].diplomacy[d] = states[d].diplomacy[a] = "Enemy")));
+            attackers.forEach(a => defenders.forEach(d => (states[a].diplomacy[d] = states[d].diplomacy[a] = "敌人")));
             chronicle.push(war); // add a record to diplomatical history
         }
 

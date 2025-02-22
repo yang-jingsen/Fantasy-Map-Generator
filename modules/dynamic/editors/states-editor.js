@@ -1211,20 +1211,20 @@ function addState() {
   const diplomacy = states.map(s => {
     if (!s.i || s.removed) return "x";
     if (!oldState) {
-      s.diplomacy.push("Neutral");
-      return "Neutral";
+      s.diplomacy.push("中立");
+      return "中立";
     }
 
     let relations = states[oldState].diplomacy[s.i]; // relations between Nth state and old overlord
-    if (s.i === oldState) relations = "Enemy";
+    if (s.i === oldState) relations = "敌人";
     // new state is Enemy to its old overlord
-    else if (relations === "Ally") relations = "Suspicion";
-    else if (relations === "Friendly") relations = "Suspicion";
-    else if (relations === "Suspicion") relations = "Neutral";
-    else if (relations === "Enemy") relations = "Friendly";
-    else if (relations === "Rival") relations = "Friendly";
-    else if (relations === "Vassal") relations = "Suspicion";
-    else if (relations === "Suzerain") relations = "Enemy";
+    else if (relations === "盟友") relations = "疑虑";
+    else if (relations === "友善") relations = "疑虑";
+    else if (relations === "疑虑") relations = "中立";
+    else if (relations === "敌人") relations = "友善";
+    else if (relations === "竞争") relations = "友善";
+    else if (relations === "Vassal") relations = "疑虑";
+    else if (relations === "Suzerain") relations = "敌人";
     s.diplomacy.push(relations);
     return relations;
   });

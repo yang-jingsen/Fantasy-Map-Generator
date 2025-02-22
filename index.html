@@ -4695,24 +4695,24 @@
 <div id="provincesEditor" class="dialog stable" style="display: none">
     <div id="provincesHeader" class="header" style="grid-template-columns: 11em 8em 8em 6em 6em 6em 8em">
         <div data-tip="Click to sort by province name" class="sortable alphabetically" data-sortby="name">
-            Province&nbsp;
+            省份<br/>Province&nbsp;
         </div>
         <div data-tip="Click to sort by province form name" class="sortable alphabetically hide" data-sortby="form">
-            Form&nbsp;
+            类型<br/>Form&nbsp;
         </div>
         <div data-tip="Click to sort by province capital" class="sortable alphabetically hide"
              data-sortby="capital">
-            Capital&nbsp;
+            首府<br/>Capital&nbsp;
         </div>
         <div data-tip="Click to sort by province owner" class="sortable alphabetically" data-sortby="state">
-            State&nbsp;
+            国家<br/>State&nbsp;
         </div>
         <div data-tip="Click to sort by province burgs count" class="sortable hide" data-sortby="burgs">
-            Burgs&nbsp;
+            城镇<br/>Burgs&nbsp;
         </div>
-        <div data-tip="Click to sort by province area" class="sortable hide" data-sortby="area">Area&nbsp;</div>
+        <div data-tip="Click to sort by province area" class="sortable hide" data-sortby="area">面积<br/>Area&nbsp;</div>
         <div data-tip="Click to sort by province population" class="sortable hide" data-sortby="population">
-            Population&nbsp;
+            人口<br/>Population&nbsp;
         </div>
     </div>
 
@@ -4734,73 +4734,44 @@
     </div>
 
     <div id="provincesBottom">
-        <button id="provincesEditorRefresh" data-tip="Refresh the Editor" class="icon-cw"></button>
-        <button id="provincesEditStyle" data-tip="Edit provinces style in Style Editor"
-                class="icon-adjust"></button>
-        <button
-                id="provincesRecolor"
-                data-tip="Recolor listed provinces based on state color"
-                class="icon-paint-roller"
-        ></button>
-        <button
-                id="provincesPercentage"
-                data-tip="Toggle percentage / absolute values views"
-                class="icon-percent"
-        ></button>
-        <button id="provincesChart" data-tip="Show provinces chart" class="icon-chart-area"></button>
-        <button
-                id="provincesToggleLabels"
-                data-tip="Toggle province labels. Change size in Menu ⭢ Style ⭢ Provinces"
-                class="icon-font"
-        ></button>
-        <button
-                id="provincesExport"
-                data-tip="Save provinces-related data as a text file (.csv)"
-                class="icon-download"
-        ></button>
+        <button id="provincesEditorRefresh" data-tip="刷新编辑器<br/>Refresh the Editor" class="icon-cw"></button>
+        <button id="provincesEditStyle" data-tip="在样式编辑器中编辑省份风格<br/>Edit provinces style in Style Editor" class="icon-adjust"></button>
+        <button id="provincesRecolor" data-tip="根据州颜色重新着色列表中的省份<br/>Recolor listed provinces based on state color" class="icon-paint-roller"></button>
+        <button id="provincesPercentage" data-tip="切换百分比 / 绝对值视图<br/>Toggle percentage / absolute values views" class="icon-percent"></button>
+        <button id="provincesChart" data-tip="显示省份统计图表<br/>Show provinces chart" class="icon-chart-area"></button>
+        <button id="provincesToggleLabels" data-tip="切换省份标签。可在菜单 ⭢ 样式 ⭢ 省份 中调整大小<br/>Toggle province labels. Change size in Menu ⭢ Style ⭢ Provinces" class="icon-font"></button>
+        <button id="provincesExport" data-tip="将省份相关数据保存为文本文件 (.csv)<br/>Save provinces-related data as a text file (.csv)" class="icon-download"></button>
 
-        <button id="provincesManually" data-tip="Manually re-assign provinces" class="icon-brush"></button>
+        <button id="provincesManually" data-tip="手动重新分配省份<br/>Manually re-assign provinces" class="icon-brush"></button>
         <div id="provincesManuallyButtons" style="display: none">
-            <div data-tip="Change brush size. Shortcut: + to increase; – to decrease" style="margin-block: 0.3em">
-                Brush size:
-                <slider-input id="provincesBrush" min="1" max="100" value="8"></slider-input>
+            <div data-tip="更改画笔大小。快捷键：+ 增大；– 减小<br/>Change brush size. Shortcut: + to increase; – to decrease" style="margin-block: 0.3em">
+                画笔大小：<slider-input id="provincesBrush" min="1" max="100" value="8"></slider-input>
             </div>
-            <button id="provincesManuallyApply" data-tip="Apply assignment" class="icon-check"></button>
-            <button id="provincesManuallyCancel" data-tip="Cancel assignment" class="icon-cancel"></button>
+            <button id="provincesManuallyApply" data-tip="应用分配<br/>Apply assignment" class="icon-check"></button>
+            <button id="provincesManuallyCancel" data-tip="取消分配<br/>Cancel assignment" class="icon-cancel"></button>
         </div>
 
-        <button
-                id="provincesRelease"
-                data-tip="Release all provinces. It will make all provinces with burgs independent"
-                class="icon-flag"
-        ></button>
-        <button
-                id="provincesAdd"
-                data-tip="Add a new province. Hold Shift to add multiple"
-                class="icon-plus"
-        ></button>
-        <button
-                id="provincesRemoveAll"
-                data-tip="Remove all provinces. States will remain as they are"
-                class="icon-trash"
-        ></button>
+        <button id="provincesRelease" data-tip="释放所有省份。这将使所有拥有城镇的省份独立<br/>Release all provinces. It will make all provinces with burgs independent" class="icon-flag"></button>
+        <button id="provincesAdd" data-tip="添加新省份。按住 Shift 可添加多个<br/>Add a new province. Hold Shift to add multiple" class="icon-plus"></button>
+        <button id="provincesRemoveAll" data-tip="删除所有省份，州将保持不变<br/>Remove all provinces. States will remain as they are" class="icon-trash"></button>
 
-        <span>State: </span>
+        <span><b>国家</b>/State: </span>
         <select id="provincesFilterState"></select>
     </div>
+
 </div>
 
 <div id="diplomacyEditor" class="dialog stable" style="display: none">
     <div id="diplomacyHeader" class="header" style="grid-template-columns: 15em 6em">
         <div data-tip="Click to sort by state name" class="sortable alphabetically" data-sortby="name">
-            State&nbsp;
+            国家<br/>State&nbsp;
         </div>
         <div
                 data-tip="Click to sort by diplomatical relations"
                 class="sortable alphabetically"
                 data-sortby="relations"
         >
-            Relations&nbsp;
+            关系<br/>Relations&nbsp;
         </div>
     </div>
 
@@ -4808,23 +4779,23 @@
     <div class="info-line">Click on state name to see relations.<br/>Click on relations name to change it</div>
 
     <div id="diplomacyBottom" style="margin-top: 0.1em">
-        <button id="diplomacyEditorRefresh" data-tip="Refresh the Editor" class="icon-cw"></button>
+        <button id="diplomacyEditorRefresh" data-tip="刷新编辑器<br/>Refresh the Editor" class="icon-cw"></button>
         <button
                 id="diplomacyEditStyle"
-                data-tip="Edit states (including diplomacy view) style in Style Editor"
+                data-tip="在样式编辑器中修改州（含外交视图）的样式<br/>Edit states (including diplomacy view) style in Style Editor"
                 class="icon-adjust"
         ></button>
-        <button id="diplomacyRegenerate" data-tip="Regenerate diplomatical relations" class="icon-retweet"></button>
+        <button id="diplomacyRegenerate" data-tip="重新生成外交关系<br/>Regenerate diplomatical relations" class="icon-retweet"></button>
         <button
                 id="diplomacyReset"
-                data-tip="Reset diplomatical relations of selected state to Neutral"
+                data-tip="将选定国家的外交关系重置为中立<br/>Reset diplomatical relations of selected state to Neutral"
                 class="icon-eraser"
         ></button>
-        <button id="diplomacyHistory" data-tip="Show relations history" class="icon-hourglass-1"></button>
-        <button id="diplomacyShowMatrix" data-tip="Show relations matrix" class="icon-list-bullet"></button>
+        <button id="diplomacyHistory" data-tip="显示外交关系历史<br/>Show relations history" class="icon-hourglass-1"></button>
+        <button id="diplomacyShowMatrix" data-tip="显示外交关系矩阵<br/>Show relations matrix" class="icon-list-bullet"></button>
         <button
                 id="diplomacyExport"
-                data-tip="Save state relations matrix as a text file (.csv)"
+                data-tip="将外交关系矩阵保存为文本文件（.csv）<br/>Save state relations matrix as a text file (.csv)"
                 class="icon-download"
         ></button>
     </div>

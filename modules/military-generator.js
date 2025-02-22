@@ -12,13 +12,13 @@ window.Military = (function () {
     const area = d3.sum(valid.map(s => s.area)); // total area
     const rate = {
       x: 0,
-      Ally: -0.2,
-      Friendly: -0.1,
-      Neutral: 0,
-      Suspicion: 0.1,
-      Enemy: 1,
-      Unknown: 0,
-      Rival: 0.5,
+      "盟友": -0.2,
+      "友善": -0.1,
+      "中立": 0,
+      "疑虑": 0.1,
+      "敌人": 1,
+      "未知": 0,
+      "竞争": 0.5,
       Vassal: 0.5,
       Suzerain: -0.5
     };
@@ -96,15 +96,15 @@ window.Military = (function () {
       const d = s.diplomacy;
 
       const expansionRate = minmax(s.expansionism / expn / (s.area / area), 0.25, 4); // how much state expansionism is realized
-      const diplomacyRate = d.some(d => d === "Enemy")
+      const diplomacyRate = d.some(d => d === "敌人")
         ? 1
-        : d.some(d => d === "Rival")
+        : d.some(d => d === "竞争")
         ? 0.8
-        : d.some(d => d === "Suspicion")
+        : d.some(d => d === "疑虑")
         ? 0.5
         : 0.1; // peacefulness
       const neighborsRateRaw = s.neighbors
-        .map(n => (n ? pack.states[n].diplomacy[s.i] : "Suspicion"))
+        .map(n => (n ? pack.states[n].diplomacy[s.i] : "疑虑"))
         .reduce((s, r) => (s += rate[r]), 0.5);
       const neighborsRate = minmax(neighborsRateRaw, 0.3, 3); // neighbors rate
       s.alert = minmax(rn(expansionRate * diplomacyRate * neighborsRate, 2), 0.1, 5); // alert rate (area modifier)

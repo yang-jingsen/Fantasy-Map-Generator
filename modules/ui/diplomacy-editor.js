@@ -15,40 +15,40 @@ function editDiplomacy() {
   if (layerIsOn("toggleReligions")) toggleReligions();
 
   const relations = {
-    Ally: {
-      inText: "is an ally of",
+    "盟友": {
+      inText: "是其盟友<br/>is an ally of",
       color: "#00b300",
       tip: "Allies formed a defensive pact and protect each other in case of third party aggression"
     },
-    Friendly: {
-      inText: "is friendly to",
+    "友善": {
+      inText: "对其友善<br/>is friendly to",
       color: "#d4f8aa",
       tip: "State is friendly to anouther state when they share some common interests"
     },
-    Neutral: {
-      inText: "is neutral to",
+    "中立": {
+      inText: "对其中立<br/>is neutral to",
       color: "#edeee8",
       tip: "Neutral means states relations are neither positive nor negative"
     },
-    Suspicion: {
-      inText: "is suspicious of",
+    "疑虑": {
+      inText: "对其抱有疑虑<br/>is suspicious of",
       color: "#eeafaa",
       tip: "Suspicion means state has a cautious distrust of another state"
     },
-    Enemy: {inText: "is at war with", color: "#e64b40", tip: "Enemies are states at war with each other"},
-    Unknown: {
-      inText: "does not know about",
+    "敌人": {inText: "与其交战<br/>is at war with", color: "#e64b40", tip: "Enemies are states at war with each other"},
+    "未知": {
+      inText: "不了解<br/>does not know about",
       color: "#a9a9a9",
       tip: "Relations are unknown if states do not have enough information about each other"
     },
-    Rival: {
-      inText: "is a rival of",
+    "竞争": {
+      inText: "是其竞争对手<br/>is a rival of",
       color: "#ad5a1f",
       tip: "Rivalry is a state of competing for dominance in the region"
     },
-    Vassal: {inText: "is a vassal of", color: "#87CEFA", tip: "Vassal is a state having obligation to its suzerain"},
+    Vassal: {inText: "是其附属国<br/>is a vassal of", color: "#87CEFA", tip: "Vassal is a state having obligation to its suzerain"},
     Suzerain: {
-      inText: "is suzerain to",
+      inText: "是其宗主国<br/>is suzerain to",
       color: "#00008B",
       tip: "Suzerain is a state having some control over its vassals"
     }
@@ -314,7 +314,7 @@ function editDiplomacy() {
     const peace = () => {
       const treaty = `${subjectName} and ${objectName} agreed to cease fire and signed a peace treaty`;
       const changed =
-        newRelation === "Ally"
+        newRelation === "盟友"
           ? ally()
           : newRelation === "Vassal"
           ? vassal()
@@ -326,13 +326,13 @@ function editDiplomacy() {
       return [`War termination`, treaty, changed[1]];
     };
 
-    if (oldRelation === "Enemy") chronicle.push(peace());
-    else if (newRelation === "Enemy") chronicle.push(war());
+    if (oldRelation === "敌人") chronicle.push(peace());
+    else if (newRelation === "敌人") chronicle.push(war());
     else if (newRelation === "Vassal") chronicle.push(vassal());
     else if (newRelation === "Suzerain") chronicle.push(suzerain());
-    else if (newRelation === "Ally") chronicle.push(ally());
-    else if (newRelation === "Unknown") chronicle.push(unknown());
-    else if (newRelation === "Rival") chronicle.push(rival());
+    else if (newRelation === "盟友") chronicle.push(ally());
+    else if (newRelation === "未知") chronicle.push(unknown());
+    else if (newRelation === "竞争") chronicle.push(rival());
     else chronicle.push(change());
 
     refreshDiplomacyEditor();
@@ -354,8 +354,8 @@ function editDiplomacy() {
 
     states[selectedId].diplomacy.forEach((relations, index) => {
       if (relations !== "x") {
-        states[selectedId].diplomacy[index] = "Neutral";
-        states[index].diplomacy[selectedId] = "Neutral";
+        states[selectedId].diplomacy[index] = "中立";
+        states[index].diplomacy[selectedId] = "中立";
       }
     });
 

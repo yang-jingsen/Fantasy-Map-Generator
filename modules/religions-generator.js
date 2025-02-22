@@ -196,7 +196,7 @@ window.Religions = (function () {
       "Fatal",
       "Favorable",
       "Flying",
-      "Friendly",
+      "友善",
       "Frozen",
       "Giant",
       "Good",

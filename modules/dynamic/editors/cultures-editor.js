@@ -30,7 +30,7 @@ function insertEditorHtml() {
       <div data-tip="Click to sort by culture namesbase" class="sortable" data-sortby="base">名称库<br/>Namesbase&nbsp;</div>
       <div data-tip="Click to sort by culture cells count" class="sortable hide" data-sortby="cells">单元格<br/>Cells&nbsp;</div>
       <div data-tip="Click to sort by expansionism" class="sortable hide" data-sortby="expansionism">扩张<br/>Expansion&nbsp;</div>
-      <div data-tip="Click to sort by culture area" class="sortable hide" data-sortby="area">地区<br/>Area&nbsp;</div>
+      <div data-tip="Click to sort by culture area" class="sortable hide" data-sortby="area">面积<br/>Area&nbsp;</div>
       <div data-tip="Click to sort by culture population" class="sortable hide icon-sort-number-down" data-sortby="population">人口<br/>Population&nbsp;</div>
       <div data-tip="Click to sort by culture emblems shape" class="sortable alphabetically hide" data-sortby="emblems">徽标<br/>Emblems&nbsp;</div>
     </div>
@@ -44,27 +44,27 @@ function insertEditorHtml() {
     </div>
 
     <div id="culturesBottom">
-      <button id="culturesEditorRefresh" data-tip="Refresh the Editor" class="icon-cw"></button>
-      <button id="culturesEditStyle" data-tip="Edit cultures style in Style Editor" class="icon-adjust"></button>
-      <button id="culturesLegend" data-tip="Toggle Legend box" class="icon-list-bullet"></button>
-      <button id="culturesPercentage" data-tip="Toggle percentage / absolute values display mode" class="icon-percent"></button>
-      <button id="culturesHeirarchy" data-tip="Show cultures hierarchy tree" class="icon-sitemap"></button>
-      <button id="culturesManually" data-tip="Manually re-assign cultures" class="icon-brush"></button>
+      <button id="culturesEditorRefresh" data-tip="刷新编辑器<br/>Refresh the Editor" class="icon-cw"></button>
+      <button id="culturesEditStyle" data-tip="在样式编辑器中编辑文化风格<br/>Edit cultures style in Style Editor" class="icon-adjust"></button>
+      <button id="culturesLegend" data-tip="切换图例框<br/>Toggle Legend box" class="icon-list-bullet"></button>
+      <button id="culturesPercentage" data-tip="切换百分比 / 绝对值显示模式<br/>Toggle percentage / absolute values display mode" class="icon-percent"></button>
+      <button id="culturesHeirarchy" data-tip="显示文化层级结构<br/>Show cultures hierarchy tree" class="icon-sitemap"></button>
+      <button id="culturesManually" data-tip="手动重新分配文化<br/>Manually re-assign cultures" class="icon-brush"></button>
       <div id="culturesManuallyButtons" style="display: none">
-        <div data-tip="Change brush size. Shortcut: + to increase; – to decrease" style="margin-block: 0.3em;">
-          <slider-input id="culturesBrush" min="1" max="100" value="15">Brush size:</slider-input>
+        <div data-tip="更改画笔大小。快捷键：+ 增大；– 减小<br/>Change brush size. Shortcut: + to increase; – to decrease" style="margin-block: 0.3em;">
+          <slider-input id="culturesBrush" min="1" max="100" value="15">画笔大小：</slider-input>
         </div>
-        <button id="culturesManuallyApply" data-tip="Apply assignment" class="icon-check"></button>
-        <button id="culturesManuallyCancel" data-tip="Cancel assignment" class="icon-cancel"></button>
+        <button id="culturesManuallyApply" data-tip="应用分配<br/>Apply assignment" class="icon-check"></button>
+        <button id="culturesManuallyCancel" data-tip="取消分配<br/>Cancel assignment" class="icon-cancel"></button>
       </div>
-      <button id="culturesEditNamesBase" data-tip="Edit a database used for names generation" class="icon-font"></button>
-      <button id="culturesAdd" data-tip="Add a new culture. Hold Shift to add multiple" class="icon-plus"></button>
-      <button id="culturesExport" data-tip="Download cultures-related data" class="icon-download"></button>
-      <button id="culturesImport" data-tip="Upload cultures-related data" class="icon-upload"></button>
-      <button id="culturesRecalculate" data-tip="Recalculate cultures based on current values of growth-related attributes" class="icon-retweet"></button>
-      <span data-tip="Allow culture centers, expansion and type changes to take an immediate effect">
+      <button id="culturesEditNamesBase" data-tip="编辑用于名称生成的数据库<br/>Edit a database used for names generation" class="icon-font"></button>
+      <button id="culturesAdd" data-tip="添加新文化。按住 Shift 可添加多个<br/>Add a new culture. Hold Shift to add multiple" class="icon-plus"></button>
+      <button id="culturesExport" data-tip="下载与文化相关的数据<br/>Download cultures-related data" class="icon-download"></button>
+      <button id="culturesImport" data-tip="上传与文化相关的数据<br/>Upload cultures-related data" class="icon-upload"></button>
+      <button id="culturesRecalculate" data-tip="根据当前增长相关属性值重新计算文化<br/>Recalculate cultures based on current values of growth-related attributes" class="icon-retweet"></button>
+      <span data-tip="允许文化中心、扩张和类型变化立即生效<br/>Allow culture centers, expansion and type changes to take an immediate effect">
         <input id="culturesAutoChange" class="checkbox" type="checkbox" />
-        <label for="culturesAutoChange" class="checkbox-label"><i>auto-apply changes</i></label>
+        <label for="culturesAutoChange" class="checkbox-label">自动应用更改/<i>auto-apply changes</i></label>
       </span>
     </div>
   </div>`;

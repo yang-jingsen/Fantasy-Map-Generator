@@ -15,7 +15,7 @@ function editProvinces() {
   modules.editProvinces = true;
 
   $("#provincesEditor").dialog({
-    title: "Provinces Editor",
+    title: "省份编辑器 Provinces Editor",
     resizable: false,
     width: fitContent(),
     close: closeProvincesEditor,
@@ -323,14 +323,14 @@ function editProvinces() {
       if (!s.i || s.removed) return "x";
       let relations = states[oldStateId].diplomacy[s.i]; // relations between Nth state and old overlord
       // new state is Enemy to its old owner
-      if (s.i === oldStateId) relations = "Enemy";
-      else if (relations === "Ally") relations = "Suspicion";
-      else if (relations === "Friendly") relations = "Suspicion";
-      else if (relations === "Suspicion") relations = "Neutral";
-      else if (relations === "Enemy") relations = "Friendly";
-      else if (relations === "Rival") relations = "Friendly";
-      else if (relations === "Vassal") relations = "Suspicion";
-      else if (relations === "Suzerain") relations = "Enemy";
+      if (s.i === oldStateId) relations = "敌人";
+      else if (relations === "盟友") relations = "疑虑";
+      else if (relations === "友善") relations = "疑虑";
+      else if (relations === "疑虑") relations = "中立";
+      else if (relations === "敌人") relations = "友善";
+      else if (relations === "竞争") relations = "友善";
+      else if (relations === "Vassal") relations = "疑虑";
+      else if (relations === "Suzerain") relations = "敌人";
       s.diplomacy.push(relations);
       return relations;
     });

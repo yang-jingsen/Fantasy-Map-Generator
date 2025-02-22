@@ -23,20 +23,34 @@ function editHeightmap(options) {
   byId("templateRedo").on("click", () => restoreHistory(edits.n + 1));
 
   function showModeDialog() {
-    alertMessage.innerHTML = /* html */ `Heightmap is a core element on which all other data (rivers, burgs, states etc) is based. So the best edit approach is to
-    <i>erase</i> the secondary data and let the system automatically regenerate it on edit completion.
-    <p><i>Erase</i> mode also allows you Convert an Image into a heightmap or use Template Editor.</p>
+    alertMessage.innerHTML = /* html */ `高度图是所有其他数据（河流、城镇、州等）的核心基础。因此，最佳的编辑方式是
+    <b>清除</b>次要数据，并让系统在编辑完成后自动重新生成它们。
+    <p><b>清除</b>模式还允许你将图片转换为高度图或使用模板编辑器。</p>
+    <p>你可以选择<b>保留</b>数据，但这样就无法修改海岸线。</p>
+    <p>尝试<b>风险</b>模式来修改海岸线并保留数据。系统会尽可能恢复数据，但可能会引发不可预测的错误。</p>
+    <p>请在编辑高度图之前 <span class="pseudoLink" onclick="saveMap('machine')">保存地图</span>！</p>
+    <p style="margin-bottom: 0">查看 ${link(
+      "https://github.com/Azgaar/Fantasy-Map-Generator/wiki/Heightmap-customization",
+      "wiki"
+    )} 以获取指南。</p>
+
+    <hr>
+
+    The heightmap is the core element on which all other data (rivers, burgs, states, etc.) is based. The best approach is to 
+    <b>erase</b> the secondary data and let the system automatically regenerate it upon edit completion.
+    <p><i>Erase</i> mode also allows you to convert an image into a heightmap or use the Template Editor.</p>
     <p>You can <i>keep</i> the data, but you won't be able to change the coastline.</p>
-    <p>Try <i>risk</i> mode to change the coastline and keep the data. The data will be restored as much as possible, but it can cause unpredictable errors.</p>
+    <p>Try <i>risk</i> mode to modify the coastline while keeping the data. The system will restore as much as possible, but it may cause unpredictable errors.</p>
     <p>Please <span class="pseudoLink" onclick="saveMap('machine')">save the map</span> before editing the heightmap!</p>
     <p style="margin-bottom: 0">Check out ${link(
       "https://github.com/Azgaar/Fantasy-Map-Generator/wiki/Heightmap-customization",
       "wiki"
     )} for guidance.</p>`;
 
+
     $("#alert").dialog({
       resizable: false,
-      title: "Edit Heightmap",
+      title: "编辑高度图 Edit Heightmap",
       width: "28em",
       buttons: {
         Erase: () => enterHeightmapEditMode("erase"),

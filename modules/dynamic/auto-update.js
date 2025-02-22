@@ -115,7 +115,7 @@ export function resolveVersionConflicts(mapVersion) {
     // v1.0 had Sympathy status then relaced with Friendly
     for (const s of pack.states) {
       if (!s.diplomacy) continue;
-      s.diplomacy = s.diplomacy.map(r => (r === "Sympathy" ? "Friendly" : r));
+      s.diplomacy = s.diplomacy.map(r => (r === "Sympathy" ? "友善" : r));
     }
 
     // labels should be toggled via style attribute, so remove display attribute

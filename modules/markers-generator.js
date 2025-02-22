@@ -383,7 +383,7 @@ window.Markers = (function () {
       "Honest",
       "Giant",
       "Distant",
-      "Friendly",
+      "友善",
       "Loud",
       "Hungry",
       "Magical",

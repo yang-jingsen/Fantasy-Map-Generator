@@ -68,7 +68,7 @@ window.Zones = (function () {
     }
 
     const subtype = rw({
-      Invasion: 5,
+      "入侵": 5,
       Occupation: 4,
       Conquest: 3,
       Incursion: 2,
@@ -85,7 +85,7 @@ window.Zones = (function () {
     });
     const name = getAdjective(states[attacker].name) + " " + subtype;
 
-    pack.zones.push({i: pack.zones.length, name, type: "Invasion", cells: invasionCells, color: "url(#hatch1)"});
+    pack.zones.push({i: pack.zones.length, name, type: "入侵", cells: invasionCells, color: "url(#hatch1)"});
   }
 
   function addRebels(usedCells) {
@@ -120,7 +120,7 @@ window.Zones = (function () {
     }
 
     const rebels = rw({
-      Rebels: 5,
+      "叛乱": 5,
       Insurrection: 2,
       Mutineers: 1,
       Insurgents: 1,
@@ -135,7 +135,7 @@ window.Zones = (function () {
     });
 
     const name = getAdjective(states[neibStateId].name) + " " + rebels;
-    pack.zones.push({i: pack.zones.length, name, type: "Rebels", cells: cellsArray, color: "url(#hatch3)"});
+    pack.zones.push({i: pack.zones.length, name, type: "叛乱", cells: cellsArray, color: "url(#hatch3)"});
   }
 
   function addProselytism(usedCells) {
@@ -237,7 +237,7 @@ window.Zones = (function () {
       if (model === "adjective") return ra(["Blind", "Bloody", "Brutal", "Burning", "Deadly", "Fatal", "Furious", "Great", "Grim", "Horrible", "Invisible", "Lethal", "Loud", "Mortal", "Savage", "Severe", "Silent", "Unknown", "Venomous", "Vicious"]);
     })()} ${rw({Fever: 5, Plague: 3, Cough: 3, Flu: 2, Pox: 2, Cholera: 2, Typhoid: 2, Leprosy: 1, Smallpox: 1, Pestilence: 1, Consumption: 1, Malaria: 1, Dropsy: 1})}`;
 
-    pack.zones.push({i: pack.zones.length, name, type: "Disease", cells: cellsArray, color: "url(#hatch12)"});
+    pack.zones.push({i: pack.zones.length, name, type: "疾病", cells: cellsArray, color: "url(#hatch12)"});
   }
 
   function addDisaster(usedCells) {
@@ -282,7 +282,7 @@ window.Zones = (function () {
       Blight: 1
     });
     const name = getAdjective(burg.name) + " " + type;
-    pack.zones.push({i: pack.zones.length, name, type: "Disaster", cells: cellsArray, color: "url(#hatch5)"});
+    pack.zones.push({i: pack.zones.length, name, type: "灾害", cells: cellsArray, color: "url(#hatch5)"});
   }
 
   function addEruption(usedCells) {
@@ -312,7 +312,7 @@ window.Zones = (function () {
       });
     }
 
-    pack.zones.push({i: pack.zones.length, name, type: "Eruption", cells: cellsArray, color: "url(#hatch7)"});
+    pack.zones.push({i: pack.zones.length, name, type: "喷发", cells: cellsArray, color: "url(#hatch7)"});
   }
 
   function addAvalanche(usedCells) {
@@ -340,8 +340,8 @@ window.Zones = (function () {
       });
     }
 
-    const name = getAdjective(Names.getCultureShort(cells.culture[startCell])) + " Avalanche";
-    pack.zones.push({i: pack.zones.length, name, type: "Avalanche", cells: cellsArray, color: "url(#hatch5)"});
+    const name = getAdjective(Names.getCultureShort(cells.culture[startCell])) + " 雪崩";
+    pack.zones.push({i: pack.zones.length, name, type: "雪崩", cells: cellsArray, color: "url(#hatch5)"});
   }
 
   function addFault(usedCells) {
@@ -369,8 +369,8 @@ window.Zones = (function () {
       });
     }
 
-    const name = getAdjective(Names.getCultureShort(cells.culture[startCell])) + " Fault";
-    pack.zones.push({i: pack.zones.length, name, type: "Fault", cells: cellsArray, color: "url(#hatch2)"});
+    const name = getAdjective(Names.getCultureShort(cells.culture[startCell])) + " 断层";
+    pack.zones.push({i: pack.zones.length, name, type: "断层", cells: cellsArray, color: "url(#hatch2)"});
   }
 
   function addFlood(usedCells) {
@@ -413,8 +413,8 @@ window.Zones = (function () {
       });
     }
 
-    const name = getAdjective(pack.burgs[cells.burg[startCell]].name) + " Flood";
-    pack.zones.push({i: pack.zones.length, name, type: "Flood", cells: cellsArray, color: "url(#hatch13)"});
+    const name = getAdjective(pack.burgs[cells.burg[startCell]].name) + " 洪水";
+    pack.zones.push({i: pack.zones.length, name, type: "洪水", cells: cellsArray, color: "url(#hatch13)"});
   }
 
   function addTsunami(usedCells) {
@@ -446,8 +446,8 @@ window.Zones = (function () {
       });
     }
 
-    const name = getAdjective(Names.getCultureShort(cells.culture[startCell])) + " Tsunami";
-    pack.zones.push({i: pack.zones.length, name, type: "Tsunami", cells: cellsArray, color: "url(#hatch13)"});
+    const name = getAdjective(Names.getCultureShort(cells.culture[startCell])) + " 海啸";
+    pack.zones.push({i: pack.zones.length, name, type: "海啸", cells: cellsArray, color: "url(#hatch13)"});
   }
 
   return {generate};

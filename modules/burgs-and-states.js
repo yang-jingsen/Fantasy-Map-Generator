@@ -496,7 +496,7 @@ window.BurgsAndStates = (() => {
         War: 6,
         Conflict: 2,
         Campaign: 4,
-        Invasion: 2,
+        "入侵": 2,
         Rebellion: 2,
         Conquest: 2,
         Intervention: 1,

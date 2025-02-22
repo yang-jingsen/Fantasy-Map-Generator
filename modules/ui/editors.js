@@ -110,6 +110,24 @@ function sortLines(headerElement) {
   applySorting(headers);
 }
 
+// function applySorting(headers) {
+//   const header = headers.querySelector("div[class*='icon-sort']");
+//   if (!header) return;
+//   const sortby = header.dataset.sortby;
+//   const name = header.classList.contains("alphabetically");
+//   const desc = header.className.includes("-down") ? -1 : 1;
+//   const list = headers.nextElementSibling;
+//   const lines = Array.from(list.children);
+//
+//   lines
+//     .sort((a, b) => {
+//       const an = name ? a.dataset[sortby] : +a.dataset[sortby];
+//       const bn = name ? b.dataset[sortby] : +b.dataset[sortby];
+//       return (an > bn ? 1 : an < bn ? -1 : 0) * desc;
+//     })
+//     .forEach(line => list.appendChild(line));
+// }
+
 function applySorting(headers) {
   const header = headers.querySelector("div[class*='icon-sort']");
   if (!header) return;
@@ -119,14 +137,20 @@ function applySorting(headers) {
   const list = headers.nextElementSibling;
   const lines = Array.from(list.children);
 
-  lines
-    .sort((a, b) => {
-      const an = name ? a.dataset[sortby] : +a.dataset[sortby];
-      const bn = name ? b.dataset[sortby] : +b.dataset[sortby];
-      return (an > bn ? 1 : an < bn ? -1 : 0) * desc;
-    })
-    .forEach(line => list.appendChild(line));
+  lines.sort((a, b) => {
+    let an, bn;
+    if (name) {
+      // 使用 tiny-pinyin 将中文转换为拼音进行比较
+      an = Pinyin.convertToPinyin(a.dataset[sortby], '', true);
+      bn = Pinyin.convertToPinyin(b.dataset[sortby], '', true);
+    } else {
+      an = +a.dataset[sortby];
+      bn = +b.dataset[sortby];
+    }
+    return (an > bn ? 1 : an < bn ? -1 : 0) * desc;
+  }).forEach(line => list.appendChild(line));
 }
+
 
 function addBurg(point) {
   const {cells, states} = pack;

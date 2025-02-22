@@ -25,14 +25,14 @@ export function open() {
 function insertEditorHtml() {
   const editorHtml = /* html */ `<div id="culturesEditor" class="dialog stable">
     <div id="culturesHeader" class="header" style="grid-template-columns: 10em 7em 9em 4em 8em 5em 7em 8em">
-      <div data-tip="Click to sort by culture name" class="sortable alphabetically" data-sortby="name">Culture&nbsp;</div>
-      <div data-tip="Click to sort by type" class="sortable alphabetically" data-sortby="type">Type&nbsp;</div>
-      <div data-tip="Click to sort by culture namesbase" class="sortable" data-sortby="base">Namesbase&nbsp;</div>
-      <div data-tip="Click to sort by culture cells count" class="sortable hide" data-sortby="cells">Cells&nbsp;</div>
-      <div data-tip="Click to sort by expansionism" class="sortable hide" data-sortby="expansionism">Expansion&nbsp;</div>
-      <div data-tip="Click to sort by culture area" class="sortable hide" data-sortby="area">Area&nbsp;</div>
-      <div data-tip="Click to sort by culture population" class="sortable hide icon-sort-number-down" data-sortby="population">Population&nbsp;</div>
-      <div data-tip="Click to sort by culture emblems shape" class="sortable alphabetically hide" data-sortby="emblems">Emblems&nbsp;</div>
+      <div data-tip="Click to sort by culture name" class="sortable alphabetically" data-sortby="name">文化<br/>Culture&nbsp;</div>
+      <div data-tip="Click to sort by type" class="sortable alphabetically" data-sortby="type">类型<br/>Type&nbsp;</div>
+      <div data-tip="Click to sort by culture namesbase" class="sortable" data-sortby="base">名称库<br/>Namesbase&nbsp;</div>
+      <div data-tip="Click to sort by culture cells count" class="sortable hide" data-sortby="cells">单元格<br/>Cells&nbsp;</div>
+      <div data-tip="Click to sort by expansionism" class="sortable hide" data-sortby="expansionism">扩张<br/>Expansion&nbsp;</div>
+      <div data-tip="Click to sort by culture area" class="sortable hide" data-sortby="area">地区<br/>Area&nbsp;</div>
+      <div data-tip="Click to sort by culture population" class="sortable hide icon-sort-number-down" data-sortby="population">人口<br/>Population&nbsp;</div>
+      <div data-tip="Click to sort by culture emblems shape" class="sortable alphabetically hide" data-sortby="emblems">徽标<br/>Emblems&nbsp;</div>
     </div>
     <div id="culturesBody" class="table" data-type="absolute"></div>
 

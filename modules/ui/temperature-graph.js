@@ -111,7 +111,7 @@ function showBurgTemperatureGraph(id) {
   drawGraph();
 
   $("#alert").dialog({
-    title: b.name + "平均温度",
+    title: b.name + " 平均温度",
     position: {my: "center", at: "center", of: "svg"}
   });
 

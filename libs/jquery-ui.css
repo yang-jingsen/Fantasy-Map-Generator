@@ -328,10 +328,10 @@ body .ui-dialog {
 }
 
 .ui-dialog .ui-dialog-titlebar button {
-  padding: 3px;
+  padding: 0px;
   margin-left: 5px;
-  width: 19px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
   color: #ffffff;
   background: none;
   font-size: 0.8em;

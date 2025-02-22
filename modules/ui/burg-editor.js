@@ -76,7 +76,7 @@ function editBurg(id) {
     const temperature = grid.cells.temp[pack.cells.g[b.cell]];
     byId("burgTemperature").innerHTML = convertTemperature(temperature);
     byId("burgTemperatureLikeIn").dataset.tip =
-      "Average yearly temperature is like in " + getTemperatureLikeness(temperature);
+      "年平均气温相似的城市：" + getTemperatureLikeness(temperature);
     byId("burgElevation").innerHTML = getHeight(pack.cells.h[b.cell]);
 
     // toggle features
@@ -532,42 +532,42 @@ function editBurg(id) {
 
 // in °C, array from -1 °C; source: https://en.wikipedia.org/wiki/List_of_cities_by_average_temperature
 const meanTempCityMap = {
-  "-5": "Snag (Yukon)",
-  "-4": "Yellowknife (Canada)",
-  "-3": "Okhotsk (Russia)",
-  "-2": "Fairbanks (Alaska)",
-  "-1": "Nuuk (Greenland)",
-  0: "Murmansk (Russia)",
-  1: "Arkhangelsk (Russia)",
-  2: "Anchorage (Alaska)",
-  3: "Tromsø (Norway)",
-  4: "Reykjavik (Iceland)",
-  5: "Harbin (China)",
-  6: "Stockholm (Sweden)",
-  7: "Montreal (Canada)",
-  8: "Prague (Czechia)",
-  9: "Copenhagen (Denmark)",
-  10: "London (England)",
-  11: "Antwerp (Belgium)",
-  12: "Paris (France)",
-  13: "Milan (Italy)",
-  14: "Washington (D.C.)",
-  15: "Rome (Italy)",
-  16: "Dubrovnik (Croatia)",
-  17: "Lisbon (Portugal)",
-  18: "Barcelona (Spain)",
-  19: "Marrakesh (Morocco)",
-  20: "Alexandria (Egypt)",
-  21: "Tegucigalpa (Honduras)",
-  22: "Guangzhou (China)",
-  23: "Rio de Janeiro (Brazil)",
-  24: "Dakar (Senegal)",
-  25: "Miami (USA)",
-  26: "Jakarta (Indonesia)",
-  27: "Mogadishu (Somalia)",
-  28: "Bangkok (Thailand)",
-  29: "Niamey (Niger)",
-  30: "Khartoum (Sudan)"
+  "-5": "斯纳格 (加拿大)",
+  "-4": "耶洛奈夫 (加拿大)",
+  "-3": "鄂霍次克 (俄罗斯)",
+  "-2": "费尔班克斯 (美国)",
+  "-1": "努克 (格陵兰)",
+  0: "摩尔曼斯克 (俄罗斯)",
+  1: "阿尔汉格尔斯克 (俄罗斯)",
+  2: "安克雷奇 (美国)",
+  3: "特罗姆瑟 (挪威)",
+  4: "雷克雅未克 (冰岛)",
+  5: "哈尔滨",
+  6: "斯德哥尔摩 (瑞典)",
+  7: "乌鲁木齐；蒙特利尔 (加拿大)",
+  8: "布拉格 (捷克)",
+  9: "银川；哥本哈根 (丹麦)",
+  10: "伦敦 (英国)",
+  11: "安特卫普 (比利时)",
+  12: "巴黎 (法国)",
+  13: "北京；米兰 (意大利)",
+  14: "西安；华盛顿 (美国)",
+  15: "罗马 (意大利)",
+  16: "昆明；杜布罗夫尼克 (克罗地亚)",
+  17: "上海；里斯本 (葡萄牙)",
+  18: "长沙；巴塞罗那 (西班牙)",
+  19: "重庆；马拉喀什 (摩洛哥)",
+  20: "亚历山大 (埃及)",
+  21: "特古西加尔巴 (洪都拉斯)",
+  22: "广州",
+  23: "深圳；Rio de Janeiro (Brazil)",
+  24: "达喀尔 (塞内加尔)",
+  25: "迈阿密 (美国)",
+  26: "雅加达 (印度尼西亚)",
+  27: "摩加迪沙 (索马里)",
+  28: "曼谷 (泰国)",
+  29: "尼亚美 (尼日尔)",
+  30: "喀土穆 (苏丹)"
 };
 
 function getTemperatureLikeness(temperature) {

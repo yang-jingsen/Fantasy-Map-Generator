@@ -61,7 +61,7 @@ function editDiplomacy() {
   modules.editDiplomacy = true;
 
   $("#diplomacyEditor").dialog({
-    title: "Diplomacy Editor",
+    title: "外交编辑器 Diplomacy Editor",
     resizable: false,
     width: fitContent(),
     close: closeDiplomacyEditor,

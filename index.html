@@ -827,7 +827,7 @@
 
                 <tbody id="styleGroup">
                 <tr data-tip="选择元素分组<br/>Select element group">
-                    <td><b>分组<br/>Group</b></td>
+                    <td style="color: #b38c00;"><b>分组</b><br/>Group</td>
                     <td>
                         <select id="styleGroupSelect"></select>
                     </td>
@@ -845,28 +845,28 @@
                 </tr>
 
                 <tr data-tip="梯田力度。设为 0 则关闭<br/>Terracing power. Set to 0 to toggle off">
-                    <td>梯田<br/>Terracing</td>
+                    <td><b>梯田</b><br/>Terracing</td>
                     <td>
                         <slider-input id="styleHeightmapTerracing" min="0" max="20" step="1"></slider-input>
                     </td>
                 </tr>
 
                 <tr data-tip="图层衰减率。增加该值以提高性能<br/>Layers reduction rate. Increase to improve performance">
-                    <td>图层衰减<br/>Reduce layers</td>
+                    <td><b>图层衰减</b><br/>Reduce layers</td>
                     <td>
                         <slider-input id="styleHeightmapSkip" min="0" max="10" step="1"></slider-input>
                     </td>
                 </tr>
 
                 <tr data-tip="线条简化率。增加该值可稍微提高性能<br/>Line simplification rate. Increase to slightly improve performance">
-                    <td>简化线条<br/>Simplify line</td>
+                    <td><b>简化线条</b><br/>Simplify line</td>
                     <td>
                         <slider-input id="styleHeightmapSimplification" min="0" max="10" step="1"></slider-input>
                     </td>
                 </tr>
 
                 <tr data-tip="选择线条插值类型<br/>Select line interpolation type">
-                    <td>线条样式<br/>Line style</td>
+                    <td><b>线条样式</b><br/>Line style</td>
                     <td>
                         <select id="styleHeightmapCurve">
                             <option value="curveBasisClosed" selected>Curved</option>
@@ -877,7 +877,7 @@
                 </tr>
 
                 <tr data-tip="选择元素的配色方案<br/>Select color scheme for the element">
-                    <td>配色方案<br/>Color scheme</td>
+                    <td><b>配色方案</b><br/>Color scheme</td>
                     <td>
                         <select id="styleHeightmapScheme" style="width: 86%"></select>
                         <button
@@ -892,7 +892,7 @@
 
                 <tbody id="styleOpacity" style="display: none">
                 <tr data-tip="设置不透明度。0：完全透明，1：完全不透明<br/>Set opacity. 0: transparent, 1: solid">
-                    <td>不透明度<br/>Opacity</td>
+                    <td><b>不透明度</b><br/>Opacity</td>
                     <td>
                         <slider-input id="styleOpacityInput" min="0" max="1" step="0.01"></slider-input>
                     </td>
@@ -901,14 +901,14 @@
 
                 <tbody id="styleLegend">
                 <tr data-tip="设置每列最大项目数量<br/>Set maximum number of items in one column">
-                    <td>列项目数量<br/>Column items</td>
+                    <td><b>列项目数量</b><br/>Column items</td>
                     <td>
                         <slider-input id="styleLegendColItems" min="1" max="30" step="1"></slider-input>
                     </td>
                 </tr>
 
                 <tr data-tip="设置背景颜色<br/>Set background color">
-                    <td>背景颜色<br/>Background</td>
+                    <td><b>背景颜色</b><br/>Background</td>
                     <td>
                         <input id="styleLegendBack" type="color" value="#ffffff"/>
                         <output id="styleLegendBackOutput">#ffffff</output>
@@ -916,7 +916,7 @@
                 </tr>
 
                 <tr data-tip="设置背景不透明度<br/>Set background opacity">
-                    <td>不透明度<br/>Opacity</td>
+                    <td><b>不透明度</b><br/>Opacity</td>
                     <td>
                         <slider-input id="styleLegendOpacity" min="0" max="1" step=".01"></slider-input>
                     </td>
@@ -925,7 +925,7 @@
 
                 <tbody id="stylePopulation">
                 <tr data-tip="设置乡村人口条形颜色<br/>Set bar color for rural population">
-                    <td>乡村颜色<br/>Rural color</td>
+                    <td><b>乡村颜色</b><br/>Rural color</td>
                     <td>
                         <input id="stylePopulationRuralStrokeInput" type="color" value="#0000ff"/>
                         <output id="stylePopulationRuralStrokeOutput">#0000ff</output>
@@ -933,7 +933,7 @@
                 </tr>
 
                 <tr data-tip="设置城市人口条形颜色<br/>Set bar color for urban population">
-                    <td>城市颜色<br/>Urban color</td>
+                    <td><b>城市颜色</b><br/>Urban color</td>
                     <td>
                         <input id="stylePopulationUrbanStrokeInput" type="color" value="#ff0000"/>
                         <output id="stylePopulationUrbanStrokeOutput">#ff0000</output>
@@ -942,8 +942,8 @@
                 </tbody>
 
                 <tbody id="styleTexture">
-                <tr data-tip="Select texture image. Big textures can highly affect performance">
-                    <td>Image</td>
+                <tr data-tip="选择纹理图片。较大的纹理会严重影响性能<br/>Select texture image. Big textures can highly affect performance">
+                    <td><b>图像</b>Image</td>
                     <td>
                         <select id="styleTextureInput" style="width: 86%">
                             <option value="">无纹理 No texture</option>
@@ -986,7 +986,7 @@
                 </tr>
 
                 <tr data-tip="沿轴平移纹理（像素）<br/>Shift the texture by axes">
-                    <td>沿轴平移<br/>Shift by axes</td>
+                    <td><b>沿轴平移</b><br/>Shift by axes</td>
                     <td>
                         <input id="styleTextureShiftX" type="number" value="0"
                                data-tip="沿 x 轴平移纹理（像素）<br/>Shift texture by x axis in pixels"/>
@@ -998,7 +998,7 @@
 
                 <tbody id="styleVignette">
                 <tr data-tip="选择预设晕影<br/>Select precreated vignette">
-                    <td>预设<br/>Preset</td>
+                    <td><b>预设</b><br/>Preset</td>
                     <td>
                         <select id="styleVignettePreset"></select>
                     </td>
@@ -1006,7 +1006,7 @@
 
 
                 <tr data-tip="Vignette rectangle position (in percents)">
-                    <td>位置<br/>Position</td>
+                    <td><b>位置</b><br/>Position</td>
                     <td style="display: flex; flex-direction: column; gap: 2px">
                         <div>
                             <span>x </span>
@@ -1026,7 +1026,7 @@
                 </tr>
 
                 <tr data-tip="设置渐晕的 X 和 Y 半径（单位：百分比）<br/>Set vignette X and Y radius (in percents)">
-                    <td>半径<br/>Radius</td>
+                    <td><b>半径</b><br/>Radius</td>
                     <td>
                         <span>x </span>
                         <input id="styleVignetteRx" type="number" min="0" max="50" style="width: 5em"/>
@@ -1045,7 +1045,7 @@
 
                 <tbody id="styleOcean">
                 <tr data-tip="选择海洋图案<br/>Select ocean pattern">
-                    <td>图案<br/>Pattern</td>
+                    <td><b>图案</b><br/>Pattern</td>
                     <td>
                         <select id="styleOceanPattern">
                             <option value="">无图案 No pattern</option>
@@ -1061,14 +1061,14 @@
                 </tr>
 
                 <tr data-tip="设置海洋图案的不透明度<br/>Set ocean pattern opacity">
-                    <td>图案不透明度<br/>Pattern opacity</td>
+                    <td><b>图案不透明度</b><br/>Pattern opacity</td>
                     <td>
                         <slider-input id="styleOceanPatternOpacity" min="0" max="1" step=".01"></slider-input>
                     </td>
                 </tr>
 
                 <tr data-tip="定义海岸轮廓等高线方案<br/>Define the coast outline contours scheme">
-                    <td>海洋图层<br/>Ocean layers</td>
+                    <td><b>海洋图层</b><br/>Ocean layers</td>
                     <td>
                         <select id="outlineLayers">
                             <option value="none">无轮廓 No outline</option>
@@ -1083,7 +1083,7 @@
                 </tr>
 
                 <tr data-tip="设置海洋颜色<br/>Set ocean color">
-                    <td>颜色<br/>Color</td>
+                    <td><b>颜色</b><br/>Color</td>
                     <td>
                         <input id="styleOceanFill" type="color" value="#466eab"/>
                         <output id="styleOceanFillOutput">#466eab</output>
@@ -1093,7 +1093,7 @@
 
                 <tbody id="styleGrid">
                 <tr data-tip="选择网格叠加类型<br/>Select grid overlay type">
-                    <td>类型<br/>Type</td>
+                    <td><b>类型</b><br/>Type</td>
                     <td>
                         <select id="styleGridType">
                             <option value="pointyHex">六边形网格（尖角） (Hex grid, pointy)</option>
@@ -1111,7 +1111,7 @@
                 </tr>
 
                 <tr data-tip="设置网格单元比例因子<br/>Set grid cells scale multiplier">
-                    <td>比例<br/>Scale</td>
+                    <td><b>比例</b><br/>Scale</td>
                     <td>
                         <input id="styleGridScale" type="number" min=".1" max="10" step=".01"/>
                         <output
@@ -1131,7 +1131,7 @@
                 </tr>
 
                 <tr data-tip="沿轴平移元素<br/>Shift the element by axes">
-                    <td>沿轴平移<br/>Shift by axes</td>
+                    <td><b>沿轴平移</b><br/>Shift by axes</td>
                     <td>
                         <input id="styleGridShiftX" type="number"
                                data-tip="沿 x 轴平移（像素）<br/>Shift by x axis in pixels"/>
@@ -1143,14 +1143,14 @@
 
                 <tbody id="styleCompass">
                 <tr data-tip="设置风向玫瑰尺寸<br/>Set wind (compass) rose size">
-                    <td>尺寸<br/>Size</td>
+                    <td><b>尺寸</b><br/>Size</td>
                     <td>
                         <slider-input id="styleCompassSizeInput" min=".02" max="1" step=".01"></slider-input>
                     </td>
                 </tr>
 
                 <tr data-tip="沿轴平移风向玫瑰<br/>Shift wind (compass) rose by axes">
-                    <td>沿轴平移<br/>Shift by axes</td>
+                    <td><b>沿轴平移</b><br/>Shift by axes</td>
                     <td>
                         <input id="styleCompassShiftX" type="number" value="80" data-tip="Shift by x axis in pixels"/>
                         <input id="styleCompassShiftY" type="number" value="80" data-tip="Shift by y axis in pixels"/>
@@ -1160,7 +1160,7 @@
 
                 <tbody id="styleRelief">
                 <tr data-tip="选择地形符号组。所有地形符号将重新生成<br/>Select set of relief icons. All relief icons will be regenerated">
-                    <td>样式<br/>Style</td>
+                    <td><b>样式</b><br/>Style</td>
                     <td>
                         <select id="styleReliefSet">
                             <option value="simple" selected>简约 Simple</option>
@@ -1171,14 +1171,14 @@
                 </tr>
 
                 <tr data-tip="定义地形符号的尺寸。所有地形符号将重新生成<br/>Define the size of relief icons. All relief icons will be regenerated">
-                    <td>尺寸<br/>Size</td>
+                    <td><b>尺寸</b><br/>Size</td>
                     <td>
                         <slider-input id="styleReliefSize" min=".2" max="4" step=".01"></slider-input>
                     </td>
                 </tr>
 
                 <tr data-tip="定义地形符号的密度。所有地形符号将重新生成，可能会显著影响性能！<br/>Define the density of relief icons. All relief icons will be regenerated. Highly affects performance!">
-                    <td>密度<br/>Density</td>
+                    <td><b>密度</b><br/>Density</td>
                     <td>
                         <slider-input id="styleReliefDensity" min=".3" max=".8" step=".01"></slider-input>
                     </td>
@@ -1188,7 +1188,7 @@
 
                 <tbody id="styleFill">
                 <tr data-tip="Set fill color">
-                    <td>填充颜色<br/>Fill color</td>
+                    <td><b>填充颜色</b><br/>Fill color</td>
                     <td>
                         <input id="styleFillInput" type="color" value="#5E4FA2"/>
                         <output id="styleFillOutput">#5E4FA2</output>
@@ -1198,7 +1198,7 @@
 
                 <tbody id="styleStroke">
                 <tr data-tip="设置描边颜色<br/>Set stroke color">
-                    <td>描边颜色<br/>Stroke color</td>
+                    <td><b>描边颜色</b><br/>Stroke color</td>
                     <td>
                         <input id="styleStrokeInput" type="color" value="#5E4FA2"/>
                         <output id="styleStrokeOutput">#5E4FA2</output>
@@ -1208,7 +1208,7 @@
 
                 <tbody id="styleStrokeWidth">
                 <tr data-tip="设置描边宽度<br/>Set stroke width">
-                    <td>描边宽度<br/>Stroke width</td>
+                    <td><b>描边宽度</b><br/>Stroke width</td>
                     <td>
                         <slider-input id="styleStrokeWidthInput" min="0" max="5" step=".01"></slider-input>
                     </td>
@@ -1225,71 +1225,73 @@
                 </tbody>
 
                 <tbody id="styleStrokeDash">
-                <tr data-tip="Set stroke dash array (e.g. 5 2) and linecap">
-                    <td>Stroke dash</td>
-                    <td>
-                        <input id="styleStrokeDasharrayInput" type="text" value="1 2" style="width: 26%"/>
-                        <select id="styleStrokeLinecapInput" style="width: 32%">
-                            <option value="inherit" selected>Inherit</option>
-                            <option value="butt">Butt</option>
-                            <option value="round">Round</option>
-                            <option value="square">Square</option>
-                        </select>
-                    </td>
-                </tr>
+                    <tr data-tip="设置描边虚线数组（例如 5 2）和线帽<br/>Set stroke dash array (e.g. 5 2) and linecap">
+                        <td>虚线<br/>Stroke dash</td>
+                        <td>
+                            <input id="styleStrokeDasharrayInput" type="text" value="1 2" style="width: 26%"/>
+                            <select id="styleStrokeLinecapInput" style="width: 32%">
+                                <option value="inherit" selected>继承 Inherit</option>
+                                <option value="butt">平头 Butt</option>
+                                <option value="round">圆头 Round</option>
+                                <option value="square">方头 Square</option>
+                            </select>
+                        </td>
+                    </tr>
                 </tbody>
 
                 <tbody id="styleShadow">
-                <tr data-tip="Set text shadow">
-                    <td>Text shadow</td>
-                    <td>
-                        <input id="styleShadowInput" type="text" value="0 0 4px white"/>
-                    </td>
-                </tr>
+                    <tr data-tip="设置文字阴影<br/>Set text shadow">
+                        <td>文字阴影<br/>Text shadow</td>
+                        <td>
+                            <input id="styleShadowInput" type="text" value="0 0 4px white"/>
+                        </td>
+                    </tr>
                 </tbody>
 
                 <tbody id="styleFont">
-                <tr data-tip="Select font">
-                    <td>Font</td>
-                    <td>
-                        <select id="styleSelectFont" style="width: 85%"></select>
-                        <button id="styleFontAdd" data-tip="Add a font" class="icon-plus sideButton"></button>
-                    </td>
-                </tr>
+                    <tr data-tip="选择字体<br/>Select font">
+                        <td>字体<br/>Font</td>
+                        <td>
+                            <select id="styleSelectFont" style="width: 85%"></select>
+                            <button id="styleFontAdd" data-tip="添加字体<br/>Add a font" class="icon-plus sideButton"></button>
+                        </td>
+                    </tr>
                 </tbody>
 
+
                 <tbody id="styleSize">
-                <tr data-tip="Set font size">
-                    <td>Font size</td>
-                    <td>
-                        <button id="styleFontPlus" data-tip="Increase font" class="whiteButton">+</button>
-                        <button id="styleFontMinus" data-tip="Descrease font" class="whiteButton">-</button>
-                        <input id="styleFontSize" type="number" min=".5" max="100" step=".1"/>
-                    </td>
-                </tr>
+                    <tr data-tip="设置字体大小<br/>Set font size">
+                        <td>字体大小<br/>Font size</td>
+                        <td>
+                            <button id="styleFontPlus" data-tip="增大字体<br/>Increase font" class="whiteButton">+</button>
+                            <button id="styleFontMinus" data-tip="减小字体<br/>Decrease font" class="whiteButton">-</button>
+                            <input id="styleFontSize" type="number" min=".5" max="100" step=".1"/>
+                        </td>
+                    </tr>
                 </tbody>
 
                 <tbody id="styleRadius">
-                <tr data-tip="Set icon size">
-                    <td>Radius</td>
-                    <td>
-                        <button id="styleRadiusPlus" data-tip="Multiply radius by 1.1" class="whiteButton">+</button>
-                        <button id="styleRadiusMinus" data-tip="Multiply radius by 1.1" class="whiteButton">-</button>
-                        <input id="styleRadiusInput" type="number" min=".2" max="10" step=".02" value="1"/>
-                    </td>
-                </tr>
+                    <tr data-tip="设置图标半径<br/>Set icon size">
+                        <td>半径<br/>Radius</td>
+                        <td>
+                            <button id="styleRadiusPlus" data-tip="将半径乘以 1.1<br/>Multiply radius by 1.1" class="whiteButton">+</button>
+                            <button id="styleRadiusMinus" data-tip="将半径除以 1.1<br/>Divide radius by 1.1" class="whiteButton">-</button>
+                            <input id="styleRadiusInput" type="number" min=".2" max="10" step=".02" value="1"/>
+                        </td>
+                    </tr>
                 </tbody>
 
                 <tbody id="styleIconSize">
-                <tr data-tip="Set icon size">
-                    <td>Size</td>
-                    <td>
-                        <button id="styleIconSizePlus" data-tip="Multiply size by 1.1" class="whiteButton">+</button>
-                        <button id="styleIconSizeMinus" data-tip="Multiply size by 1.1" class="whiteButton">-</button>
-                        <input id="styleIconSizeInput" type="number" min=".2" max="10" step=".02" value="1"/>
-                    </td>
-                </tr>
+                    <tr data-tip="设置图标尺寸<br/>Set icon size">
+                        <td>尺寸<br/>Size</td>
+                        <td>
+                            <button id="styleIconSizePlus" data-tip="将尺寸乘以 1.1<br/>Multiply size by 1.1" class="whiteButton">+</button>
+                            <button id="styleIconSizeMinus" data-tip="将尺寸除以 1.1<br/>Divide size by 1.1" class="whiteButton">-</button>
+                            <input id="styleIconSizeInput" type="number" min=".2" max="10" step=".02" value="1"/>
+                        </td>
+                    </tr>
                 </tbody>
+
 
                 <tbody id="styleCoastline">
                 <tr data-tip="Allow system to apply filter automatically based on zoom level">

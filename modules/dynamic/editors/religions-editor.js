@@ -221,7 +221,7 @@ function religionsEditorAddLines() {
   const validReligions = pack.religions.filter(r => r.i && !r.removed);
   byId("religionsOrganized").innerHTML = validReligions.filter(r => r.type === "制度性宗教").length;
   byId("religionsHeresies").innerHTML = validReligions.filter(r => r.type === "Heresy").length;
-  byId("religionsCults").innerHTML = validReligions.filter(r => r.type === "Cult").length;
+  byId("religionsCults").innerHTML = validReligions.filter(r => r.type === "邪教").length;
   byId("religionsFolk").innerHTML = validReligions.filter(r => r.type === "民间信仰").length;
   byId("religionsFooterArea").innerHTML = si(totalArea) + unit;
   byId("religionsFooterPopulation").innerHTML = si(totalPopulation);
@@ -258,7 +258,7 @@ function religionsEditorAddLines() {
 
 function getTypeOptions(type) {
   let options = "";
-  const types = ["民间信仰", "制度性宗教", "Cult", "Heresy"];
+  const types = ["民间信仰", "制度性宗教", "邪教", "Heresy"];
   types.forEach(t => (options += `<option ${type === t ? "selected" : ""} value="${t}">${t}</option>`));
   return options;
 }
@@ -619,7 +619,7 @@ async function showHierarchy() {
   const getShape = ({type}) => {
     if (type === "民间信仰") return "circle";
     if (type === "制度性宗教") return "square";
-    if (type === "Cult") return "hexagon";
+    if (type === "邪教") return "hexagon";
     if (type === "Heresy") return "diamond";
   };
 

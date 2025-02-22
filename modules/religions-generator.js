@@ -374,8 +374,8 @@ window.Religions = (function () {
       "泛神论": 2,
       "无神论": 2
     },
-    Cult: {
-      Cult: 5,
+    "邪教": {
+      "邪教": 5,
       "黑暗邪教": 5,
       Sect: 1
     },
@@ -400,7 +400,7 @@ window.Religions = (function () {
       "Culture + type": 4
     },
 
-    Cult: {
+    "邪教": {
       "Burg + ian + type": 2,
       "Random + ian + type": 1,
       "Type + of the + meaning": 2
@@ -427,8 +427,8 @@ window.Religions = (function () {
     "泛神论": {Religion: 1, Faith: 1},
     "无神论": {Beliefs: 3, Spirits: 1},
 
-    Cult: {Cult: 4, "邪教派系": 2, Arcanum: 1, Order: 1, Worship: 1},
-    "黑暗邪教": {Cult: 2, Blasphemy: 1, Circle: 1, Coven: 1, Idols: 1, Occultism: 1},
+    "邪教": {"邪教": 4, "邪教派系": 2, Arcanum: 1, Order: 1, Worship: 1},
+    "黑暗邪教": {"邪教": 2, Blasphemy: 1, Circle: 1, Coven: 1, Idols: 1, Occultism: 1},
     Sect: {Sect: 3, Society: 1},
 
     Heresy: {
@@ -448,7 +448,7 @@ window.Religions = (function () {
   const expansionismMap = {
     "民间信仰": () => 0,
     "制度性宗教": () => gauss(5, 3, 0, 10, 1),
-    Cult: () => gauss(0.5, 0.5, 0, 5, 1),
+    "邪教": () => gauss(0.5, 0.5, 0, 5, 1),
     Heresy: () => gauss(1, 0.5, 0, 5, 1)
   };
 
@@ -493,7 +493,7 @@ window.Religions = (function () {
 
     const getType = index => {
       if (index < organizedCount) return "制度性宗教";
-      if (index < organizedCount + cultsCount) return "Cult";
+      if (index < organizedCount + cultsCount) return "邪教";
       return "Heresy";
     };
 
@@ -564,7 +564,7 @@ window.Religions = (function () {
 
       if (type === "民间信仰") return culture.color;
       if (type === "Heresy") return getMixedColor(culture.color, 0.35, 0.2);
-      if (type === "Cult") return getMixedColor(culture.color, 0.5, 0);
+      if (type === "邪教") return getMixedColor(culture.color, 0.5, 0);
       return getMixedColor(culture.color, 0.25, 0.4);
     }
   }
@@ -647,7 +647,7 @@ window.Religions = (function () {
   function defineOrigins(religionIds, indexedReligions) {
     const religionOriginsParamsMap = {
       "制度性宗教": {clusterSize: 100, maxReligions: 2},
-      Cult: {clusterSize: 50, maxReligions: 3},
+      "邪教": {clusterSize: 50, maxReligions: 3},
       Heresy: {clusterSize: 50, maxReligions: 4}
     };
 
@@ -810,8 +810,8 @@ window.Religions = (function () {
     const type = missingFolk
       ? "民间信仰"
       : religions[religionId].type === "制度性宗教"
-      ? rw({"制度性宗教": 4, Cult: 1, Heresy: 2})
-      : rw({"制度性宗教": 5, Cult: 2});
+      ? rw({"制度性宗教": 4, "邪教": 1, Heresy: 2})
+      : rw({"制度性宗教": 5, "邪教": 2});
     const form = rw(forms[type]);
     const deity =
       type === "Heresy"

@@ -13,7 +13,7 @@ export function open() {
   drawReligionCenters();
 
   $("#religionsEditor").dialog({
-    title: "Religions Editor",
+    title: "宗教编辑器 Religions Editor",
     resizable: false,
     close: closeReligionsEditor,
     position: {my: "right top", at: "right-10 top+10", of: "svg"}
@@ -24,14 +24,14 @@ export function open() {
 function insertEditorHtml() {
   const editorHtml = /* html */ `<div id="religionsEditor" class="dialog stable">
     <div id="religionsHeader" class="header" style="grid-template-columns: 13em 6em 7em 18em 6em 7em 6em 7em">
-      <div data-tip="Click to sort by religion name" class="sortable alphabetically" data-sortby="name">Religion&nbsp;</div>
-      <div data-tip="Click to sort by religion type" class="sortable alphabetically icon-sort-name-down" data-sortby="type">Type&nbsp;</div>
-      <div data-tip="Click to sort by religion form" class="sortable alphabetically" data-sortby="form">Form&nbsp;</div>
-      <div data-tip="Click to sort by supreme deity" class="sortable alphabetically hide" data-sortby="deity">Supreme Deity&nbsp;</div>
-      <div data-tip="Click to sort by religion area" class="sortable hide" data-sortby="area">Area&nbsp;</div>
-      <div data-tip="Click to sort by number of believers (religion area population)" class="sortable hide" data-sortby="population">Believers&nbsp;</div>
-      <div data-tip="Click to sort by potential extent type" class="sortable alphabetically hide" data-sortby="expansion">Potential&nbsp;</div>
-      <div data-tip="Click to sort by expansionism" class="sortable hide" data-sortby="expansionism">Expansion&nbsp;</div>
+      <div data-tip="Click to sort by religion name" class="sortable alphabetically" data-sortby="name">宗教<br/>Religion&nbsp;</div>
+      <div data-tip="Click to sort by religion type" class="sortable alphabetically icon-sort-name-down" data-sortby="type">类型<br/>Type&nbsp;</div>
+      <div data-tip="Click to sort by religion form" class="sortable alphabetically" data-sortby="form">形式<br/>Form&nbsp;</div>
+      <div data-tip="Click to sort by supreme deity" class="sortable alphabetically hide" data-sortby="deity">神祇<br/>Supreme Deity&nbsp;</div>
+      <div data-tip="Click to sort by religion area" class="sortable hide" data-sortby="area">面积<br/>Area&nbsp;</div>
+      <div data-tip="Click to sort by number of believers (religion area population)" class="sortable hide" data-sortby="population">信众<br/>Believers&nbsp;</div>
+      <div data-tip="Click to sort by potential extent type" class="sortable alphabetically hide" data-sortby="expansion">潜力<br/>Potential&nbsp;</div>
+      <div data-tip="Click to sort by expansionism" class="sortable hide" data-sortby="expansionism">扩张<br/>Expansion&nbsp;</div>
     </div>
     <div id="religionsBody" class="table" data-type="absolute"></div>
 

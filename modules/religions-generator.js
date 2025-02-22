@@ -359,24 +359,24 @@ window.Religions = (function () {
   };
 
   const forms = {
-    Folk: {
-      Shamanism: 4,
-      Animism: 4,
-      Polytheism: 4,
-      "Ancestor Worship": 2,
-      "Nature Worship": 1,
-      Totemism: 1
+    "民间信仰": {
+      "萨满信仰": 4,
+      "泛灵论": 4,
+      "多神论": 4,
+      "祖先崇拜": 2,
+      "自然崇拜": 1,
+      "图腾崇拜": 1
     },
-    Organized: {
-      Polytheism: 7,
-      Monotheism: 7,
-      Dualism: 3,
-      Pantheism: 2,
-      "Non-theism": 2
+    "制度性宗教": {
+      "多神论": 7,
+      "一神论": 7,
+      "二元神论": 3,
+      "泛神论": 2,
+      "无神论": 2
     },
     Cult: {
       Cult: 5,
-      "Dark Cult": 5,
+      "黑暗邪教": 5,
       Sect: 1
     },
     Heresy: {
@@ -385,11 +385,11 @@ window.Religions = (function () {
   };
 
   const namingMethods = {
-    Folk: {
+    "民间信仰": {
       "Culture + type": 1
     },
 
-    Organized: {
+    "制度性宗教": {
       "Random + type": 3,
       "Random + ism": 1,
       "Supreme + ism": 5,
@@ -415,20 +415,20 @@ window.Religions = (function () {
   };
 
   const types = {
-    Shamanism: {Beliefs: 3, Shamanism: 2, Druidism: 1, Spirits: 1},
-    Animism: {Spirits: 3, Beliefs: 1},
-    Polytheism: {Deities: 3, Faith: 1, Gods: 1, Pantheon: 1},
-    "Ancestor Worship": {Beliefs: 1, Forefathers: 2, Ancestors: 2},
-    "Nature Worship": {Beliefs: 3, Druids: 1},
+    "萨满信仰": {Beliefs: 3, "萨满信仰": 2, Druidism: 1, Spirits: 1},
+    "泛灵论": {Spirits: 3, Beliefs: 1},
+    "多神论": {Deities: 3, Faith: 1, Gods: 1, Pantheon: 1},
+    "祖先崇拜": {Beliefs: 1, Forefathers: 2, Ancestors: 2},
+    "自然崇拜": {Beliefs: 3, Druids: 1},
     Totemism: {Beliefs: 2, Totems: 2, Idols: 1},
 
-    Monotheism: {Religion: 2, Church: 3, Faith: 1},
-    Dualism: {Religion: 3, Faith: 1, Cult: 1},
-    Pantheism: {Religion: 1, Faith: 1},
-    "Non-theism": {Beliefs: 3, Spirits: 1},
+    "一神论": {Religion: 2, Church: 3, Faith: 1},
+    "二元神论": {Religion: 3, Faith: 1, Cult: 1},
+    "泛神论": {Religion: 1, Faith: 1},
+    "无神论": {Beliefs: 3, Spirits: 1},
 
-    Cult: {Cult: 4, Sect: 2, Arcanum: 1, Order: 1, Worship: 1},
-    "Dark Cult": {Cult: 2, Blasphemy: 1, Circle: 1, Coven: 1, Idols: 1, Occultism: 1},
+    Cult: {Cult: 4, "邪教派系": 2, Arcanum: 1, Order: 1, Worship: 1},
+    "黑暗邪教": {Cult: 2, Blasphemy: 1, Circle: 1, Coven: 1, Idols: 1, Occultism: 1},
     Sect: {Sect: 3, Society: 1},
 
     Heresy: {
@@ -446,8 +446,8 @@ window.Religions = (function () {
   };
 
   const expansionismMap = {
-    Folk: () => 0,
-    Organized: () => gauss(5, 3, 0, 10, 1),
+    "民间信仰": () => 0,
+    "制度性宗教": () => gauss(5, 3, 0, 10, 1),
     Cult: () => gauss(0.5, 0.5, 0, 5, 1),
     Heresy: () => gauss(1, 0.5, 0, 5, 1)
   };
@@ -475,12 +475,12 @@ window.Religions = (function () {
   function generateFolkReligions() {
     return pack.cultures
       .filter(c => c.i && !c.removed)
-      .map(culture => ({type: "Folk", form: rw(forms.Folk), culture: culture.i, center: culture.center}));
+      .map(culture => ({type: "民间信仰", form: rw(forms["民间信仰"]), culture: culture.i, center: culture.center}));
   }
 
   function generateOrganizedReligions(desiredReligionNumber, lockedReligions) {
     const cells = pack.cells;
-    const lockedReligionCount = lockedReligions.filter(({type}) => type !== "Folk").length || 0;
+    const lockedReligionCount = lockedReligions.filter(({type}) => type !== "民间信仰").length || 0;
     const requiredReligionsNumber = desiredReligionNumber - lockedReligionCount;
     if (requiredReligionsNumber < 1) return [];
 
@@ -492,7 +492,7 @@ window.Religions = (function () {
     const organizedCount = religionCores.length - cultsCount - heresiesCount;
 
     const getType = index => {
-      if (index < organizedCount) return "Organized";
+      if (index < organizedCount) return "制度性宗教";
       if (index < organizedCount + cultsCount) return "Cult";
       return "Heresy";
     };
@@ -544,7 +544,7 @@ window.Religions = (function () {
 
     const rawReligions = newReligions.map(({type, form, culture: cultureId, center}) => {
       const supreme = getDeityName(cultureId);
-      const deity = form === "Non-theism" || form === "Animism" ? null : supreme;
+      const deity = form === "无神论" || form === "泛灵论" ? null : supreme;
 
       const stateId = cells.state[center];
 
@@ -562,7 +562,7 @@ window.Religions = (function () {
     function getReligionColor(culture, type) {
       if (!culture.i) return getRandomColor();
 
-      if (type === "Folk") return culture.color;
+      if (type === "民间信仰") return culture.color;
       if (type === "Heresy") return getMixedColor(culture.color, 0.35, 0.2);
       if (type === "Cult") return getMixedColor(culture.color, 0.5, 0);
       return getMixedColor(culture.color, 0.25, 0.4);
@@ -593,8 +593,8 @@ window.Religions = (function () {
         progress++;
 
         if (
-          nextReligion.type === "Folk" &&
-          lockedReligions.some(({type, culture}) => type === "Folk" && culture === nextReligion.culture)
+          nextReligion.type === "民间信仰" &&
+          lockedReligions.some(({type, culture}) => type === "民间信仰" && culture === nextReligion.culture)
         )
           continue; // when there is a locked Folk religion for this culture discard duplicate
 
@@ -605,7 +605,7 @@ window.Religions = (function () {
         continue;
       }
 
-      indexedReligions.push({i: index, type: "Folk", culture: 0, name: "Removed religion", removed: true});
+      indexedReligions.push({i: index, type: "民间信仰", culture: 0, name: "Removed religion", removed: true});
     }
     return indexedReligions;
 
@@ -622,21 +622,21 @@ window.Religions = (function () {
 
       const highestLockedIndex = Math.max(...lockedReligions.map(r => r.i));
       const codes = lockedReligions.length > 0 ? lockedReligions.map(r => r.code) : [];
-      const numberLockedFolk = lockedReligions.filter(({type}) => type === "Folk").length;
+      const numberLockedFolk = lockedReligions.filter(({type}) => type === "民间信仰").length;
 
       return {lockedReligionQueue, highestLockedIndex, codes, numberLockedFolk};
     }
 
     // prepend 'Old' to names of folk religions which have organized competitors
     function renameOld({name, type, culture: cultureId}) {
-      if (type !== "Folk") return name;
+      if (type !== "民间信仰") return name;
 
       const haveOrganized =
         namedReligions.some(
-          ({type, culture, expansion}) => culture === cultureId && type === "Organized" && expansion === "culture"
+          ({type, culture, expansion}) => culture === cultureId && type === "制度性宗教" && expansion === "culture"
         ) ||
         lockedReligions.some(
-          ({type, culture, expansion}) => culture === cultureId && type === "Organized" && expansion === "culture"
+          ({type, culture, expansion}) => culture === cultureId && type === "制度性宗教" && expansion === "culture"
         );
       if (haveOrganized && name.slice(0, 3) !== "Old") return `Old ${name}`;
       return name;
@@ -646,16 +646,16 @@ window.Religions = (function () {
   // finally generate and stores origins trees
   function defineOrigins(religionIds, indexedReligions) {
     const religionOriginsParamsMap = {
-      Organized: {clusterSize: 100, maxReligions: 2},
+      "制度性宗教": {clusterSize: 100, maxReligions: 2},
       Cult: {clusterSize: 50, maxReligions: 3},
       Heresy: {clusterSize: 50, maxReligions: 4}
     };
 
     const origins = indexedReligions.map(({i, type, culture: cultureId, expansion, center}) => {
       if (i === 0) return null; // no religion
-      if (type === "Folk") return [0]; // folk religions originate from its parent culture only
+      if (type === "民间信仰") return [0]; // folk religions originate from its parent culture only
 
-      const folkReligion = indexedReligions.find(({culture, type}) => type === "Folk" && culture === cultureId);
+      const folkReligion = indexedReligions.find(({culture, type}) => type === "民间信仰" && culture === cultureId);
       const isFolkBased = folkReligion && cultureId && expansion === "culture" && each(2)(center);
       if (isFolkBased) return [folkReligion.i];
 
@@ -702,7 +702,7 @@ window.Religions = (function () {
     const maxExpansionCost = (cells.i.length / 20) * byId("growthRate").valueAsNumber;
 
     religions
-      .filter(r => r.i && !r.lock && r.type !== "Folk" && !r.removed)
+      .filter(r => r.i && !r.lock && r.type !== "民间信仰" && !r.removed)
       .forEach(r => {
         religionIds[r.center] = r.i;
         queue.push({e: r.center, p: 0, r: r.i, s: cells.state[r.center]}, 0);
@@ -760,7 +760,7 @@ window.Religions = (function () {
     const hasPrior = cells.religion && true;
     const religionIds = new Uint16Array(cells.i.length);
 
-    const folkReligions = religions.filter(religion => religion.type === "Folk" && !religion.removed);
+    const folkReligions = religions.filter(religion => religion.type === "民间信仰" && !religion.removed);
     const cultureToReligionMap = new Map(folkReligions.map(({i, culture}) => [culture, i]));
 
     for (const cellId of cells.i) {
@@ -785,7 +785,7 @@ window.Religions = (function () {
       const firstCell = cells.i.find(i => cells.religion[i] === r.i);
       const cultureHome = pack.cultures[r.culture]?.center;
       if (firstCell) r.center = firstCell; // move center, othervise it's an extinct religion
-      else if (r.type === "Folk" && cultureHome) r.center = cultureHome; // reset extinct culture centers
+      else if (r.type === "民间信仰" && cultureHome) r.center = cultureHome; // reset extinct culture centers
     });
   }
 
@@ -804,19 +804,19 @@ window.Religions = (function () {
     const cultureId = cells.culture[center];
     const missingFolk =
       cultureId !== 0 &&
-      !religions.some(({type, culture, removed}) => type === "Folk" && culture === cultureId && !removed);
+      !religions.some(({type, culture, removed}) => type === "民间信仰" && culture === cultureId && !removed);
     const color = missingFolk ? cultures[cultureId].color : getMixedColor(religions[religionId].color, 0.3, 0);
 
     const type = missingFolk
-      ? "Folk"
-      : religions[religionId].type === "Organized"
-      ? rw({Organized: 4, Cult: 1, Heresy: 2})
-      : rw({Organized: 5, Cult: 2});
+      ? "民间信仰"
+      : religions[religionId].type === "制度性宗教"
+      ? rw({"制度性宗教": 4, Cult: 1, Heresy: 2})
+      : rw({"制度性宗教": 5, Cult: 2});
     const form = rw(forms[type]);
     const deity =
       type === "Heresy"
         ? religions[religionId].deity
-        : form === "Non-theism" || form === "Animism"
+        : form === "无神论" || form === "泛灵论"
         ? null
         : getDeityName(cultureId);
 
@@ -828,7 +828,7 @@ window.Religions = (function () {
       religions.map(r => r.code)
     );
     const influences = getReligionsInRadius(cells.c, center, cells.religion, i, 25, 3, 0);
-    const origins = type === "Folk" ? [0] : influences;
+    const origins = type === "民间信仰" ? [0] : influences;
 
     religions.push({
       i,

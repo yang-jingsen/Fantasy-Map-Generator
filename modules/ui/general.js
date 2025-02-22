@@ -225,7 +225,7 @@ function showMapTooltip(point, e, i, g) {
   } else if (layerIsOn("toggleReligions") && pack.cells.religion[i]) {
     const religion = pack.cells.religion[i];
     const r = pack.religions[religion];
-    const type = r.type === "Cult" || r.type == "Heresy" ? r.type : r.type + " religion";
+    const type = r.type === "邪教" || r.type == "Heresy" ? r.type : r.type + " religion";
     tip(type + ": " + r.name);
     if (byId("religionsEditor")?.offsetParent) highlightEditorLine(religionsEditor, religion);
   } else if (pack.cells.state[i] && (layerIsOn("toggleProvinces") || layerIsOn("toggleStates"))) {

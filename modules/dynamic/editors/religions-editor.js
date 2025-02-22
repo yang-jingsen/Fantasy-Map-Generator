@@ -13,7 +13,7 @@ export function open() {
   drawReligionCenters();
 
   $("#religionsEditor").dialog({
-    title: "宗教编辑器 Religions Editor",
+    title: "Religions Editor",
     resizable: false,
     close: closeReligionsEditor,
     position: {my: "right top", at: "right-10 top+10", of: "svg"}
@@ -37,7 +37,7 @@ function insertEditorHtml() {
 
     <div id="religionsFooter" class="totalLine">
       <div data-tip="Total number of organized religions" style="margin-left: 12px">
-        Organized:&nbsp;<span id="religionsOrganized">0</span>
+        制度性宗教:&nbsp;<span id="religionsOrganized">0</span>
       </div>
       <div data-tip="Total number of heresies" style="margin-left: 12px">
         Heresies:&nbsp;<span id="religionsHeresies">0</span>
@@ -46,7 +46,7 @@ function insertEditorHtml() {
         Cults:&nbsp;<span id="religionsCults">0</span>
       </div>
       <div data-tip="Total number of folk religions" style="margin-left: 12px">
-        Folk:&nbsp;<span id="religionsFolk">0</span>
+        民间信仰:&nbsp;<span id="religionsFolk">0</span>
       </div>
       <div data-tip="Total land area" style="margin-left: 12px">
         Land Area:&nbsp;<span id="religionsFooterArea">0</span>
@@ -219,10 +219,10 @@ function religionsEditorAddLines() {
 
   // update footer
   const validReligions = pack.religions.filter(r => r.i && !r.removed);
-  byId("religionsOrganized").innerHTML = validReligions.filter(r => r.type === "Organized").length;
+  byId("religionsOrganized").innerHTML = validReligions.filter(r => r.type === "制度性宗教").length;
   byId("religionsHeresies").innerHTML = validReligions.filter(r => r.type === "Heresy").length;
   byId("religionsCults").innerHTML = validReligions.filter(r => r.type === "Cult").length;
-  byId("religionsFolk").innerHTML = validReligions.filter(r => r.type === "Folk").length;
+  byId("religionsFolk").innerHTML = validReligions.filter(r => r.type === "民间信仰").length;
   byId("religionsFooterArea").innerHTML = si(totalArea) + unit;
   byId("religionsFooterPopulation").innerHTML = si(totalPopulation);
   byId("religionsFooterArea").dataset.area = totalArea;
@@ -258,13 +258,13 @@ function religionsEditorAddLines() {
 
 function getTypeOptions(type) {
   let options = "";
-  const types = ["Folk", "Organized", "Cult", "Heresy"];
+  const types = ["民间信仰", "制度性宗教", "Cult", "Heresy"];
   types.forEach(t => (options += `<option ${type === t ? "selected" : ""} value="${t}">${t}</option>`));
   return options;
 }
 
 function getExpansionColumns(r) {
-  if (r.type === "Folk") {
+  if (r.type === "民间信仰") {
     const tip =
       "Folk religions are not competitive and do not expand. Initially they cover all cells of their parent culture, but get ousted by organized religions when they expand";
     return /* html */ `
@@ -605,7 +605,7 @@ async function showHierarchy() {
     const getTypeText = () => {
       if (name.includes(type)) return "";
       if (form.includes(type)) return "";
-      if (type === "Folk" || type === "Organized") return `. ${type} religion`;
+      if (type === "民间信仰" || type === "制度性宗教") return `. ${type} religion`;
       return `. ${type}`;
     };
 
@@ -617,8 +617,8 @@ async function showHierarchy() {
   };
 
   const getShape = ({type}) => {
-    if (type === "Folk") return "circle";
-    if (type === "Organized") return "square";
+    if (type === "民间信仰") return "circle";
+    if (type === "制度性宗教") return "square";
     if (type === "Cult") return "hexagon";
     if (type === "Heresy") return "diamond";
   };

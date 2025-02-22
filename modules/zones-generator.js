@@ -141,7 +141,7 @@ window.Zones = (function () {
   function addProselytism(usedCells) {
     const {cells, religions} = pack;
 
-    const organizedReligions = religions.filter(r => r.i && !r.removed && r.type === "Organized");
+    const organizedReligions = religions.filter(r => r.i && !r.removed && r.type === "制度性宗教");
     const religion = ra(organizedReligions);
     if (!religion) return;
 

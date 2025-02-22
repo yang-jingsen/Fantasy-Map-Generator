@@ -1,7 +1,7 @@
 :root {
-  --monospace: Consolas, monospace;
-  --serif: Georgia, serif;
-  --sans-serif: Helvetica, Arial, sans-serif;
+  --monospace: Consolas, "微软雅黑", monospace;
+  --serif: Georgia, "微软雅黑", serif;
+  --sans-serif: Helvetica, Arial, "微软雅黑", sans-serif;
 }
 
 /* hide Google translate header */

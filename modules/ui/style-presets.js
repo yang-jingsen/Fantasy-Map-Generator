@@ -2,6 +2,7 @@
 "use strict";
 
 const systemPresets = [
+  "chinese-default",
   "default",
   "ancient",
   "gloom",
@@ -29,7 +30,7 @@ const customPresetPrefix = "fmgStyle_";
 }
 
 async function applyStyleOnLoad() {
-  const desiredPreset = localStorage.getItem("presetStyle") || "default";
+  const desiredPreset = localStorage.getItem("presetStyle") || "chinese-default";
   const styleData = await getStylePreset(desiredPreset);
   const [appliedPreset, style] = styleData;
 

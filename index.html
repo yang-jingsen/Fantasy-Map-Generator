@@ -827,7 +827,7 @@
 
                 <tbody id="styleGroup">
                 <tr data-tip="选择元素分组<br/>Select element group">
-                    <td style="color: #b38c00;"><b>分组</b><br/>Group</td>
+                    <td style="color: #8c0004;"><b>分组！！</b><br/>Group!!</td>
                     <td>
                         <select id="styleGroupSelect"></select>
                     </td>
@@ -1217,7 +1217,7 @@
 
                 <tbody id="styleLetterSpacing">
                 <tr data-tip="设置字间距<br/>Set letter spacing">
-                    <td>字间距<br/>Letter spacing</td>
+                    <td><b>字间距</b><br/>Letter spacing</td>
                     <td>
                         <slider-input id="styleLetterSpacingInput" min="0" max="20" step=".01"></slider-input>
                     </td>
@@ -1226,7 +1226,7 @@
 
                 <tbody id="styleStrokeDash">
                     <tr data-tip="设置描边虚线数组（例如 5 2）和线帽<br/>Set stroke dash array (e.g. 5 2) and linecap">
-                        <td>虚线<br/>Stroke dash</td>
+                        <td><b>虚线</b><br/>Stroke dash</td>
                         <td>
                             <input id="styleStrokeDasharrayInput" type="text" value="1 2" style="width: 26%"/>
                             <select id="styleStrokeLinecapInput" style="width: 32%">
@@ -1241,7 +1241,7 @@
 
                 <tbody id="styleShadow">
                     <tr data-tip="设置文字阴影<br/>Set text shadow">
-                        <td>文字阴影<br/>Text shadow</td>
+                        <td><b>文字阴影</b><br/>Text shadow</td>
                         <td>
                             <input id="styleShadowInput" type="text" value="0 0 4px white"/>
                         </td>
@@ -1250,7 +1250,7 @@
 
                 <tbody id="styleFont">
                     <tr data-tip="选择字体<br/>Select font">
-                        <td>字体<br/>Font</td>
+                        <td><b>字体</b><br/>Font</td>
                         <td>
                             <select id="styleSelectFont" style="width: 85%"></select>
                             <button id="styleFontAdd" data-tip="添加字体<br/>Add a font" class="icon-plus sideButton"></button>
@@ -1261,7 +1261,7 @@
 
                 <tbody id="styleSize">
                     <tr data-tip="设置字体大小<br/>Set font size">
-                        <td>字体大小<br/>Font size</td>
+                        <td><b>字体大小</b><br/>Font size</td>
                         <td>
                             <button id="styleFontPlus" data-tip="增大字体<br/>Increase font" class="whiteButton">+</button>
                             <button id="styleFontMinus" data-tip="减小字体<br/>Decrease font" class="whiteButton">-</button>
@@ -1272,7 +1272,7 @@
 
                 <tbody id="styleRadius">
                     <tr data-tip="设置图标半径<br/>Set icon size">
-                        <td>半径<br/>Radius</td>
+                        <td><b>半径</b><br/>Radius</td>
                         <td>
                             <button id="styleRadiusPlus" data-tip="将半径乘以 1.1<br/>Multiply radius by 1.1" class="whiteButton">+</button>
                             <button id="styleRadiusMinus" data-tip="将半径除以 1.1<br/>Divide radius by 1.1" class="whiteButton">-</button>
@@ -1283,7 +1283,7 @@
 
                 <tbody id="styleIconSize">
                     <tr data-tip="设置图标尺寸<br/>Set icon size">
-                        <td>尺寸<br/>Size</td>
+                        <td><b>尺寸</b><br/>Size</td>
                         <td>
                             <button id="styleIconSizePlus" data-tip="将尺寸乘以 1.1<br/>Multiply size by 1.1" class="whiteButton">+</button>
                             <button id="styleIconSizeMinus" data-tip="将尺寸除以 1.1<br/>Divide size by 1.1" class="whiteButton">-</button>
@@ -1292,157 +1292,152 @@
                     </tr>
                 </tbody>
 
-
                 <tbody id="styleCoastline">
-                <tr data-tip="Allow system to apply filter automatically based on zoom level">
-                    <td colspan="2">
-                        <input id="styleCoastlineAuto" class="checkbox" type="checkbox"/>
-                        <label for="styleCoastlineAuto" class="checkbox-label">Automatically change filter on
-                            zoom</label>
-                    </td>
-                </tr>
+                    <tr data-tip="允许系统根据缩放级别自动应用滤镜<br/>Allow system to apply filter automatically based on zoom level">
+                        <td colspan="2">
+                            <input id="styleCoastlineAuto" class="checkbox" type="checkbox"/>
+                            <label for="styleCoastlineAuto" class="checkbox-label"><b>自动缩放时更改滤镜</b><br/>Automatically change filter on zoom</label>
+                        </td>
+                    </tr>
                 </tbody>
 
                 <tbody id="styleTemperature">
-                <tr data-tip="Define transparency of temperature leyer. Set to 0 to make it fully transparent">
-                    <td>Fill opacity</td>
-                    <td>
-                        <slider-input id="styleTemperatureFillOpacityInput" min="0" max="1" step=".01"></slider-input>
-                    </td>
-                </tr>
+                    <tr data-tip="定义温度层的不透明度。设为0则完全透明<br/>Define transparency of temperature layer. Set to 0 to make it fully transparent">
+                        <td><b>填充不透明度</b><br/>Fill opacity</td>
+                        <td>
+                            <slider-input id="styleTemperatureFillOpacityInput" min="0" max="1" step=".01"></slider-input>
+                        </td>
+                    </tr>
 
-                <tr data-tip="Set labels size">
-                    <td>Labels size</td>
-                    <td>
-                        <slider-input id="styleTemperatureFontSizeInput" min="0" max="30" step="1"></slider-input>
-                    </td>
-                </tr>
+                    <tr data-tip="设置标签大小<br/>Set labels size">
+                        <td><b>标签大小</b><br/>Labels size</td>
+                        <td>
+                            <slider-input id="styleTemperatureFontSizeInput" min="0" max="30" step="1"></slider-input>
+                        </td>
+                    </tr>
 
-                <tr data-tip="Set labels color">
-                    <td>Labels color</td>
-                    <td>
-                        <input id="styleTemperatureFillInput" type="color"/>
-                        <output id="styleTemperatureFillOutput">#000</output>
-                    </td>
-                </tr>
+                    <tr data-tip="设置标签颜色<br/>Set labels color">
+                        <td><b>标签颜色</b><br/>Labels color</td>
+                        <td>
+                            <input id="styleTemperatureFillInput" type="color"/>
+                            <output id="styleTemperatureFillOutput">#000</output>
+                        </td>
+                    </tr>
                 </tbody>
 
                 <tbody id="styleStates" style="display: block">
-                <tr data-tip="Set states fill opacity. 0: invisible, 1: solid">
-                    <td>Body opacity</td>
-                    <td>
-                        <slider-input id="styleStatesBodyOpacity" min="0" max="1" step="0.01"></slider-input>
-                    </td>
-                </tr>
+                    <tr data-tip="设置国家填充不透明度。0：透明，1：不透明<br/>Set states fill opacity. 0: invisible, 1: solid">
+                        <td><b>填充不透明度</b><br/>Body opacity</td>
+                        <td>
+                            <slider-input id="styleStatesBodyOpacity" min="0" max="1" step="0.01"></slider-input>
+                        </td>
+                    </tr>
 
-                <tr data-tip="Select filter for states fill. Please note filters may cause performance issues!">
-                    <td>Body filter</td>
-                    <td><select id="styleStatesBodyFilter"/></td>
-                </tr>
+                    <tr data-tip="选择国家填充滤镜。请注意，滤镜可能会影响性能！<br/>Select filter for states fill. Please note filters may cause performance issues!">
+                        <td><b>填充滤镜</b><br/>Body filter</td>
+                        <td><select id="styleStatesBodyFilter"/></td>
+                    </tr>
 
-                <tr style="margin-top: 0.8em">
-                    <td style="font-style: italic">
-                        Halo is only rendered if "Rendering" option is set to "Best quality"!
-                    </td>
-                </tr>
+                    <tr style="margin-top: 0.8em">
+                        <td style="font-style: italic">
+                            Halo 仅在“渲染”选项设置为“最佳质量”时才渲染！<br/>Halo is only rendered if "Rendering" option is set to "Best quality"!<br/>　
+                        </td>
+                    </tr>
 
-                <tr data-tip="Set states halo effect width">
-                    <td>Halo width</td>
-                    <td>
-                        <slider-input id="styleStatesHaloWidth" min="0" max="30" step="0.1"></slider-input>
-                    </td>
-                </tr>
+                    <tr data-tip="设置国家光晕宽度<br/>Set states halo effect width">
+                        <td><b>光晕宽度</b><br/>Halo width</td>
+                        <td>
+                            <slider-input id="styleStatesHaloWidth" min="0" max="30" step="0.1"></slider-input>
+                        </td>
+                    </tr>
 
-                <tr data-tip="Set states halo effect opacity. 0: invisible, 1: solid">
-                    <td>Halo opacity</td>
-                    <td>
-                        <slider-input id="styleStatesHaloOpacity" min="0" max="1" step="0.01"></slider-input>
-                    </td>
-                </tr>
+                    <tr data-tip="设置国家光晕不透明度。0：透明，1：不透明<br/>Set states halo effect opacity. 0: invisible, 1: solid">
+                        <td><b>光晕不透明度</b><br/>Halo opacity</td>
+                        <td>
+                            <slider-input id="styleStatesHaloOpacity" min="0" max="1" step="0.01"></slider-input>
+                        </td>
+                    </tr>
 
-                <tr data-tip="Select halo effect power (blur). Set to 0 to make it solid line"
-                    style="margin-bottom: 1em">
-                    <td>Halo blur</td>
-                    <td>
-                        <slider-input id="styleStatesHaloBlur" min="0" max="10" step="0.01"></slider-input>
-                    </td>
-                </tr>
+                    <tr data-tip="选择光晕模糊强度。设为0时为实线<br/>Select halo effect power (blur). Set to 0 to make it solid line" style="margin-bottom: 1em">
+                        <td><b>光晕模糊</b><br/>Halo blur</td>
+                        <td>
+                            <slider-input id="styleStatesHaloBlur" min="0" max="10" step="0.01"></slider-input>
+                        </td>
+                    </tr>
                 </tbody>
 
                 <tbody id="styleArmies">
-                <tr data-tip="Set fill transparency. Set to 0 to make it fully transparent">
-                    <td>Fill opacity</td>
-                    <td>
-                        <slider-input id="styleArmiesFillOpacity" min="0" max="1" step=".01"></slider-input>
-                    </td>
-                </tr>
-                <tr data-tip="Set regiment box size. All regiments will be redrawn on change (position will defaulted)">
-                    <td>Box Size</td>
-                    <td>
-                        <slider-input id="styleArmiesSize" min="0" max="10" step=".1"></slider-input>
-                    </td>
-                </tr>
+                    <tr data-tip="设置填充不透明度。设为0则完全透明<br/>Set fill transparency. Set to 0 to make it fully transparent">
+                        <td><b>填充不透明度</b><br/>Fill opacity</td>
+                        <td>
+                            <slider-input id="styleArmiesFillOpacity" min="0" max="1" step=".01"></slider-input>
+                        </td>
+                    </tr>
+                    <tr data-tip="设置军团框尺寸。更改后所有军团将被重新绘制（位置将重置）<br/>Set regiment box size. All regiments will be redrawn on change (position will default)">
+                        <td><b>军团框尺寸</b><br/>Box Size</td>
+                        <td>
+                            <slider-input id="styleArmiesSize" min="0" max="10" step=".1"></slider-input>
+                        </td>
+                    </tr>
                 </tbody>
 
                 <tbody id="styleEmblems">
-                <tr data-tip="Set state emblems size multiplier">
-                    <td>State size</td>
-                    <td>
-                        <slider-input id="emblemsStateSizeInput" min="0" max="5" step=".01"></slider-input>
-                    </td>
-                </tr>
-
-                <tr data-tip="Set province emblems size multiplier">
-                    <td>Province size</td>
-                    <td>
-                        <slider-input id="emblemsProvinceSizeInput" min="0" max="5" step=".01"></slider-input>
-                    </td>
-                </tr>
-
-                <tr data-tip="Set burg emblems size multiplier">
-                    <td>Burg size</td>
-                    <td>
-                        <slider-input id="emblemsBurgSizeInput" min="0" max="5" step=".01"></slider-input>
-                    </td>
-                </tr>
-
-                <tr data-tip="Allow system to hide emblem groups if their size in too small or too big on that scale">
-                    <td colspan="2">
-                        <input id="hideEmblems" class="checkbox" type="checkbox" onchange="invokeActiveZooming()"
-                               checked/>
-                        <label for="hideEmblems" class="checkbox-label">Toggle visibility automatically</label>
-                    </td>
-                </tr>
+                    <tr data-tip="设置国家徽章尺寸倍数<br/>Set state emblems size multiplier">
+                        <td><b>国家徽章尺寸</b><br/>State size</td>
+                        <td>
+                            <slider-input id="emblemsStateSizeInput" min="0" max="5" step=".01"></slider-input>
+                        </td>
+                    </tr>
+                    <tr data-tip="设置省份徽章尺寸倍数<br/>Set province emblems size multiplier">
+                        <td><b>省份徽章尺寸</b><br/>Province size</td>
+                        <td>
+                            <slider-input id="emblemsProvinceSizeInput" min="0" max="5" step=".01"></slider-input>
+                        </td>
+                    </tr>
+                    <tr data-tip="设置城镇徽章尺寸倍数<br/>Set burg emblems size multiplier">
+                        <td><b>城镇徽章尺寸</b><br/>Burg size</td>
+                        <td>
+                            <slider-input id="emblemsBurgSizeInput" min="0" max="5" step=".01"></slider-input>
+                        </td>
+                    </tr>
+                    <tr data-tip="允许系统在该比例下自动隐藏徽章组（如果尺寸过小或过大）<br/>Allow system to hide emblem groups if their size is too small or too big on that scale">
+                        <td colspan="2">
+                            <input id="hideEmblems" class="checkbox" type="checkbox" onchange="invokeActiveZooming()"
+                                   checked/>
+                            <label for="hideEmblems" class="checkbox-label"><b>自动切换可见性</b><br/>Toggle visibility automatically</label>
+                        </td>
+                    </tr>
                 </tbody>
 
                 <tbody id="styleFilter" style="display: block">
-                <tr data-tip="Select filter for element. Please note filters may cause performance issues!">
-                    <td>Filter</td>
-                    <td><select id="styleFilterInput"/></td>
-                </tr>
+                    <tr data-tip="选择元素滤镜。请注意滤镜可能会影响性能！<br/>Select filter for element. Please note filters may cause performance issues!">
+                        <td><b>滤镜</b><br/>Filter</td>
+                        <td><select id="styleFilterInput"/></td>
+                    </tr>
                 </tbody>
 
                 <tbody id="styleClipping">
-                <tr data-tip="Set clipping. Only non-clipped part will be visible">
-                    <td>Clipping</td>
-                    <td>
-                        <select id="styleClippingInput">
-                            <option value="" selected>No clipping</option>
-                            <option value="url(#land)">Clip water</option>
-                            <option value="url(#water)">Clip land</option>
-                        </select>
-                    </td>
-                </tr>
+                    <tr data-tip="设置裁剪。仅显示未被裁剪部分<br/>Set clipping. Only non-clipped part will be visible">
+                        <td><b>裁剪</b><br/>Clipping</td>
+                        <td>
+                            <select id="styleClippingInput">
+                                <option value="" selected>无裁剪 No clipping</option>
+                                <option value="url(#land)">裁剪水域 Clip water</option>
+                                <option value="url(#water)">裁剪陆地 Clip land</option>
+                            </select>
+                        </td>
+                    </tr>
                 </tbody>
 
                 <tbody id="styleMarkers">
-                <tr data-tip="Try to keep the same size on any map scale, turn off to get size change depending on scale">
-                    <td colspan="2">
-                        <input id="styleRescaleMarkers" class="checkbox" type="checkbox"/>
-                        <label for="styleRescaleMarkers" class="checkbox-label">Keep initial size on zoom change</label>
-                    </td>
-                </tr>
+                    <tr data-tip="尝试保持在任意地图缩放下尺寸不变，关闭则根据缩放改变尺寸<br/>Try to keep the same size on any map scale, turn off to get size change depending on scale">
+                        <td colspan="2">
+                            <input id="styleRescaleMarkers" class="checkbox" type="checkbox"/>
+                            <label for="styleRescaleMarkers" class="checkbox-label"><b>保持初始尺寸</b><br/>Keep initial size on zoom change</label>
+                        </td>
+                    </tr>
                 </tbody>
+
 
                 <tbody id="styleVisibility">
                 <tr data-tip="Allow system to hide labels if their size in too small or too big on that scale">

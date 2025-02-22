@@ -115,7 +115,7 @@ window.Military = (function () {
         if (!stateModifier[unit.type]) continue;
 
         let modifier = stateModifier[unit.type][s.type] || 1;
-        if (unit.type === "mounted" && s.formName.includes("Horde")) modifier *= 2;
+        if (unit.type === "mounted" && s.formName.includes("游群")) modifier *= 2;
         else if (unit.type === "naval" && s.form === "Republic") modifier *= 1.2;
         s.temp[unit.name] = modifier * s.alert;
       }

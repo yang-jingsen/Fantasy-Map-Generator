@@ -990,10 +990,12 @@
                     <td>
                         <b>x </b>
                         <input id="styleTextureShiftX" type="number" value="0"
-                               data-tip="沿 x 轴平移纹理（像素）<br/>Shift texture by x axis in pixels" style="text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
+                               data-tip="沿 x 轴平移纹理（像素）<br/>Shift texture by x axis in pixels"
+                               style="text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
                         <b>y </b>
                         <input id="styleTextureShiftY" type="number" value="0"
-                               data-tip="沿 y 轴平移纹理（像素）<br/>Shift texture by y axis in pixels" style="text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
+                               data-tip="沿 y 轴平移纹理（像素）<br/>Shift texture by y axis in pixels"
+                               style="text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
                     </td>
                 </tr>
                 </tbody>
@@ -1012,14 +1014,16 @@
                     <td style="display: flex; flex-direction: column; gap: 2px">
                         <div>
                             <span><b>x</b></span>
-                            <input id="styleVignetteX" type="number" min="0" max="100" step="0.1" style="width: 5em; text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
+                            <input id="styleVignetteX" type="number" min="0" max="100" step="0.1"
+                                   style="width: 5em; text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
                             <span><b>宽度</b> W</span>
                             <input id="styleVignetteWidth" type="number" min="0" max="100" step="0.1"
                                    style="width: 5em; text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
                         </div>
                         <div>
                             <span><b>y</b></span>
-                            <input id="styleVignetteY" type="number" min="0" max="100" step="0.1" style="width: 5em; text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
+                            <input id="styleVignetteY" type="number" min="0" max="100" step="0.1"
+                                   style="width: 5em; text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
                             <span><b>高度</b> H</span>
                             <input id="styleVignetteHeight" type="number" min="0" max="100" step="0.1"
                                    style="width: 5em; text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
@@ -1031,9 +1035,11 @@
                     <td><b>半径</b><br/>Radius</td>
                     <td>
                         <span>x </span>
-                        <input id="styleVignetteRx" type="number" min="0" max="50" style="width: 5em; text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
+                        <input id="styleVignetteRx" type="number" min="0" max="50"
+                               style="width: 5em; text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
                         <span>y </span>
-                        <input id="styleVignetteRy" type="number" min="0" max="50" style="width: 5em; text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
+                        <input id="styleVignetteRy" type="number" min="0" max="50"
+                               style="width: 5em; text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
                     </td>
                 </tr>
 
@@ -1115,7 +1121,8 @@
                 <tr data-tip="设置网格单元比例因子<br/>Set grid cells scale multiplier">
                     <td><b>比例</b><br/>Scale</td>
                     <td>
-                        <input id="styleGridScale" type="number" min=".1" max="10" step=".01" style="text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
+                        <input id="styleGridScale" type="number" min=".1" max="10" step=".01"
+                               style="text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
                         <output
                                 id="styleGridSizeFriendly"
                                 data-tip="网格单元中心间距（地图比例）<br/>Distance between grid cell centers (in map scale)"
@@ -1137,10 +1144,12 @@
                     <td>
                         <b>x </b>
                         <input id="styleGridShiftX" type="number"
-                               data-tip="沿 x 轴平移（像素）<br/>Shift by x axis in pixels" style="text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
+                               data-tip="沿 x 轴平移（像素）<br/>Shift by x axis in pixels"
+                               style="text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
                         <b>y </b>
                         <input id="styleGridShiftY" type="number"
-                               data-tip="沿 y 轴平移（像素）<br/>Shift by y axis in pixels" style="text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
+                               data-tip="沿 y 轴平移（像素）<br/>Shift by y axis in pixels"
+                               style="text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
                     </td>
                 </tr>
                 </tbody>
@@ -1276,7 +1285,8 @@
                     <td>
                         <button id="styleFontPlus" data-tip="增大字体<br/>Increase font" class="whiteButton">+</button>
                         <button id="styleFontMinus" data-tip="减小字体<br/>Decrease font" class="whiteButton">-</button>
-                        <input id="styleFontSize" type="number" min=".5" max="100" step=".1" style="text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
+                        <input id="styleFontSize" type="number" min=".5" max="100" step=".1"
+                               style="text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
                     </td>
                 </tr>
                 </tbody>
@@ -1306,7 +1316,8 @@
                         <button id="styleIconSizeMinus" data-tip="将尺寸除以 1.1<br/>Divide size by 1.1"
                                 class="whiteButton">-
                         </button>
-                        <input id="styleIconSizeInput" type="number" min=".2" max="10" step=".02" value="1" style="text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
+                        <input id="styleIconSizeInput" type="number" min=".2" max="10" step=".02" value="1"
+                               style="text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
                     </td>
                 </tr>
                 </tbody>
@@ -1315,7 +1326,8 @@
                 <tr data-tip="允许系统根据缩放级别自动应用滤镜<br/>Allow system to apply filter automatically based on zoom level">
                     <td colspan="2">
                         <input id="styleCoastlineAuto" class="checkbox" type="checkbox"/>
-                        <label for="styleCoastlineAuto" class="checkbox-label"><b>自动缩放时更改滤镜</b><br/>　 Automatically change filter on zoom</label>
+                        <label for="styleCoastlineAuto" class="checkbox-label"><b>自动缩放时更改滤镜</b><br/>　
+                            Automatically change filter on zoom</label>
                     </td>
                 </tr>
                 </tbody>
@@ -1425,7 +1437,8 @@
                     <td colspan="2">
                         <input id="hideEmblems" class="checkbox" type="checkbox" onchange="invokeActiveZooming()"
                                checked/>
-                        <label for="hideEmblems" class="checkbox-label"><b>自动切换可见性</b><br/>　 Toggle visibility automatically</label>
+                        <label for="hideEmblems" class="checkbox-label"><b>自动切换可见性</b><br/>　 Toggle visibility
+                            automatically</label>
                     </td>
                 </tr>
                 </tbody>
@@ -1533,10 +1546,10 @@
                     <td>
                         <input id="styleScaleBarBackgroundStroke" type="color"/>
                         <output id="styleScaleBarBackgroundStrokeOutput"></output>
-                        </td>
+                    </td>
                     <td>
                         <span><b>宽度</b><br/>Width </span></td>
-                        <td><input id="styleScaleBarBackgroundStrokeWidth" type="number" min="0" max="10" step="0.1"
+                    <td><input id="styleScaleBarBackgroundStrokeWidth" type="number" min="0" max="10" step="0.1"
                                style="width: 5em; text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
                     </td>
                 </tr>
@@ -1556,7 +1569,7 @@
                                style="width: 4em; text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
                     </td>
                     <td><b>→</b></td>
-                    <td> <input id="styleScaleBarBackgroundPaddingRight" type="number" min="0" max="100"
+                    <td><input id="styleScaleBarBackgroundPaddingRight" type="number" min="0" max="100"
                                style="width: 4em; text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"/>
                     </td>
                 </tr>
@@ -1569,7 +1582,8 @@
                 </tbody>
             </table>
 
-            <div id="mapFilters" data-tip="设置全局应用于地图的滤镜<br/>Set a filter to be applied to the map in general">
+            <div id="mapFilters"
+                 data-tip="设置全局应用于地图的滤镜<br/>Set a filter to be applied to the map in general">
                 <p><b>切换全局滤镜</b> Toggle global filters</p>
                 <button id="grayscale" class="radio">灰度 Gray.</button>
                 <button id="sepia" class="radio">深褐 Sepia</button>
@@ -1587,7 +1601,8 @@
                         data-tip="在生成时设置原始地图大小。以后无法更改。始终保持画布尺寸等于或小于屏幕尺寸。最好使用默认值。对于全景地图，使用宽高比 2:1<br/>Set original map size on generation. It cannot be changed later. Always keep canvas size equal to your screen size or less. The best option is to use the default value. For full-globe maps use aspect ratio 2:1"
                 >
                     <td>
-                        <i data-tip="恢复默认画布尺寸<br/>Restore default canvas size" id="restoreDefaultCanvasSize" class="icon-ccw"></i>
+                        <i data-tip="恢复默认画布尺寸<br/>Restore default canvas size" id="restoreDefaultCanvasSize"
+                           class="icon-ccw"></i>
                     </td>
                     <td><b>画布大小</b><br/>Canvas size</td>
                     <td>
@@ -1829,7 +1844,7 @@
             </table>
 
             <p data-tip="不影响地图的工具设置。更改会立即应用<br/>Tool settings that don't affect maps. Changes are getting applied immediately">
-                 生成器设置 Generator settings
+                生成器设置 Generator settings
             </p>
             <table>
                 <tr
@@ -1853,7 +1868,8 @@
 
                 <tr data-tip="设置对话框和工具窗口主题色调<br/>Set theme hue for dialogs and tool windows">
                     <td>
-                        <i data-tip="恢复默认主题颜色：淡洋红色<br/>Restore default theme color: pale magenta" id="themeColorRestore"
+                        <i data-tip="恢复默认主题颜色：淡洋红色<br/>Restore default theme color: pale magenta"
+                           id="themeColorRestore"
                            class="icon-ccw"></i>
                     </td>
                     <td><b>主题色</b><br/>Theme color</td>
@@ -2130,7 +2146,8 @@
                 <button id="overviewMarkersButton" data-tip="Click to open Markers Overview" data-shortcut="Shift + K">
                     <b>标记</b><br/>Markers (<b>^K</b>)
                 </button>
-                <button id="overviewMilitaryButton" data-tip="Click to open Military Forces Overview" data-shortcut="Shift + M">
+                <button id="overviewMilitaryButton" data-tip="Click to open Military Forces Overview"
+                        data-shortcut="Shift + M">
                     <b>军事</b><br/>Military (<b>^M</b>)
                 </button>
                 <button id="editNamesBaseButton" data-tip="Click to open Namesbase Editor" data-shortcut="Shift + N">
@@ -2214,14 +2231,16 @@
                 <button id="regenerateIce" data-tip="Click to regenerate icebergs and glaciers">
                     <b>冰川</b>/Ice
                 </button>
-                <button id="regenerateStateLabels" data-tip="Click to update state labels placement based on current borders">
+                <button id="regenerateStateLabels"
+                        data-tip="Click to update state labels placement based on current borders">
                     <b>国家标签</b>/S.L.
                 </button>
                 <button id="regenerateMarkers" data-tip="Click to regenerate unlocked markers">
                     <b>标记</b>/Markers
-                    <i id="configRegenerateMarkers" class="icon-cog"  data-tip="Click to set number multiplier"></i>
+                    <i id="configRegenerateMarkers" class="icon-cog" data-tip="Click to set number multiplier"></i>
                 </button>
-                <button id="regenerateMilitary" data-tip="Click to recalculate military forces based on current military options" >
+                <button id="regenerateMilitary"
+                        data-tip="Click to recalculate military forces based on current military options">
                     <b>军事</b>/Mil.
                 </button>
                 <button id="regeneratePopulation" data-tip="Click to recalculate rural and urban population">
@@ -2246,7 +2265,8 @@
                     <b>河流</b>/Rivers
                 </button>
                 <button id="regenerateRoutes" data-tip="Click to regenerate all unlocked routes">
-                    <b>贸易路线</b>/Routes</button>
+                    <b>贸易路线</b>/Routes
+                </button>
                 <button
                         id="regenerateStates"
                         data-tip="Click to regenerate non-locked states. Emblems and military forces will be regenerated as well, burgs will remain as they are, but capitals will be different"
@@ -3463,16 +3483,17 @@
                     <use id="burgEmblem"></use>
                 </svg>
                 <div style="display: grid; grid-auto-rows: minmax(1.6em, auto)">
-                    <div id="burgProvinceAndState" style="font-weight: bold; max-width: 16em"></div>
+                    <div id="burgProvinceAndState"
+                         style="font-weight: bold; max-width: 16em; font-size: var(--burg-editor-state-prov-font-size)"></div>
 
-                    <div>
-                        <div class="label">Name:</div>
+                    <div style="margin-top: 10px; margin-bottom: 10px">
+                        <!--                        <div class="label">城镇名称：</div>-->
                         <input
                                 id="burgName"
                                 data-tip="Type to rename the burg"
                                 autocorrect="off"
                                 spellcheck="false"
-                                style="width: 9em"
+                                style="font-weight: bold; font-size: var(--burg-editor-burg-font-size)"
                         />
                         <span data-tip="Speak the name. You can change voice and language in options"
                               class="speaker">🔊</span>
@@ -3482,22 +3503,21 @@
                                 class="icon-globe pointer"
                         ></span>
                     </div>
-
-                    <div data-tip="Select burg type. Type slightly affects emblem generation">
-                        <div class="label">Type:</div>
+                    <div data-tip="选择城镇类型。类型会略微影响纹章生成<br/>Select burg type. Type slightly affects emblem generation">
+                        <div class="label">类型：</div>
                         <select id="burgType" style="width: 9em">
-                            <option value="Generic">Generic</option>
-                            <option value="River">River</option>
-                            <option value="Lake">Lake</option>
-                            <option value="Naval">Naval</option>
-                            <option value="Nomadic">Nomadic</option>
-                            <option value="Hunting">Hunting</option>
-                            <option value="Highland">Highland</option>
+                            <option value="Generic">通用 Generic</option>
+                            <option value="River">河流 River</option>
+                            <option value="Lake">湖泊 Lake</option>
+                            <option value="Naval">海洋 Naval</option>
+                            <option value="Nomadic">游牧 Nomadic</option>
+                            <option value="Hunting">狩猎 Hunting</option>
+                            <option value="Highland">高地 Highland</option>
                         </select>
                     </div>
 
-                    <div data-tip="Select dominant culture">
-                        <div class="label">Culture:</div>
+                    <div data-tip="选择主要文化<br/>Select dominant culture">
+                        <div class="label">文化：</div>
                         <select id="burgCulture" style="width: 9em"></select>
                         <span
                                 id="burgNameReCulture"
@@ -3506,76 +3526,76 @@
                         ></span>
                     </div>
 
-                    <div data-tip="Set burg population">
-                        <div class="label">Population:</div>
+                    <div data-tip="设置人口<br/>Set burg population">
+                        <div class="label">人口：</div>
                         <input id="burgPopulation" type="number" min="0" step="1" style="width: 9em"/>
                     </div>
 
-                    <div data-tip="Burg average yearly temperature"
+                    <div data-tip="设置年平均温度<br/>Burg average yearly temperature"
                          style="display: flex; justify-content: space-between">
                         <div>
-                            <div class="label">Temperature:</div>
+                            <div class="label">温度：</div>
                             <span id="burgTemperature"></span>
                         </div>
                         <div style="display: flex; gap: 0.5em">
                             <i class="icon-info-circled" id="burgTemperatureLikeIn"></i>
                             <i
                                     id="burgTemperatureGraph"
-                                    data-tip="Show temperature graph for the burg"
+                                    data-tip="显示温度图<br/>Show temperature graph for the burg"
                                     class="icon-chart-area pointer"
                             ></i>
                         </div>
                     </div>
 
                     <div data-tip="Burg height above mean sea level">
-                        <div class="label">Elevation:</div>
-                        <span id="burgElevation"></span> above sea level
+                        <div class="label">海拔：</div>
+                        <span id="burgElevation"></span> （海平面以上）
                     </div>
 
                     <div>
-                        <div class="label">Features:</div>
+                        <div class="label">特征：</div>
                         <span
                                 id="burgCapital"
-                                data-tip="Shows whether the burg is a state capital. Click to toggle"
+                                data-tip="显示该城镇是否为<b>首都</b>。点击切换<br/>Shows whether the burg is a state capital. Click to toggle"
                                 data-feature="capital"
                                 class="burgFeature icon-star"
                         ></span>
                         <span
                                 id="burgPort"
-                                data-tip="Shows whether the burg is a port. Click to toggle"
+                                data-tip="显示该城镇是否为<b>港口</b>。点击切换<br/>Shows whether the burg is a port. Click to toggle"
                                 data-feature="port"
                                 class="burgFeature icon-anchor"
                         ></span>
                         <span
                                 id="burgCitadel"
-                                data-tip="Shows whether the burg has a citadel (castle). Click to toggle"
+                                data-tip="显示该城镇是否拥有<b>要塞（城堡）</b>。点击切换Shows whether the burg has a citadel (castle). Click to toggle"
                                 data-feature="citadel"
                                 class="burgFeature icon-chess-rook"
                                 style="font-size: 1.1em"
                         ></span>
                         <span
                                 id="burgWalls"
-                                data-tip="Shows whether the burg is walled. Click to toggle"
+                                data-tip="显示该城镇是否有<b>城墙</b>。点击切换<br/>Shows whether the burg is walled. Click to toggle"
                                 data-feature="walls"
                                 class="burgFeature icon-fort-awesome"
                         ></span>
                         <span
                                 id="burgPlaza"
-                                data-tip="Shows whether the burg is a trade center (has big marketplace). Click to toggle"
+                                data-tip="显示该城镇是否为<b>贸易中心</b>（拥有大型市场）。点击切换<br/>Shows whether the burg is a trade center (has big marketplace). Click to toggle"
                                 data-feature="plaza"
                                 class="burgFeature icon-store"
                                 style="font-size: 1em"
                         ></span>
                         <span
                                 id="burgTemple"
-                                data-tip="Shows whether the burg is a religious center. Click to toggle"
+                                data-tip="显示该城镇是否为<b>宗教中心</b>。点击切换<br/>Shows whether the burg is a religious center. Click to toggle"
                                 data-feature="temple"
                                 class="burgFeature icon-chess-bishop"
                                 style="font-size: 1.1em; margin-left: 3px"
                         ></span>
                         <span
                                 id="burgShanty"
-                                data-tip="Shows whether the burg has a shanty town. Click to toggle"
+                                data-tip="显示该城镇是否有<b>棚户区</b>。点击切换<br/>Shows whether the burg has a shanty town. Click to toggle"
                                 data-feature="shanty"
                                 class="burgFeature icon-campground"
                                 style="font-size: 1em"
@@ -3586,7 +3606,7 @@
 
             <div id="burgPreviewSection" data-tip="Burg map preview" style="display: flex; flex-direction: column">
                 <div style="display: flex; justify-content: space-between">
-                    <span>Burg preview:</span>
+                    <span>城镇预览：</span>
                     <div style="display: flex; gap: 0.5em">
                         <i
                                 id="burgLinkEdit"
@@ -4529,7 +4549,7 @@
 
     <div id="stateNameEditor" class="dialog" data-state="0" style="display: none">
         <div>
-            <div data-tip="State short name" class="label">Short name:</div>
+            <div data-tip="State short name" class="label">国家简称：</div>
             <input
                     id="stateNameEditorShort"
                     data-tip="Type to change the short name"
@@ -4547,82 +4567,85 @@
         </div>
 
         <div data-tip="Select form name">
-            <div data-tip="State form name" class="label">Form name:</div>
+            <div data-tip="State form name" class="label">国家类型：</div>
             <select id="stateNameEditorSelectForm" style="width: 11em">
                 <option value="">blank</option>
-                <optgroup label="Monarchy">
-                    <option value="Beylik">Beylik</option>
-                    <option value="Despotate">Despotate</option>
-                    <option value="Dominion">Dominion</option>
-                    <option value="Duchy">Duchy</option>
-                    <option value="Emirate">Emirate</option>
-                    <option value="Empire">Empire</option>
-                    <option value="Horde">Horde</option>
-                    <option value="Grand Duchy">Grand Duchy</option>
-                    <option value="Heptarchy">Heptarchy</option>
-                    <option value="Khaganate">Khaganate</option>
-                    <option value="Khanate">Khanate</option>
-                    <option value="Kingdom">Kingdom</option>
-                    <option value="Marches">Marches</option>
-                    <option value="Principality">Principality</option>
-                    <option value="Satrapy">Satrapy</option>
-                    <option value="Shogunate">Shogunate</option>
-                    <option value="Sultanate">Sultanate</option>
-                    <option value="Tsardom">Tsardom</option>
-                    <option value="Ulus">Ulus</option>
-                    <option value="Viceroyalty">Viceroyalty</option>
+                <optgroup label="君主制 Monarchy">
+                    <option value="帝国">帝国 Empire</option>
+                    <option value="王国">王国 Kingdom</option>
+                    <option value="公国">公国 Duchy</option>
+                    <option value="贝伊国">贝伊国 Beylik</option>
+                    <option value="边疆区">边疆区 Marches</option>
+                    <option value="大公国">大公国 Grand Duchy</option>
+                    <option value="汗国">汗国 Khanate</option>
+                    <option value="可汗国">可汗国 Khaganate</option>
+                    <option value="幕府">幕府 Shogunate</option>
+                    <option value="七国联盟">七国联盟 Heptarchy</option>
+                    <option value="亲王国">亲王国 Principality</option>
+                    <option value="酋长国">酋长国 Emirate</option>
+                    <option value="沙皇国">沙皇国 Tsardom</option>
+                    <option value="苏丹国">苏丹国 Sultanate</option>
+                    <option value="兀鲁思">兀鲁思 Ulus</option>
+                    <option value="游群">游群 Horde</option>
+                    <option value="专制国">专制国 Despotate</option>
+                    <option value="自治领">自治领 Dominion</option>
+                    <option value="总督辖区 Satrapy">总督辖区 Satrapy</option>
+                    <option value="总督辖区 Viceroyalty">总督辖区 Viceroyalty</option>
                 </optgroup>
-                <optgroup label="Republic">
-                    <option value="Chancellery">Chancellery</option>
-                    <option value="City-state">City-state</option>
-                    <option value="Diarchy">Diarchy</option>
-                    <option value="Federation">Federation</option>
-                    <option value="Free City">Free City</option>
-                    <option value="Most Serene Republic">Most Serene Republic</option>
-                    <option value="Oligarchy">Oligarchy</option>
-                    <option value="Protectorate">Protectorate</option>
-                    <option value="Republic">Republic</option>
-                    <option value="Tetrarchy">Tetrarchy</option>
-                    <option value="Trade Company">Trade Company</option>
-                    <option value="Triumvirate">Triumvirate</option>
+                <optgroup label="共和制 Republic">
+                    <option value="大臣共和国">大臣共和国 Chancellery</option>
+                    <option value="保护国">保护国 Protectorate</option>
+                    <option value="城邦">城邦 City-state</option>
+                    <option value="共和国">共和国 Republic</option>
+                    <option value="贵族共和国">贵族共和国（寡头政治） Oligarchy</option>
+                    <option value="军政府">军政府 Junta</option>
+                    <option value="联邦">联邦 Federation</option>
+                    <option value="贸易公司">贸易公司 Trade Company</option>
+                    <option value="自由城邦">自由城邦 Free City</option>
+                    <option value="最宁静的共和国">最宁静的共和国 Most Serene Republic</option>
+                    <!--                    <option value="Tetrarchy">Tetrarchy</option>-->
+                    <!--                    <option value="Triumvirate">Triumvirate</option>-->
+                    <!--                    <option value="Diarchy">Diarchy</option>-->
                 </optgroup>
-                <optgroup label="Union">
-                    <option value="Confederacy">Confederacy</option>
-                    <option value="Confederation">Confederation</option>
-                    <option value="Conglomerate">Conglomerate</option>
-                    <option value="Commonwealth">Commonwealth</option>
-                    <option value="League">League</option>
-                    <option value="Union">Union</option>
-                    <option value="United Hordes">United Hordes</option>
-                    <option value="United Kingdom">United Kingdom</option>
-                    <option value="United Provinces">United Provinces</option>
-                    <option value="United Republic">United Republic</option>
-                    <option value="United States">United States</option>
-                    <option value="United Tribes">United Tribes</option>
+                <optgroup label="神权制 Theocracy">
+                    <option value="哈里发国">哈里发国 Caliphate</option>
+                    <option value="教区">教区 Diocese</option>
+                    <option value="教廷">教廷 See</option>
+                    <option value="摄政区">摄政区 Exarchate</option>
+                    <option value="神圣大公国">神圣大公国 Divine Grand Duchy</option>
+                    <option value="神圣帝国">神圣帝国 Divine Empire</option>
+                    <option value="神圣公国">神圣公国 Divine Duchy</option>
+                    <option value="神圣亲王国">神圣亲王国 Divine Principality</option>
+                    <option value="圣国">圣国 Holy State</option>
+                    <option value="圣王国">圣王国 Divine Kingdom</option>
+                    <option value="兄弟会">兄弟会 Brotherhood</option>
+                    <option value="伊玛目国">伊玛目国 Imamah</option>
+                    <option value="神权国">神权国 Theocracy</option>
+                    <option value="主教区">主教区 Bishopric</option>
+                    <option value="主教辖区">主教辖区 Eparchy</option>
+                    <option value="宗主教区">宗主教区 Patriarchate</option>
+                    <!--                    <option value="神权国 Thearchy">神权国 Thearchy</option>-->
                 </optgroup>
-                <optgroup label="Theocracy">
-                    <option value="Bishopric">Bishopric</option>
-                    <option value="Brotherhood">Brotherhood</option>
-                    <option value="Caliphate">Caliphate</option>
-                    <option value="Diocese">Diocese</option>
-                    <option value="Divine Duchy">Divine Duchy</option>
-                    <option value="Divine Grand Duchy">Divine Grand Duchy</option>
-                    <option value="Divine Principality">Divine Principality</option>
-                    <option value="Divine Kingdom">Divine Kingdom</option>
-                    <option value="Divine Empire">Divine Empire</option>
-                    <option value="Eparchy">Eparchy</option>
-                    <option value="Exarchate">Exarchate</option>
-                    <option value="Holy State">Holy State</option>
-                    <option value="Imamah">Imamah</option>
-                    <option value="Patriarchate">Patriarchate</option>
-                    <option value="Theocracy">Theocracy</option>
+                <optgroup label="联合政体 Union">
+                    <option value="联合邦">联合邦 Confederacy</option>
+                    <option value="邦联">邦联 Confederation</option>
+                    <option value="联合体">联合体 Conglomerate</option>
+                    <option value="联邦体">联邦体 Commonwealth</option>
+                    <option value="联盟">联盟 League</option>
+                    <option value="同盟">同盟 Union</option>
+                    <option value="联合游群">联合游群 United Hordes</option>
+                    <option value="联合王国">联合王国 United Kingdom</option>
+                    <option value="联省">联省 United Provinces</option>
+                    <option value="联合共和国">联合共和国 United Republic</option>
+                    <option value="合众国">合众国 United States</option>
+                    <option value="联合部落">联合部落 United Tribes</option>
                 </optgroup>
-                <optgroup label="Anarchy">
-                    <option value="Commune">Commune</option>
-                    <option value="Community">Community</option>
-                    <option value="Council">Council</option>
-                    <option value="Free Territory">Free Territory</option>
-                    <option value="Tribes">Tribes</option>
+                <optgroup label="无政府 Anarchy">
+                    <option value="市镇">市镇 Commune</option>
+                    <option value="社区">社区 Community</option>
+                    <option value="委员会">委员会 Council</option>
+                    <option value="自由领地">自由领地 Free Territory</option>
+                    <option value="部落">部落 Tribes</option>
                 </optgroup>
             </select>
             <input
@@ -4639,7 +4662,7 @@
         </div>
 
         <div>
-            <div data-tip="State full name" class="label">Full name:</div>
+            <div data-tip="State full name" class="label">国家全称：</div>
             <input
                     id="stateNameEditorFull"
                     data-tip="Type to change the full name"
@@ -4658,7 +4681,8 @@
 
         <div data-tip="Uncheck to not update state label on name change" style="padding-block: 0.2em">
             <input id="stateNameEditorUpdateLabel" class="checkbox" type="checkbox" checked/>
-            <label for="stateNameEditorUpdateLabel" class="checkbox-label"><i>Update label on Apply</i></label>
+            <label for="stateNameEditorUpdateLabel" class="checkbox-label"><i>自动更新标签<br/>　 Update label on
+                Apply</i></label>
         </div>
     </div>
 
@@ -4806,7 +4830,7 @@
 
     <div id="provinceNameEditor" class="dialog" data-province="0" style="display: none">
         <div>
-            <div data-tip="Province short name" class="label">Short name:</div>
+            <div data-tip="Province short name" class="label">省份简称：</div>
             <input
                     id="provinceNameEditorShort"
                     data-tip="Type to change the short name"
@@ -4824,45 +4848,45 @@
         </div>
 
         <div data-tip="Select form name">
-            <div data-tip="Province form name" class="label">Form name:</div>
+            <div data-tip="Province form name" class="label">省份类型：</div>
             <select id="provinceNameEditorSelectForm" style="display: inline-block; width: 11em; height: 1.645em">
                 <option value="">blank</option>
-                <option value="Area">Area</option>
-                <option value="Autonomy">Autonomy</option>
-                <option value="Barony">Barony</option>
-                <option value="Canton">Canton</option>
-                <option value="Captaincy">Captaincy</option>
-                <option value="Chiefdom">Chiefdom</option>
-                <option value="Clan">Clan</option>
-                <option value="Colony">Colony</option>
-                <option value="Council">Council</option>
-                <option value="County">County</option>
-                <option value="Deanery">Deanery</option>
-                <option value="Department">Department</option>
-                <option value="Dependency">Dependency</option>
-                <option value="Diaconate">Diaconate</option>
-                <option value="District">District</option>
-                <option value="Earldom">Earldom</option>
-                <option value="Governorate">Governorate</option>
-                <option value="Island">Island</option>
-                <option value="Islands">Islands</option>
-                <option value="Land">Land</option>
-                <option value="Landgrave">Landgrave</option>
-                <option value="Mandate">Mandate</option>
-                <option value="Margrave">Margrave</option>
-                <option value="Municipality">Municipality</option>
-                <option value="Occupation zone">Occupation zone</option>
-                <option value="Parish">Parish</option>
-                <option value="Prefecture">Prefecture</option>
-                <option value="Province">Province</option>
-                <option value="Region">Region</option>
-                <option value="Republic">Republic</option>
-                <option value="Reservation">Reservation</option>
-                <option value="Seneschalty">Seneschalty</option>
-                <option value="Shire">Shire</option>
-                <option value="State">State</option>
-                <option value="Territory">Territory</option>
-                <option value="Tribe">Tribe</option>
+                <option value="地区">地区 Area</option>
+                <option value="自治领地">自治领地 Autonomy</option>
+                <option value="男爵领">男爵领 Barony</option>
+                <option value="州 Canton">州 Canton</option>
+                <option value="船长领">船长领 Captaincy</option>
+                <option value="酋长国">酋长国 Chiefdom</option>
+                <option value="氏族">氏族 Clan</option>
+                <option value="殖民地">殖民地 Colony</option>
+                <option value="委员会">委员会 Council</option>
+                <option value="县">县 County</option>
+                <option value="教区">教区 Deanery</option>
+                <option value="行政区">行政区 Department</option>
+                <option value="属地">属地 Dependency</option>
+                <option value="执事辖区">执事辖区 Diaconate</option>
+                <option value="区">区 District</option>
+                <option value="伯爵领">伯爵领 Earldom</option>
+                <option value="总督辖区">总督辖区 Governorate</option>
+                <option value="岛">岛 Island</option>
+                <option value="群岛">群岛 Islands</option>
+                <option value="土地">土地 Land</option>
+                <option value="领地伯爵领">领地伯爵领 Landgrave</option>
+                <option value="托管地">托管地 Mandate</option>
+                <option value="边境伯爵领">边境伯爵领 Margrave</option>
+                <option value="直辖市">直辖市 Municipality</option>
+                <option value="占领区">占领区 Occupation zone</option>
+                <option value="堂区">堂区 Parish</option>
+                <option value="县 Prefecture">Prefecture</option>
+                <option value="省">省 Province</option>
+                <option value="区域">地区 Region</option>
+                <option value="共和国">共和国 Republic</option>
+                <option value="保留地">保留地 Reservation</option>
+                <option value="执事领">执事领 Seneschalty</option>
+                <option value="郡">郡 Shire</option>
+                <option value="州">州 State</option>
+                <option value="领地">领地 Territory</option>
+                <option value="部族">部族 Tribe</option>
             </select>
             <input
                     id="provinceNameEditorCustomForm"
@@ -4878,7 +4902,7 @@
         </div>
 
         <div>
-            <div data-tip="Province full name" class="label">Full name:</div>
+            <div data-tip="Province full name" class="label">省份全称：</div>
             <input
                     id="provinceNameEditorFull"
                     data-tip="Type to change the full name"

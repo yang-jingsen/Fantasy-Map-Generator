@@ -2,12 +2,12 @@
 
 window.Provinces = (function () {
   const forms = {
-    Monarchy: {County: 22, Earldom: 6, Shire: 2, Landgrave: 2, Margrave: 2, Barony: 2, Captaincy: 1, Seneschalty: 1},
-    Republic: {Province: 6, Department: 2, Governorate: 2, District: 1, Canton: 1, Prefecture: 1},
-    Theocracy: {Parish: 3, Deanery: 1},
-    Union: {Province: 1, State: 1, Canton: 1, Republic: 1, County: 1, Council: 1},
-    Anarchy: {Council: 1, Commune: 1, Community: 1, Tribe: 1},
-    Wild: {Territory: 10, Land: 5, Region: 2, Tribe: 1, Clan: 1, Dependency: 1, Area: 1}
+    Monarchy: {"县": 22, "伯爵领": 6, "郡": 2, "领地伯爵领": 2, "边境伯爵领": 2, "男爵领": 2, "船长领": 1, "执事领": 1},
+    Republic: {"省": 6, "行政区": 2, "总督辖区": 2, "区": 1, "州 Canton": 1, "县 Prefecture": 1},
+    Theocracy: {"堂区": 3, "教区": 1},
+    Union: {"省": 1, "州": 1, "州 Canton": 1, "共和国": 1, "县": 1, "委员会": 1},
+    Anarchy: {"委员会": 1, "市镇": 1, "社区": 1, "部族": 1},
+    Wild: {"领地": 10, "土地": 5, "地区": 2, "部族": 1, "氏族": 1, "属地": 1, "区域": 1}
   };
 
   const generate = (regenerate = false, regenerateLockedStates = false) => {
@@ -196,9 +196,9 @@ window.Provinces = (function () {
         })();
 
         const formName = (() => {
-          if (singleIsle) return "Island";
-          if (isleGroup) return "Islands";
-          if (colony) return "Colony";
+          if (singleIsle) return "岛";
+          if (isleGroup) return "群岛";
+          if (colony) return "殖民地";
           return rw(forms["Wild"]);
         })();
 

@@ -493,11 +493,11 @@ function regenerateEmblems() {
     let dominion = false;
     if (!province.burg) {
       dominion = P(0.2);
-      if (province.formName === "Colony") dominion = P(0.95);
-      else if (province.formName === "Island") dominion = P(0.6);
-      else if (province.formName === "Islands") dominion = P(0.5);
-      else if (province.formName === "Territory") dominion = P(0.4);
-      else if (province.formName === "Land") dominion = P(0.3);
+      if (province.formName === "殖民地") dominion = P(0.95);
+      else if (province.formName === "岛") dominion = P(0.6);
+      else if (province.formName === "群岛") dominion = P(0.5);
+      else if (province.formName === "领地") dominion = P(0.4);
+      else if (province.formName === "土地") dominion = P(0.3);
     }
 
     const nameByBurg = province.burg && province.name.slice(0, 3) === parent.name.slice(0, 3);

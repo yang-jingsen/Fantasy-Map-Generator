@@ -1,5 +1,7 @@
 :root {
   --input-color: #000000;
+  --burg-editor-state-prov-font-size: 110%;
+  --burg-editor-burg-font-size: 120%;
   --slider-input-font-color: #000000;
   --slider-input-bg: #ffffff;
   --input-bg: #ffffff;

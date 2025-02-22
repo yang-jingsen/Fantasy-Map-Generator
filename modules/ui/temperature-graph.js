@@ -111,7 +111,7 @@ function showBurgTemperatureGraph(id) {
   drawGraph();
 
   $("#alert").dialog({
-    title: "Average temperature in " + b.name,
+    title: b.name + "平均温度",
     position: {my: "center", at: "center", of: "svg"}
   });
 
@@ -136,21 +136,21 @@ function showBurgTemperatureGraph(id) {
       .attr("x", legendTextX(1))
       .attr("y", legendY)
       .attr("alignment-baseline", "central")
-      .text("Day temperature");
+      .text("日间");
     legend.append("circle").attr("cx", legendX(2)).attr("cy", legendY).attr("r", 4).style("fill", "orange");
     legend
       .append("text")
       .attr("x", legendTextX(2))
       .attr("y", legendY)
       .attr("alignment-baseline", "central")
-      .text("Mean temperature");
+      .text("平均");
     legend.append("circle").attr("cx", legendX(3)).attr("cy", legendY).attr("r", 4).style("fill", "blue");
     legend
       .append("text")
       .attr("x", legendTextX(3))
       .attr("y", legendY)
       .attr("alignment-baseline", "central")
-      .text("Night temperature");
+      .text("夜间");
 
     const xGrid = d3.axisBottom(xscale).ticks().tickSize(-chartHeight);
     const yGrid = d3.axisLeft(yscale).ticks(5).tickSize(-chartWidth);

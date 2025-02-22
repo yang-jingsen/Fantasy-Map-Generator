@@ -14,7 +14,7 @@ export function open() {
   refreshCulturesEditor();
 
   $("#culturesEditor").dialog({
-    title: "Cultures Editor",
+    title: "文化編輯器 Cultures Editor",
     resizable: false,
     close: closeCulturesEditor,
     position: {my: "right top", at: "right-10 top+10", of: "svg"}

@@ -11,7 +11,7 @@ function editBurg(id) {
   updateBurgValues();
 
   $("#burgEditor").dialog({
-    title: "Edit Burg",
+    title: "编辑城镇 Edit Burg",
     resizable: false,
     close: closeBurgEditor,
     position: {my: "left top", at: "left+10 top+10", of: "svg", collision: "fit"}
@@ -58,9 +58,9 @@ function editBurg(id) {
     const id = +elSelected.attr("data-id");
     const b = pack.burgs[id];
     const province = pack.cells.province[b.cell];
-    const provinceName = province ? pack.provinces[province].fullName + ", " : "";
+    const provinceName = province ? pack.provinces[province].fullName : "";
     const stateName = pack.states[b.state].fullName || pack.states[b.state].name;
-    byId("burgProvinceAndState").innerHTML = provinceName + stateName;
+    byId("burgProvinceAndState").innerHTML = stateName + "<br>" + provinceName;
 
     byId("burgName").value = b.name;
     byId("burgType").value = b.type || "Generic";

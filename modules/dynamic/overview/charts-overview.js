@@ -21,7 +21,7 @@ const entitiesMap = {
     landOnly: true
   },
   provinces: {
-    label: "Province",
+    label: "省",
     getCellsData: () => pack.cells.province,
     getName: nameGetter("provinces"),
     getColors: colorsGetter("provinces"),

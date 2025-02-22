@@ -13,7 +13,7 @@ export function open() {
   drawReligionCenters();
 
   $("#religionsEditor").dialog({
-    title: "Religions Editor",
+    title: "宗教编辑器 Religions Editor",
     resizable: false,
     close: closeReligionsEditor,
     position: {my: "right top", at: "right-10 top+10", of: "svg"}

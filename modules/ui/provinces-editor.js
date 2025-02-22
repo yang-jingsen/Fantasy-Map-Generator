@@ -515,7 +515,7 @@ function editProvinces() {
 
     $("#provinceNameEditor").dialog({
       resizable: false,
-      title: "Change province name",
+      title: "省份名称 Change province name",
       buttons: {
         Apply: function () {
           applyNameChange(p);
@@ -1023,7 +1023,7 @@ function editProvinces() {
     const burg = cells.burg[center];
     const c = cells.culture[center];
     const name = burg ? pack.burgs[burg].name : Names.getState(Names.getCultureShort(c), c);
-    const formName = oldProvince ? provinces[oldProvince].formName : "Province";
+    const formName = oldProvince ? provinces[oldProvince].formName : "省";
     const fullName = name + " " + formName;
     const stateColor = pack.states[state].color;
     const rndColor = getRandomColor();

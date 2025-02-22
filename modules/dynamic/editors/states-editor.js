@@ -381,7 +381,7 @@ function editStateName(state) {
 
   $("#stateNameEditor").dialog({
     resizable: false,
-    title: "Change state name",
+    title: "国家名称 Change state name",
     buttons: {
       Apply: function () {
         applyNameChange(s);
@@ -1097,7 +1097,7 @@ function adjustProvinces(affectedProvinces) {
     const nameByBurg = burgCell && P(0.5);
     const name = nameByBurg ? burg.name : oldProvince.name || Names.getState(Names.getCultureShort(culture), culture);
 
-    const formOptions = ["Zone", "Area", "Territory", "Province"];
+    const formOptions = ["Zone", "地区", "领地", "省"];
     const formName = burgCell && oldProvince.formName ? oldProvince.formName : ra(formOptions);
 
     const color = getMixedColor(states[stateId].color);

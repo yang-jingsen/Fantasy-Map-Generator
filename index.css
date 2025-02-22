@@ -10,6 +10,10 @@
   --sans-serif: Helvetica, Arial, "微软雅黑", sans-serif;
 }
 
+.normal-text {
+    font-style: normal;
+}
+
 /* hide Google translate header */
 body > .skiptranslate {
   display: none;

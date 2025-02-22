@@ -1797,7 +1797,7 @@ window.COArenderer = (function () {
 
   const draw = async function (id, coa) {
     const {shield = "heater", division, ordinaries = [], charges = []} = coa;
-
+    console.log("shield:", shield);
     const ordinariesRegular = ordinaries.filter(o => !o.above);
     const ordinariesAboveCharges = ordinaries.filter(o => o.above);
     const shieldPath = shieldPaths[shield] || shieldPaths.heater;
@@ -1913,6 +1913,10 @@ window.COArenderer = (function () {
       const secondary = clr(secondaryTincture || tincture);
       const tertiary = clr(tertiaryTincture || tincture);
       const stroke = charge.stroke || "#000";
+
+      console.log("charge:", charge);
+      console.log("charge.p:", charge.p);
+      console.log("positions:", positions);
 
       const chargePositions = [...new Set(charge.p)].filter(position => positions[position]);
 

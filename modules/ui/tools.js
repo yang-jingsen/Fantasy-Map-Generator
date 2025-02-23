@@ -27,6 +27,7 @@ toolsContent.addEventListener("click", function (event) {
   else if (button === "overviewMilitaryButton") overviewMilitary();
   else if (button === "overviewMarkersButton") overviewMarkers();
   else if (button === "overviewCellsButton") viewCellDetails();
+  else if (button === "updateBurgCoaButton") updateBurgCoa(); // 新增的判断 TODO: 删除 burg COA
 
   // click on Regenerate buttons
   if (event.target.parentNode.id === "regenerateFeature") {
@@ -962,6 +963,31 @@ function viewCellDetails() {
     position: {my: "right top", at: "right-10 top+10", of: "svg", collision: "fit"}
   });
 }
+
+function updateBurgCoa() {
+  // 定义默认的纯白 coa 对象，仅包含 t1 和 shield 属性
+  const defaultCoa = { t1: "white", shield: "flag" };
+
+  pack.burgs.forEach(burg => {
+    if (burg.state) {
+      // 非独立城镇删除 coa 属性
+      if (burg.hasOwnProperty("coa")) {
+        delete burg.coa;
+      }
+    } else {
+      // 独立城镇若没有 coa，则赋予默认纯白 coa
+      if (!burg.coa) {
+        burg.coa = Object.assign({}, defaultCoa);
+      }
+    }
+  });
+}
+
+// 当 DOM 加载完成后绑定事件
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("updateBurgCoaButton").addEventListener("click", updateBurgCoa);
+});
+
 
 async function overviewCharts() {
   const Overview = await import("../dynamic/overview/charts-overview.js?v=1.99.00");

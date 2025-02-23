@@ -24,7 +24,7 @@ function editEmblem(type, id, el) {
   // add listeners,then remove on closure
   emblemStates.oninput = selectState;
   emblemProvinces.oninput = selectProvince;
-  emblemBurgs.oninput = selectBurg;
+  emblemBurgs.oninput = selectBurg;  //TODO: 不再管 Burg
   emblemShapeSelector.oninput = changeShape;
   document.getElementById("emblemSizeSlider").oninput = changeSize;
   document.getElementById("emblemSizeNumber").oninput = changeSize;

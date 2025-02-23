@@ -2298,8 +2298,11 @@
                 >
                     <b>图表</b><br/>Charts (<b>^A</b>)
                 </button>
+                    <!-- 新增按钮，运行 updateBurgCoa 函数 -->
+                <button id="updateBurgCoaButton" data-tip="点击运行更新非独立城镇徽标函数" data-shortcut="Shift + U">
+                    <b>更新徽标</b><br/>Update Coa
+                </button>
             </div>
-
             <div class="separator" style="font-style: normal"><b>创建</b>　Create</div>
             <div class="grid">
                 <button id="openSubmapTool" data-tip="Click to generate a submap from the current viewport">
@@ -3539,7 +3542,7 @@
                         <input id="burgPopulation" type="number" min="0" step="1" style="width: 9em"/>
                     </div>
 
-                    <div data-tip="设置年平均温度<br/>Burg average yearly temperature"
+                    <div data-tip="年平均温度<br/>Burg average yearly temperature"
                          style="display: flex; justify-content: space-between">
                         <div>
                             <div class="label">温度：</div>
@@ -4634,21 +4637,25 @@
                 <option value="主教区">主教区 Bishopric</option>
                 <option value="主教辖区">主教辖区 Eparchy</option>
                 <option value="宗主教区">宗主教区 Patriarchate</option>
+                <option value="骑士团">骑士团 Chivalric Order</option>
                 <!--                    <option value="神权国 Thearchy">神权国 Thearchy</option>-->
             </optgroup>
             <optgroup label="联合政体 Union">
-                <option value="联合邦">联合邦 Confederacy</option>
                 <option value="邦联">邦联 Confederation</option>
-                <option value="联合体">联合体 Conglomerate</option>
+                <option value="城邦联盟">城邦联盟 United City-states</option>
+                <option value="合众国">合众国 United States</option>
                 <option value="联邦体">联邦体 Commonwealth</option>
-                <option value="联盟">联盟 League</option>
-                <option value="同盟">同盟 Union</option>
-                <option value="联合游群">联合游群 United Hordes</option>
+                <option value="联合邦">联合邦 Confederacy</option>
+                <option value="联合体">联合体 Conglomerate</option>
                 <option value="联合王国">联合王国 United Kingdom</option>
+                <option value="联合游群">联合游群 United Hordes</option>
+                <option value="联盟">联盟 League</option>
                 <option value="联省">联省 United Provinces</option>
                 <option value="联合共和国">联合共和国 United Republic</option>
-                <option value="合众国">合众国 United States</option>
                 <option value="联合部落">联合部落 United Tribes</option>
+                <option value="贸易联盟">贸易联盟 Trade Union</option>
+                <option value="同盟">同盟 Union</option>
+
             </optgroup>
             <optgroup label="无政府 Anarchy">
                 <option value="市镇">市镇 Commune</option>
@@ -4868,6 +4875,7 @@
             <option value="州">州 State</option>
             <option value="领地">领地 Territory</option>
             <option value="部族">部族 Tribe</option>
+            <option value="城邦">城邦 City-state</option>
         </select>
         <input
                 id="provinceNameEditorCustomForm"

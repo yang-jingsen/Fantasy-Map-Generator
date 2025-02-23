@@ -107,10 +107,23 @@ function editBurg(id) {
       select.options.add(new Option(this.id, this.id, false, this.id === group));
     });
 
-    // set emlem image
-    const coaID = "burgCOA" + id;
-    COArenderer.trigger(coaID, b.coa);
-    byId("burgEmblem").setAttribute("href", "#" + coaID);
+    // // set emlem image
+    // const coaID = "burgCOA" + id;
+    // COArenderer.trigger(coaID, b.coa);
+    // byId("burgEmblem").setAttribute("href", "#" + coaID);
+    // TODO: 徽标使用国家
+    if (b.state && pack.states[b.state] && pack.states[b.state].coa) {
+      const state = pack.states[b.state];
+      const coaID = "stateCOA" + state.i;
+      COArenderer.trigger(coaID, state.coa);
+      byId("burgEmblem").setAttribute("href", "#" + coaID);
+    } else {
+      const coaID = "burgCOA" + b.i;
+      COArenderer.trigger(coaID, b.coa);
+      byId("burgEmblem").setAttribute("href", "#" + coaID);
+    }
+
+
 
     if (options.showBurgPreview) {
       byId("burgPreviewSection").style.display = "block";

@@ -514,7 +514,7 @@ function invokeActiveZooming() {
       if (rescaleLabels.checked) this.setAttribute("font-size", relative);
 
       // TODO : Modified ! => Hide labels if they are too small or too big
-      const hidden = hideLabels.checked && (relative * scale < 10 || relative * scale > 120);
+      const hidden = hideLabels.checked && (relative * scale < 14 || relative * scale > 120);
       if (hidden) this.classList.add("hidden");
       else this.classList.remove("hidden");
     });

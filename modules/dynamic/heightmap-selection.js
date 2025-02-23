@@ -13,7 +13,7 @@ export function open() {
   graph = getGraph(graph);
 
   $("#heightmapSelection").dialog({
-    title: "Select Heightmap",
+    title: "选择高度图 Select Heightmap",
     resizable: false,
     position: {my: "center", at: "center", of: "svg"},
     buttons: {
@@ -157,11 +157,11 @@ function insertHtml() {
   const heightmapSelectionHtml = /* html */ `<div id="heightmapSelection" class="dialog stable">
     <div class="heightmap-selection">
       <section data-tip="Select heightmap template – template provides unique, but similar-looking maps on generation">
-        <header><h1>Heightmap templates</h1></header>
+        <header><h1>高度图模板<br/>Heightmap templates</h1></header>
         <div class="heightmap-selection_container"></div>
       </section>
       <section data-tip="Select precreated heightmap – it will be the same for each map">
-        <header><h1>Precreated heightmaps</h1></header>
+        <header><h1>预设高度图<br/>Precreated heightmaps</h1></header>
         <div class="heightmap-selection_container"></div>
       </section>
       <section>

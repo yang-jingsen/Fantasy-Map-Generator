@@ -2312,35 +2312,35 @@
         </div>
 
         <div id="customizationMenu" class="tabcontent">
-            <p>Heightmap customization tools:</p>
+            <p>高度图自定义工具 Heightmap customization tools:</p>
             <div id="customizeTools">
-                <button data-tip="Display brushes panel" id="paintBrushes">Paint Brushes</button>
-                <button data-tip="Open template editor" id="applyTemplate" style="display: none">Template Editor
+                <button data-tip="显示画笔面板<br/>Display brushes panel" id="paintBrushes"><b>画笔工具</b><br/>Paint Brushes</button>
+                <button data-tip="打开模板编辑器<br/>Open template editor" id="applyTemplate" style="display: none"><b>模板编辑器</b><br/>Template Editor
                 </button>
-                <button data-tip="Open Image Converter" id="convertImage" style="display: none">Image Converter</button>
-                <button data-tip="Render heightmap data as a small monochrome image" id="heightmapPreview">Preview
+                <button data-tip="打开图像转换器<br/>Open Image Converter" id="convertImage" style="display: none"><b>图像转换器</b><br/>Image Converter</button>
+                <button data-tip="将高度图数据渲染为小型黑白图像<br/>Render heightmap data as a small monochrome image" id="heightmapPreview"><b>预览</b><br/>Preview
                 </button>
-                <button data-tip="Preview heightmap in 3D scene" id="heightmap3DView">3D scene</button>
+                <button data-tip="在 3D 场景中预览高度图<br/>Preview heightmap in 3D scene" id="heightmap3DView"><b>预览3D</b><br/>3D scene</button>
             </div>
 
             <p>Options:</p>
             <div id="customizeOptions">
-                <div data-tip="Heightmap edit mode">Edit mode: <span id="heightmapEditMode"></span></div>
+                <div data-tip="Heightmap edit mode"><b>编辑模式</b>： <span id="heightmapEditMode"></span></div>
                 <div data-tip="Render cells below the sea level (with height less than 20)">
                     <input id="renderOcean" class="checkbox" type="checkbox"/>
-                    <label for="renderOcean" class="checkbox-label">Render ocean cells</label>
+                    <label for="renderOcean" class="checkbox-label"><b>渲染海洋单元格</b><br/>　 Render ocean cells</label>
                 </div>
                 <div
                         id="allowErosionBox"
                         data-tip="Regenerate rivers and allow water flow to change heights and form new lakes. Better to keep checked"
                 >
                     <input id="allowErosion" class="checkbox" type="checkbox" checked/>
-                    <label for="allowErosion" class="checkbox-label">Allow water erosion</label>
+                    <label for="allowErosion" class="checkbox-label"><b>允许水蚀</b><br/>　 Allow water erosion</label>
                 </div>
                 <div
-                        data-tip="Maximum number of iterations taken to resolve depressions. Increase if you have rivers ending nowhere"
+                        data-tip="解决凹陷问题所采取的最大迭代次数。如果存在河流无归处的情况，请增加此值。<br/>Maximum number of iterations taken to resolve depressions. Increase if you have rivers ending nowhere"
                 >
-                    <div>Depressions filling max iterations:</div>
+                    <div><b>凹陷填充最大迭代次数</b><br/>Depressions filling max iterations:</div>
                     <input
                             id="resolveDepressionsStepsInput"
                             data-stored="resolveDepressionsSteps"
@@ -2356,11 +2356,12 @@
                             min="0"
                             max="1000"
                             value="250"
+                            style="text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"
                     />
                 </div>
 
-                <div data-tip="Depression depth to form a new lake. Increase to reduce number of lakes added by system">
-                    <div>Depression depth threshold:</div>
+                <div data-tip="形成新湖泊所需的凹陷深度。增大此值可以减少系统添加的湖泊数量<br/>Depression depth to form a new lake. Increase to reduce number of lakes added by system">
+                    <div><b>凹陷深度阈值</b><br/>Depression depth threshold</div>
                     <input
                             id="lakeElevationLimitInput"
                             data-stored="lakeElevationLimit"
@@ -2376,22 +2377,24 @@
                             min="0"
                             max="80"
                             value="20"
+                            style="text-align: left; color: var(--input-color); background: var(--input-bg); border: var(--input-border);"
                     />
                 </div>
             </div>
 
-            <p>Statistics:</p>
+            <p><b>统计</b> Statistics</p>
             <div>
-                <span>Land cells: </span><span id="landmassCounter">0</span>
-                <span style="margin-left: 0.9em">Mean height: </span><span id="landmassAverage">0</span>
+                <span><b>陆地单元格</b> Land cells：</span><span id="landmassCounter">0</span>
+                <span style="margin-left: 0.9em"><b>平均高度</b>Mean height: </span><span id="landmassAverage">0</span>
             </div>
 
-            <p>Cell info:</p>
+            <p><b>单元格信息</b> Cell info</p>
             <div>
-                <span>Coord: </span><span id="heightmapInfoX"></span>/<span id="heightmapInfoY"></span><br/>
-                <span>Cell: </span><span id="heightmapInfoCell"></span><br/>
-                <span>Height: </span><span id="heightmapInfoHeight"></span>
+                <span><b>坐标：</b></span><span id="heightmapInfoX"></span>/<span id="heightmapInfoY"></span><br/>
+                <span><b>单元格：</b></span><span id="heightmapInfoCell"></span><br/>
+                <span><b>高度：</b></span><span id="heightmapInfoHeight"></span>
             </div>
+            <div>　 </div>
         </div>
 
         <div id="aboutContent" class="tabcontent">
@@ -4172,7 +4175,7 @@
 
 <div id="brushesPanel" class="dialog stable" style="display: none">
     <div id="brushesButtons" style="display: inline-block">
-        <button id="brushRaise" data-tip="Raise brush: increase height of cells in radius by Power value">
+        <button id="brushRaise" data-tip="提升画笔：在半径范围内按力度值增加单元高度<br/>Raise brush: increase height of cells in radius by Power value">
             <svg viewBox="15 15 70 70" height="1em" width="1.6em">
                 <path d="m20,39 h60 M50,85 v-35 l-12,8 m12,-8 l12,8" fill="none" stroke="#000" stroke-width="5"/>
             </svg>
@@ -4180,7 +4183,7 @@
 
         <button
                 id="brushElevate"
-                data-tip="Elevate brush: drag to gradually increase height of cells in radius by Power value"
+                data-tip="抬升画笔：拖动以在半径范围内按力度值逐渐增加单元高度<br/>Elevate brush: drag to gradually increase height of cells in radius by Power value"
         >
             <svg viewBox="15 15 70 70" height="1em" width="1.6em">
                 <path
@@ -4192,7 +4195,7 @@
             </svg>
         </button>
 
-        <button id="brushLower" data-tip="Lower brush: drag to decrease height of cells in radius by Power value">
+        <button id="brushLower" data-tip="降低画笔：拖动以在半径范围内按力度值减少单元高度<br/>Lower brush: drag to decrease height of cells in radius by Power value">
             <svg viewBox="15 15 70 70" height="1em" width="1.6em">
                 <path d="M50,30 v35 l-12,-8 m12,8 l12,-8 M20,78 h60" fill="none" stroke="#000" stroke-width="5"/>
             </svg>
@@ -4200,7 +4203,7 @@
 
         <button
                 id="brushDepress"
-                data-tip="Depress brush: drag to gradually decrease height of cells in radius by Power value"
+                data-tip="压低画笔：拖动以在半径范围内按力度值逐渐减少单元高度<br/>Depress brush: drag to gradually decrease height of cells in radius by Power value"
         >
             <svg viewBox="15 15 70 70" height="1em" width="1.6em">
                 <path d="M50,30 v35 l-12,-8 m12,8 l12,-8 M20,63 q30,35 60,0" fill="none" stroke="#000"
@@ -4210,7 +4213,7 @@
 
         <button
                 id="brushAlign"
-                data-tip="Align brush: drag to set height of cells in radius to height of the cell at mousepoint"
+                data-tip="对齐画笔：拖动以将半径范围内的单元高度设为鼠标指向单元的高度<br/>Align brush: drag to set height of cells in radius to height of the cell at mousepoint"
         >
             <svg viewBox="15 15 70 70" height="1em" width="1.6em">
                 <path d="m20,50 h56 m0,20 h-56" fill="none" stroke="#000" stroke-width="5"/>
@@ -4219,7 +4222,7 @@
 
         <button
                 id="brushSmooth"
-                data-tip="Smooth brush: drag to level height of cells in radius to height of adjacent cells"
+                data-tip="平滑画笔：拖动以使半径范围内的单元高度平衡至相邻单元的高度<br/>Smooth brush: drag to level height of cells in radius to height of adjacent cells"
         >
             <svg viewBox="15 15 70 70" height="1em" width="1.6em">
                 <path d="m15,60 q15,-15 30,0 q15,15 35,0" fill="none" stroke="#000" stroke-width="5"/>
@@ -4228,14 +4231,14 @@
 
         <button
                 id="brushDisrupt"
-                data-tip="Disrupt brush: drag to randomize height of cells in radius based on Power value"
+                data-tip="扰动画笔：拖动以根据力度值随机化半径范围内的单元高度<br/>Disrupt brush: drag to randomize height of cells in radius based on Power value"
         >
             <svg viewBox="15 15 70 70" height="1em" width="1.6em">
                 <path d="m15,63 l15,-13 15,20 15,-20 15,19 15,-14" fill="none" stroke="#000" stroke-width="5"/>
             </svg>
         </button>
 
-        <button id="brushLine" data-tip="Line: select two points to change heights along the line">
+        <button id="brushLine" data-tip="直线工具：选择两个点以调整沿线的高度<br/>Line: select two points to change heights along the line">
             <svg viewBox="0 -5 100 100" height="1em" width="1.6em">
                 <path d="M0 90 L100 10" fill="none" stroke="#000" stroke-width="7"></path>
             </svg>
@@ -4243,52 +4246,52 @@
     </div>
 
     <div id="brushesSliders" style="display: none">
-        <div data-tip="Change brush size. Shortcut: + to increase; – to decrease">
+        <div data-tip="更改画笔大小。快捷键：+ 增大，- 缩小<br/>Change brush size. Shortcut: + to increase; – to decrease">
             <slider-input id="heightmapBrushRadius" min="1" max="100" value="25">
-                <div style="width: 3.5em">Radius:</div>
+                <div style="width: 3.5em"><b>半径</b>Radius</div>
             </slider-input>
         </div>
 
-        <div data-tip="Change brush power">
+        <div data-tip="更改画笔力度<br/>Change brush power">
             <slider-input id="heightmapBrushPower" min="1" max="10" value="5">
-                <div style="width: 3.5em">Power:</div>
+                <div style="width: 3.5em"><b>力度</b>Power</div>
             </slider-input>
         </div>
     </div>
 
     <div id="lineSlider" style="display: none">
-        <div data-tip="Change tool power. Shortcut: + to increase; – to decrease">
+        <div data-tip="更改工具力度。快捷键：+ 增大，- 缩小<br/>Change tool power. Shortcut: + to increase; – to decrease">
             <slider-input id="heightmapLinePower" min="-100" max="100" value="30">
-                <div style="width: 3.5em">Power:</div>
+                <div style="width: 3.5em"><b>力度</b>Power</div>
             </slider-input>
         </div>
     </div>
 
     <div
-            data-tip="Allow brush to change only land cells and hence restrict the coastline modification"
+            data-tip="仅允许画笔修改陆地单元，以限制海岸线的变动<br/>Allow brush to change only land cells and hence restrict the coastline modification"
             style="margin-bottom: 0.6em"
     >
         <input id="changeOnlyLand" class="checkbox" type="checkbox"/>
-        <label for="changeOnlyLand" class="checkbox-label"><i>change only land cells</i></label>
+        <label for="changeOnlyLand" class="checkbox-label"><i><b>仅修改陆地单元</b><br/>　 change only land cells</i></label>
     </div>
 
     <div id="modifyButtons">
-        <button id="undo" data-tip="Undo the latest action (Ctrl + Z)" class="icon-ccw" disabled></button>
-        <button id="redo" data-tip="Redo the action (Ctrl + Y)" class="icon-cw" disabled></button>
-        <button id="rescaleShow" data-tip="Show rescaler slider" class="icon-exchange"></button>
+        <button id="undo" data-tip="撤销上一步操作 (Ctrl + Z)<br/>Undo the latest action (Ctrl + Z)" class="icon-ccw" disabled></button>
+        <button id="redo" data-tip="重做上一步操作 (Ctrl + Y)<br/>Redo the action (Ctrl + Y)" class="icon-cw" disabled></button>
+        <button id="rescaleShow" data-tip="显示缩放滑块<br/>Show rescaler slider" class="icon-exchange"></button>
         <button
                 id="rescaleCondShow"
-                data-tip="Rescaler: change height if condition is fulfilled"
+                data-tip="缩放器：仅在满足条件时更改高度<br/>Rescaler: change height if condition is fulfilled"
                 class="icon-if"
         ></button>
-        <button id="smoothHeights" data-tip="Smooth all heights a bit" class="icon-smooth"></button>
-        <button id="disruptHeights" data-tip="Disrupt (randomize) heights a bit" class="icon-disrupt"></button>
-        <button id="brushClear" data-tip="Set height for all cells to 0 (erase the map)"
+        <button id="smoothHeights" data-tip="稍微平滑所有高度<br/>Smooth all heights a bit" class="icon-smooth"></button>
+        <button id="disruptHeights" data-tip="稍微扰动 (随机化) 高度<br/>Disrupt (randomize) heights a bit" class="icon-disrupt"></button>
+        <button id="brushClear" data-tip="将所有单元高度设为 0 (清空地图)<br/>Set height for all cells to 0 (erase the map)"
                 class="icon-eraser"></button>
     </div>
 
     <div id="rescaleSection" style="display: none">
-        <button id="rescaleHide" data-tip="Hide rescaler slider" class="icon-exchange"></button>
+        <button id="rescaleHide" data-tip="隐藏缩放滑块<br/>Hide rescaler slider" class="icon-exchange"></button>
         <input
                 id="rescaler"
                 data-tip="Change height for all cells"
@@ -4302,10 +4305,10 @@
 
     <div
             id="rescaleCondSection"
-            data-tip="If height is greater or equal to X and less or equal to Y, then perform an operation Z with operand V"
+            data-tip="如果高度大于等于 X 且小于等于 Y，则执行操作 Z，操作数为 V<br/>If height is greater or equal to X and less or equal to Y, then perform an operation Z with operand V"
             style="display: none"
     >
-        <button id="rescaleCondHide" data-tip="Hide rescaler" class="icon-if"></button>
+        <button id="rescaleCondHide" data-tip="隐藏缩放工具<br/>Hide rescaler" class="icon-if"></button>
         <label>h ≥</label>
         <input id="rescaleLower" value="20" type="number" min="0" max="100"/>
         <label>≤</label>
@@ -4319,7 +4322,7 @@
             <option value="exponent">^</option>
         </select>
         <input id="rescaleModifier" type="number" value="0.9" min="0" max="1.5" step="0.01"/>
-        <button id="rescaleExecute" data-tip="Click to perform an operation" class="icon-play-circled2"></button>
+        <button id="rescaleExecute" data-tip="点击执行操作<br/>Click to perform an operation" class="icon-play-circled2"></button>
     </div>
 </div>
 

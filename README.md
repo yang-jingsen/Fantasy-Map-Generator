@@ -1,3 +1,8 @@
+# 幻想地图生成器
+
+自用中英双语版本，汉化了大部分 UI，部分属性，名称库，添加了拼音排序功能。
+
+---
 # Fantasy Map Generator
 
 Azgaar's _Fantasy Map Generator_ is a free web application that helps fantasy writers, game masters, and cartographers create and edit fantasy maps.

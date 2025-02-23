@@ -167,7 +167,7 @@ function showMapTooltip(point, e, i, g) {
     if (burgId) {
       const burg = pack.burgs[burgId];
       const population = si(burg.population * populationRate * urbanization);
-      tip(`${burg.name}. Population: ${population}. Click to edit`);
+      tip(`<b>${burg.name}</b>。人口: ${population}。点击以编辑<br/>${burg.name}. Population: ${population}. Click to edit`);
       if (burgsOverview?.offsetParent) highlightEditorLine(burgsOverview, burgId, 5000);
       return;
     }
@@ -198,7 +198,7 @@ function showMapTooltip(point, e, i, g) {
     const lakeId = +e.target.dataset.f;
     const name = pack.features[lakeId]?.name;
     const fullName = subgroup === "freshwater" ? name : name + " " + subgroup;
-    tip(`${fullName} lake. Click to edit`);
+    tip(`${fullName}（湖泊）。点击以编辑<br/>${fullName} lake. Click to edit`);
     return;
   }
   if (group === "coastline") return tip("Click to edit the coastline");

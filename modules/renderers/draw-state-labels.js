@@ -58,6 +58,15 @@ function drawStateLabels(list) {
     return labelPaths;
   }
 
+  // function checkExampleLetterLength() {
+  //   const textGroup = d3.select("g#labels > g#states");
+  //   const testLabel = textGroup.append("text").attr("x", 0).attr("y", 0).text("Example");
+  //   const letterLength = testLabel.node().getComputedTextLength() / 7; // approximate length of 1 letter
+  //   testLabel.remove();
+  //
+  //   return letterLength;
+  // }
+
   function checkExampleLetterLength() {
     const textGroup = d3.select("g#labels > g#states");
     const testLabel = textGroup.append("text").attr("x", 0).attr("y", 0).text("Example");
@@ -66,6 +75,7 @@ function drawStateLabels(list) {
 
     return letterLength;
   }
+
 
   function drawLabelPath(letterLength) {
     const mode = options.stateLabelsMode || "auto";
@@ -103,6 +113,32 @@ function drawStateLabels(list) {
 
         textPath.attr("d", round(lineGen(pathPoints)));
       }
+      // if (pathLength && pathLength < longestLineLength) {
+      //   // 获取当前起点和终点
+      //   const [x1, y1] = pathPoints[0];
+      //   const [x2, y2] = pathPoints[pathPoints.length - 1];
+      //
+      //   // 计算路径方向向量
+      //   const deltaX = x2 - x1;
+      //   const deltaY = y2 - y1;
+      //
+      //   // 设定延伸比例，例如 1.3 表示延长 30%
+      //   const extendFactor = 1.1;
+      //
+      //   // 延长起点和终点：使得总延伸距离按比例增加
+      //   const newX1 = x1 - deltaX * (extendFactor - 1);
+      //   const newY1 = y1 - deltaY * (extendFactor - 1);
+      //   const newX2 = x2 + deltaX * (extendFactor - 1);
+      //   const newY2 = y2 + deltaY * (extendFactor - 1);
+      //
+      //   // 更新 pathPoints 起点和终点
+      //   pathPoints[0] = [newX1, newY1];
+      //   pathPoints[pathPoints.length - 1] = [newX2, newY2];
+      //
+      //   // 更新路径
+      //   textPath.attr("d", round(lineGen(pathPoints)));
+      // }
+
 
       const textElement = textGroup
         .append("text")

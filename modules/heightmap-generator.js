@@ -150,7 +150,7 @@ window.HeightmapGenerator = (function () {
       const queue = [start];
       while (queue.length) {
         const q = queue.shift();
-
+        // console.log("正在处理 cell 索引:", q, "对应的邻居数据:", grid.cells.c[q]); //TODO: remove
         for (const c of grid.cells.c[q]) {
           if (change[c]) continue;
           change[c] = change[q] ** blobPower * (Math.random() * 0.2 + 0.9);

@@ -625,7 +625,7 @@ async function generate(options) {
 
     applyGraphSize();
     randomizeOptions();
-
+    console.log("1111111111111111111111111111111111111111111111111")
     if (shouldRegenerateGrid(grid, precreatedSeed)) grid = precreatedGraph || generateGrid();
     else delete grid.cells.h;
     grid.cells.h = await HeightmapGenerator.generate(grid);

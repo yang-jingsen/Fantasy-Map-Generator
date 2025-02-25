@@ -4,14 +4,14 @@
 // check if new grid graph should be generated or we can use the existing one
 function shouldRegenerateGrid(grid, expectedSeed) {
     if (expectedSeed && expectedSeed !== grid.seed) {
-      console.log("Seed 不匹配，提前返回 true");
-      return true;
+        console.log("Seed 不匹配，提前返回 true");
+        return true;
     }
 
     const cellsDesired = +byId("pointsInput").dataset.cells;
     if (cellsDesired !== grid.cellsDesired) {
-      console.log("cellsDesired 不匹配，提前返回 true");
-      return true;
+        console.log("cellsDesired 不匹配，提前返回 true");
+        return true;
     }
 
     const newSpacing = rn(Math.sqrt((graphWidth * graphHeight) / cellsDesired), 2);
@@ -21,7 +21,6 @@ function shouldRegenerateGrid(grid, expectedSeed) {
     console.log("shouldRegenerateGrid: ", grid.spacing !== newSpacing || grid.cellsX !== newCellsX || grid.cellsY !== newCellsY);
     return grid.spacing !== newSpacing || grid.cellsX !== newCellsX || grid.cellsY !== newCellsY;
 }
-
 
 
 function buildCellNeighbors(cellsV) {
@@ -70,7 +69,7 @@ function generateGrid() {
 }
 
 
-function generateHexGrid(width, height, size) {
+function generateHexGridPoints(width, height, size) {
     const points = [];
     const xSpacing = Math.sqrt(3) * size;  // 水平间距
     const ySpacing = 1.5 * size;           // 垂直间距
@@ -94,40 +93,37 @@ function generateHexGrid(width, height, size) {
     return points;
 }
 
-
-// place random points to calculate Voronoi diagram
-function placePoints_old() {
-    TIME && console.time("placePoints");
-    const cellsDesired = +byId("pointsInput").dataset.cells;
-    const spacing = rn(Math.sqrt((graphWidth * graphHeight) / cellsDesired), 2); // spacing between points before jirrering
-
-    const boundary = getBoundaryPoints(graphWidth, graphHeight, spacing);
-    const points = getJitteredGrid(graphWidth, graphHeight, spacing); // points of jittered square grid
-
-
-    const cellsX = Math.floor((graphWidth + 0.5 * spacing - 1e-10) / spacing);
-    const cellsY = Math.floor((graphHeight + 0.5 * spacing - 1e-10) / spacing);
-    TIME && console.timeEnd("placePoints");
-
-    return {spacing, cellsDesired, boundary, points, cellsX, cellsY};
-}
+//
+//
+// // place random points to calculate Voronoi diagram
+// function placePoints_old() {
+//     TIME && console.time("placePoints");
+//     const cellsDesired = +byId("pointsInput").dataset.cells;
+//     const spacing = rn(Math.sqrt((graphWidth * graphHeight) / cellsDesired), 2); // spacing between points before jirrering
+//
+//     const boundary = getBoundaryPoints(graphWidth, graphHeight, spacing);
+//     const points = getJitteredGrid(graphWidth, graphHeight, spacing); // points of jittered square grid
+//
+//
+//     const cellsX = Math.floor((graphWidth + 0.5 * spacing - 1e-10) / spacing);
+//     const cellsY = Math.floor((graphHeight + 0.5 * spacing - 1e-10) / spacing);
+//     TIME && console.timeEnd("placePoints");
+//
+//     return {spacing, cellsDesired, boundary, points, cellsX, cellsY};
+// }
 
 function placePoints() {
     TIME && console.time("placePoints");
     const cellsDesired = +byId("pointsInput").dataset.cells;
     // 根据期望 cell 数量和总面积计算一个合适的 size（你可以根据实际需求调整）
     const size = rn(Math.sqrt((graphWidth * graphHeight) / cellsDesired), 2);
-
     // 生成边界点（如果不需要可以适当调整或保留原有方式）
     const boundary = getBoundaryPoints(graphWidth, graphHeight, size);
-
     // 用新的六边形网格函数生成点阵
-    const points = generateHexGrid(graphWidth, graphHeight, size);
-
+    const points = generateHexGridPoints(graphWidth, graphHeight, size);
     // 根据六边形网格计算列和行数（这里的计算需要和 generateHexGrid 保持一致）
-    const cellsX = Math.ceil(graphWidth / (1.5 * size));
-    const cellsY = Math.ceil(graphHeight / (Math.sqrt(3) * size));
-
+    const cellsX = Math.ceil(graphWidth / (Math.sqrt(3) * size));
+    const cellsY = Math.ceil(graphHeight / (1.5 * size));
     TIME && console.timeEnd("placePoints");
     return {spacing: size, cellsDesired, boundary, points, cellsX, cellsY};
 }
@@ -193,65 +189,37 @@ function getJitteredGrid(width, height, spacing) {
 }
 
 
-// return cell index on a regular square grid
-function findGridCell_old(x, y, grid) {
-    return (
-        Math.floor(Math.min(y / grid.spacing, grid.cellsY - 1)) * grid.cellsX +
-        Math.floor(Math.min(x / grid.spacing, grid.cellsX - 1))
-    );
-}
-
-function findGridCell_new1(x, y, grid) {
-    const col = Math.floor(Math.min(x / grid.spacing, grid.cellsX - 1));
-    const row = Math.floor(Math.min(y / grid.spacing, grid.cellsY - 1));
-    return row * grid.cellsX + col;
-}
-
 // 新的定位函数：返回六边形网格中的 cell 索引
 function findGridCell(x, y, grid) {
-    const size = grid.spacing;             // 六边形基本尺寸
-    const colWidth = 1.5 * size;             // 横向单元格宽度
-    const rowHeight = Math.sqrt(3) * size;   // 纵向单元格高度
+    const size = grid.spacing;               // 六边形基本尺寸
+    const xSpacing = Math.sqrt(3) * size;      // 水平间距（1.732 * size）
+    const ySpacing = 1.5 * size;               // 垂直间距
 
     // 根据 y 坐标计算行号
-    const row = Math.floor(y / rowHeight);
-    // 根据行号决定水平偏移（交错排列：奇数行/偶数行不同）
-    const xOffset = (row % 2) * (colWidth / 2);
-    // 根据 x 坐标（减去偏移量）计算列号
-    const col = Math.floor((x - xOffset) / colWidth);
+    const row = Math.floor(y / ySpacing);
+    // 根据行号决定水平偏移（交错排列）
+    const xOffset = (row % 2) * (xSpacing / 2);
+    // 根据 x 坐标（减去偏移）计算列号
+    const col = Math.floor((x - xOffset) / xSpacing);
 
-    // 将二维索引转换为一维索引（假设行优先）
-    return row * grid.cellsX + col;
-}
+    // 使用 generateHexGrid 计算得到的列数（cols）来生成一维索引
+    const baseIndex = row * grid.cellsX + col;
 
-
-// return array of cell indexes in radius on a regular square grid
-function findGridAll_(x, y, radius) {
-    const c = grid.cells.c;
-    let r = Math.floor(radius / grid.spacing);
-    let found = [findGridCell(x, y, grid)];
-    if (!r || radius === 1) return found;
-    if (r > 0) found = found.concat(c[found[0]]);
-    if (r > 1) {
-        let frontier = c[found[0]];
-        while (r > 1) {
-            let cycle = frontier.slice();
-            frontier = [];
-            cycle.forEach(function (s) {
-                c[s].forEach(function (e) {
-                    if (found.indexOf(e) !== -1) return;
-                    found.push(e);
-                    frontier.push(e);
-                });
-            });
-            r--;
+    // 遍历baseIndex及其周围的6个cell，找到最近的cell
+    const neighbors = grid.cells.c[baseIndex];
+    // grid.points 储存了每个 cell 的中心点坐标，我们要找到最近的 cell
+    let minDist = Infinity;
+    let closestCell = baseIndex;
+    neighbors.forEach(neighborIndex => {
+        const [nx, ny] = grid.points[neighborIndex];
+        const dist = Math.hypot(x - nx, y - ny);
+        if (dist < minDist) {
+            minDist = dist;
+            closestCell = neighborIndex;
         }
-    }
-
-    return found;
+    });
+    return closestCell;
 }
-
-
 
 // 新的 findGridAll：基于 cell 中心点与鼠标位置的距离
 function findGridAll(x, y, radius) {
